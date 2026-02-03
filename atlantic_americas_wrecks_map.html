@@ -143,7 +143,7 @@
             attribution: '© Esri', maxZoom: 19
         });
         L.control.layers({"Street": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'), "Satellite": satellite}).addTo(map);
-
+        
         // Layer groups
         var wrecksLayer = L.layerGroup().addTo(map);
         var seaRoutesLayer = L.layerGroup().addTo(map);
@@ -200,7 +200,7 @@
         }
 
         function loadData() {
-            fetch('shipwreck_database.json')
+            fetch('shipwreck_database.json?v=' + Date.now())
                 .then(r => r.json())
                 .then(data => {
                     dbData = data;
@@ -412,9 +412,8 @@
                         openFlyout(inc.name || 'Incident', inc.date||'', content);
                     });
             });
-        }
 
-        // Pirate Raids (land attacks)
+            // Pirate Raids (land attacks)
             var raids = (data.pirate_raids && data.pirate_raids.raids) || [];
             raids.forEach(function(raid) {
                 if (!raid.lat || !raid.lng) return;
@@ -466,9 +465,10 @@
                         openFlyout('🛢️ '+(well.name||well.id), well.operator||'', content);
                     });
             });
+        }
 
         // Load fishing spots from separate file
-        fetch('fishing_spots.json')
+        fetch('fishing_spots.json?v=' + Date.now())
             .then(r => r.json())
             .then(fishData => {
                 fishData.forEach(function(spot) {

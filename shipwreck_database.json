@@ -12,11 +12,11 @@
       "primary_books": [
         "Robert Marx - Shipwrecks of the Western Hemisphere: 1492-1825 (1971)",
         "John S. Potter Jr. - The Treasure Diver's Guide (1960, revised 1972)",
-        "Robert St\u00e9nuit - Treasures of the Armada (1972)",
+        "Robert Sténuit - Treasures of the Armada (1972)",
         "Kip Wagner - Pieces of Eight (1966)",
         "Eugene Lyon - The Search for the Atocha (1979)",
         "Mendel Peterson - History Under the Sea (1969)",
-        "Pablo P\u00e9rez-Malla\u00edna - Spain's Men of the Sea (1998)",
+        "Pablo Pérez-Mallaína - Spain's Men of the Sea (1998)",
         "Carla Rahn Phillips - Six Galleons for the King of Spain (1986)",
         "William Lytle Schurz - The Manila Galleon (1939)",
         "C.R. Boxer - The Portuguese Seaborne Empire 1415-1825 (1969)",
@@ -24,14 +24,14 @@
       ],
       "archives": [
         "Archivo General de Indias (Seville, Spain)",
-        "Archivo General de la Naci\u00f3n (Mexico City)",
+        "Archivo General de la Nación (Mexico City)",
         "Archivo Nacional de Cuba (Havana)",
         "Arquivo Nacional da Torre do Tombo (Lisbon)",
         "Nationaal Archief (The Hague) - VOC records"
       ],
       "trade_route_sources": [
         "Pierre Chaunu - Seville et l'Atlantique (1955-1960) - definitive study of Spanish Atlantic trade",
-        "Huguette & Pierre Chaunu - S\u00e9ville et l'Am\u00e9rique (1977)",
+        "Huguette & Pierre Chaunu - Séville et l'Amérique (1977)",
         "A.J.R. Russell-Wood - The Portuguese Empire (1998)",
         "Timothy Walton - The Spanish Treasure Fleets (1994)",
         "William Lytle Schurz - The Manila Galleon (1939, repr. 1985)"
@@ -43,7 +43,7 @@
     "routes": [
       {
         "id": "flota-outbound-new-spain",
-        "name": "Flota de Nueva Espa\u00f1a - Outbound (Spain to Mexico)",
+        "name": "Flota de Nueva España - Outbound (Spain to Mexico)",
         "type": "Spanish Treasure Fleet",
         "fleet_name": "New Spain Fleet (Flota)",
         "period": "1564-1778",
@@ -58,23 +58,23 @@
           "paper",
           "iron tools"
         ],
-        "description": "The New Spain Fleet (Flota) departed Seville/C\u00e1diz annually, sailing to Veracruz, Mexico to collect silver from Mexican mines and goods from the Manila Galleon trade.",
-        "seasonal_notes": "Departed Spain April-June to arrive before hurricane season. Mercury from Almad\u00e9n mines was critical for silver amalgamation process.",
+        "description": "The New Spain Fleet (Flota) departed Seville/Cádiz annually, sailing to Veracruz, Mexico to collect silver from Mexican mines and goods from the Manila Galleon trade.",
+        "seasonal_notes": "Departed Spain April-June to arrive before hurricane season. Mercury from Almadén mines was critical for silver amalgamation process.",
         "waypoints": [
           {
             "name": "Seville (Departure before 1680)",
             "lat": 37.3891,
             "lng": -5.9845,
-            "notes": "Primary departure port until 1680. Ships loaded at Seville, sailed down Guadalquivir to Sanl\u00facar de Barrameda bar."
+            "notes": "Primary departure port until 1680. Ships loaded at Seville, sailed down Guadalquivir to Sanlúcar de Barrameda bar."
           },
           {
-            "name": "Sanl\u00facar de Barrameda",
+            "name": "Sanlúcar de Barrameda",
             "lat": 36.7781,
             "lng": -6.3519,
             "notes": "Mouth of Guadalquivir. Treacherous bar crossing required pilots."
           },
           {
-            "name": "C\u00e1diz (Primary port after 1680)",
+            "name": "Cádiz (Primary port after 1680)",
             "lat": 36.5271,
             "lng": -6.2886,
             "notes": "Became primary departure port after 1680 due to silting of Guadalquivir."
@@ -113,12 +113,12 @@
             "name": "Veracruz, Mexico (Terminus)",
             "lat": 19.1738,
             "lng": -96.1342,
-            "notes": "Final destination. San Juan de Ul\u00faa fortress. Silver from Mexico City mints and Manila Galleon goods loaded here."
+            "notes": "Final destination. San Juan de Ulúa fortress. Silver from Mexico City mints and Manila Galleon goods loaded here."
           }
         ],
         "duration_days": "60-90",
         "dangers": [
-          "Sanl\u00facar bar crossing",
+          "Sanlúcar bar crossing",
           "Barbary corsairs near Canaries",
           "Hurricanes (early arrivals)",
           "Yellow fever at Veracruz"
@@ -126,11 +126,15 @@
         "sources": [
           "Chaunu - Seville et l'Atlantique",
           "Walton - Spanish Treasure Fleets"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Spanish_treasure_fleet",
+          "https://en.wikipedia.org/wiki/Flota_de_Indias"
         ]
       },
       {
         "id": "flota-return-new-spain",
-        "name": "Flota de Nueva Espa\u00f1a - Return (Mexico to Spain)",
+        "name": "Flota de Nueva España - Return (Mexico to Spain)",
         "type": "Spanish Treasure Fleet",
         "fleet_name": "New Spain Fleet (Flota)",
         "period": "1564-1778",
@@ -201,13 +205,13 @@
             "name": "Cape St. Vincent",
             "lat": 37.0225,
             "lng": -8.9958,
-            "notes": "SW tip of Portugal. Turn point toward C\u00e1diz. Pirate/privateer hunting ground."
+            "notes": "SW tip of Portugal. Turn point toward Cádiz. Pirate/privateer hunting ground."
           },
           {
-            "name": "C\u00e1diz/Seville (Terminus)",
+            "name": "Cádiz/Seville (Terminus)",
             "lat": 36.5271,
             "lng": -6.2886,
-            "notes": "Arrival. Treasure unloaded under guard to Casa de Contrataci\u00f3n."
+            "notes": "Arrival. Treasure unloaded under guard to Casa de Contratación."
           }
         ],
         "duration_days": "70-120",
@@ -226,6 +230,10 @@
         "sources": [
           "Chaunu - Seville et l'Atlantique",
           "Lyon - Search for the Atocha"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Spanish_treasure_fleet",
+          "https://en.wikipedia.org/wiki/Florida_Straits"
         ]
       },
       {
@@ -249,7 +257,7 @@
         "seasonal_notes": "Departed later than New Spain Fleet. Had to coordinate with Pacific silver shipments from Peru arriving at Panama.",
         "waypoints": [
           {
-            "name": "Seville/C\u00e1diz (Departure)",
+            "name": "Seville/Cádiz (Departure)",
             "lat": 36.5271,
             "lng": -6.2886,
             "notes": "Same departure as New Spain Fleet."
@@ -294,6 +302,10 @@
         "sources": [
           "Chaunu - Seville et l'Atlantique",
           "Walton - Spanish Treasure Fleets"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Spanish_treasure_fleet",
+          "https://en.wikipedia.org/wiki/Portobelo,_Col%C3%B3n"
         ]
       },
       {
@@ -303,7 +315,7 @@
         "fleet_name": "Tierra Firme Fleet (Galeones)",
         "period": "1564-1778",
         "cargo_return": [
-          "Peruvian silver (Potos\u00ed)",
+          "Peruvian silver (Potosí)",
           "Colombian gold",
           "Colombian emeralds (Muzo mines)",
           "pearls (Margarita Island)",
@@ -311,7 +323,7 @@
           "cacao",
           "quinine"
         ],
-        "description": "Return voyage with South American treasure. The PERU SILVER ROUTE was the most valuable: Potos\u00ed mines \u2192 mule trains to Arica \u2192 ships to Callao \u2192 ships to Panama City \u2192 mule trains across isthmus \u2192 Portobelo \u2192 Spain.",
+        "description": "Return voyage with South American treasure. The PERU SILVER ROUTE was the most valuable: Potosí mines → mule trains to Arica → ships to Callao → ships to Panama City → mule trains across isthmus → Portobelo → Spain.",
         "seasonal_notes": "Departed Portobelo/Cartagena by May to reach Havana in time for combined fleet departure.",
         "waypoints": [
           {
@@ -333,7 +345,7 @@
             "notes": "Met New Spain Fleet. Combined for Atlantic crossing."
           },
           {
-            "name": "Florida Straits \u2192 Azores \u2192 Spain",
+            "name": "Florida Straits → Azores → Spain",
             "lat": 39.4526,
             "lng": -31.1274,
             "notes": "Same return route as New Spain Fleet after Havana."
@@ -343,7 +355,7 @@
           "description": "The feeder route that brought Peruvian silver to Portobelo",
           "waypoints": [
             {
-              "name": "Potos\u00ed Mines, Bolivia",
+              "name": "Potosí Mines, Bolivia",
               "lat": -19.5836,
               "lng": -65.7531,
               "notes": "Source of most Spanish colonial silver. 'Cerro Rico' (Rich Hill). Elevation 13,420 ft."
@@ -352,7 +364,7 @@
               "name": "Arica, Peru (now Chile)",
               "lat": -18.4783,
               "lng": -70.3126,
-              "notes": "Pacific port. Silver arrived by llama/mule train from Potos\u00ed."
+              "notes": "Pacific port. Silver arrived by llama/mule train from Potosí."
             },
             {
               "name": "Callao, Peru",
@@ -388,16 +400,20 @@
         ],
         "notable_disasters": [
           "1622 (Atocha lost waiting for late Tierra Firme silver)",
-          "1708 (San Jos\u00e9 sunk off Cartagena)"
+          "1708 (San José sunk off Cartagena)"
         ],
         "sources": [
           "Chaunu - Seville et l'Atlantique",
           "Lyon - Search for the Atocha"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Spanish_treasure_fleet",
+          "https://en.wikipedia.org/wiki/Potos%C3%AD"
         ]
       },
       {
         "id": "carreira-da-india-outbound",
-        "name": "Carreira da \u00cdndia - Outbound (Lisbon to India)",
+        "name": "Carreira da Índia - Outbound (Lisbon to India)",
         "type": "Portuguese India Run",
         "period": "1497-1850s",
         "frequency": "Annual fleet, departed March-April",
@@ -417,7 +433,7 @@
             "name": "Lisbon, Portugal (Departure)",
             "lat": 38.7223,
             "lng": -9.1393,
-            "notes": "Bel\u00e9m Tower departure point. Ships blessed at Jer\u00f3nimos Monastery."
+            "notes": "Belém Tower departure point. Ships blessed at Jerónimos Monastery."
           },
           {
             "name": "Madeira (optional)",
@@ -515,11 +531,15 @@
         "sources": [
           "Boxer - Portuguese Seaborne Empire",
           "Russell-Wood - Portuguese Empire"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Carreira_da_%C3%8Dndia",
+          "https://en.wikipedia.org/wiki/Portuguese_India_Armadas"
         ]
       },
       {
         "id": "carreira-da-india-return",
-        "name": "Carreira da \u00cdndia - Return (India to Lisbon)",
+        "name": "Carreira da Índia - Return (India to Lisbon)",
         "type": "Portuguese India Run",
         "period": "1497-1850s",
         "cargo_return": [
@@ -574,7 +594,7 @@
             "name": "Lisbon (Terminus)",
             "lat": 38.7223,
             "lng": -9.1393,
-            "notes": "Arrival. Cargo unloaded at Casa da \u00cdndia."
+            "notes": "Arrival. Cargo unloaded at Casa da Índia."
           }
         ],
         "duration_days": "180-300",
@@ -585,11 +605,15 @@
           "Ships overloaded with cargo"
         ],
         "notable_disasters": [
-          "1552 S\u00e3o Jo\u00e3o (richest ship ever lost)",
+          "1552 São João (richest ship ever lost)",
           "1511 Flor de la Mar"
         ],
         "sources": [
           "Boxer - Portuguese Seaborne Empire"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Carreira_da_%C3%8Dndia",
+          "https://en.wikipedia.org/wiki/Cape_of_Good_Hope"
         ]
       },
       {
@@ -634,7 +658,7 @@
             "name": "Manila, Philippines (Terminus)",
             "lat": 14.5995,
             "lng": 120.9842,
-            "notes": "Spanish colonial capital. Chinese merchants brought goods to Pari\u00e1n market."
+            "notes": "Spanish colonial capital. Chinese merchants brought goods to Parián market."
           }
         ],
         "duration_days": "60-90",
@@ -645,6 +669,10 @@
         ],
         "sources": [
           "Schurz - The Manila Galleon"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Manila_galleon",
+          "https://en.wikipedia.org/wiki/Acapulco"
         ]
       },
       {
@@ -687,7 +715,7 @@
             "name": "North Pacific High Point",
             "lat": 38.0,
             "lng": 170.0,
-            "notes": "Reached as far north as 38-42\u00b0N. Cold, stormy, scurvy-ridden."
+            "notes": "Reached as far north as 38-42°N. Cold, stormy, scurvy-ridden."
           },
           {
             "name": "Westerly Wind Belt",
@@ -736,11 +764,15 @@
           "Starvation"
         ],
         "notable_disasters": [
-          "1595 San Agust\u00edn (wrecked California coast)",
+          "1595 San Agustín (wrecked California coast)",
           "1743 capture of Covadonga by Anson"
         ],
         "sources": [
           "Schurz - The Manila Galleon"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Manila_galleon",
+          "https://en.wikipedia.org/wiki/Tornaviaje"
         ]
       },
       {
@@ -835,6 +867,10 @@
         "sources": [
           "Gaastra - Dutch East India Company",
           "Dash - Batavia's Graveyard"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Dutch_East_India_Company",
+          "https://en.wikipedia.org/wiki/Roaring_Forties"
         ]
       },
       {
@@ -921,6 +957,10 @@
         ],
         "sources": [
           "Gaastra - Dutch East India Company"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Dutch_East_India_Company",
+          "https://en.wikipedia.org/wiki/Batavia,_Dutch_East_Indies"
         ]
       },
       {
@@ -1025,6 +1065,10 @@
         "sources": [
           "Rediker - The Slave Ship",
           "Thomas - The Slave Trade"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Triangular_trade",
+          "https://en.wikipedia.org/wiki/Atlantic_slave_trade"
         ]
       }
     ]
@@ -1034,7 +1078,7 @@
     "sites": [
       {
         "id": "potosi",
-        "name": "Potos\u00ed (Cerro Rico)",
+        "name": "Potosí (Cerro Rico)",
         "country": "Bolivia",
         "lat": -19.5836,
         "lng": -65.7531,
@@ -1053,6 +1097,11 @@
         "sources": [
           "Bakewell - Miners of the Red Mountain",
           "Tandeter - Coercion and Market"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Potos%C3%AD",
+          "https://en.wikipedia.org/wiki/Cerro_Rico",
+          "https://whc.unesco.org/en/list/420"
         ]
       },
       {
@@ -1066,13 +1115,17 @@
         "discovery_year": 1563,
         "peak_years": "1570-1700",
         "peak_output": "Supplied mercury for all Peruvian and much Mexican silver refining",
-        "description": "Called 'Mine of Death' - mercury poisoning killed thousands. Mercury essential for silver amalgamation process (patio process). Connected to Potos\u00ed by mule train.",
+        "description": "Called 'Mine of Death' - mercury poisoning killed thousands. Mercury essential for silver amalgamation process (patio process). Connected to Potosí by mule train.",
         "connected_ports": [
           "Callao"
         ],
-        "notes": "Mercury shipped to Potos\u00ed despite enormous distance because Mexican mercury from Almad\u00e9n was even further. Mercury poisoning endemic.",
+        "notes": "Mercury shipped to Potosí despite enormous distance because Mexican mercury from Almadén was even further. Mercury poisoning endemic.",
         "sources": [
           "Lohmann Villena - Las minas de Huancavelica"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Huancavelica",
+          "https://en.wikipedia.org/wiki/Santa_B%C3%A1rbara_mine"
         ]
       },
       {
@@ -1085,14 +1138,17 @@
         "mineral_type": "Silver",
         "discovery_year": 1538,
         "peak_years": "1538-1560",
-        "peak_output": "Major producer before Potos\u00ed discovery",
-        "description": "Pre-Columbian silver mine expanded by Spanish. Produced significant silver before Potos\u00ed overshadowed it. Inca had mined here before conquest.",
+        "peak_output": "Major producer before Potosí discovery",
+        "description": "Pre-Columbian silver mine expanded by Spanish. Produced significant silver before Potosí overshadowed it. Inca had mined here before conquest.",
         "connected_ports": [
           "Arica"
         ],
-        "notes": "One of first Spanish silver mines in Peru. Quickly eclipsed by Potos\u00ed.",
+        "notes": "One of first Spanish silver mines in Peru. Quickly eclipsed by Potosí.",
         "sources": [
           "Marx - Shipwrecks of the Western Hemisphere"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Porco_Municipality"
         ]
       },
       {
@@ -1105,7 +1161,7 @@
         "mineral_type": "Silver, Tin",
         "discovery_year": 1595,
         "peak_years": "1600-1700",
-        "peak_output": "Second largest Bolivian producer after Potos\u00ed",
+        "peak_output": "Second largest Bolivian producer after Potosí",
         "description": "Important secondary silver source. Also produced tin. Native uprising 1781. Became tin-mining center in 19th century.",
         "connected_ports": [
           "Arica"
@@ -1113,6 +1169,10 @@
         "notes": "UNESCO World Heritage for cultural traditions.",
         "sources": [
           "Bakewell - Miners of the Red Mountain"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Oruro",
+          "https://en.wikipedia.org/wiki/Oruro_Department"
         ]
       },
       {
@@ -1134,6 +1194,11 @@
         "notes": "UNESCO World Heritage Site. Still active mining district.",
         "sources": [
           "Bakewell - Silver Mining and Society in Colonial Mexico"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Zacatecas",
+          "https://en.wikipedia.org/wiki/Zacatecas_City",
+          "https://whc.unesco.org/en/list/676"
         ]
       },
       {
@@ -1155,6 +1220,11 @@
         "notes": "UNESCO World Heritage Site. Underground streets.",
         "sources": [
           "Brading - Miners and Merchants in Bourbon Mexico"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Guanajuato",
+          "https://en.wikipedia.org/wiki/Guanajuato_City",
+          "https://whc.unesco.org/en/list/482"
         ]
       },
       {
@@ -1168,7 +1238,7 @@
         "discovery_year": 1522,
         "peak_years": "1530-1600",
         "peak_output": "Earliest major Mexican silver source",
-        "description": "First significant Spanish silver mine in Mexico. Jos\u00e9 de la Borda revived mines in 18th century. Santa Prisca church built with silver profits.",
+        "description": "First significant Spanish silver mine in Mexico. José de la Borda revived mines in 18th century. Santa Prisca church built with silver profits.",
         "connected_ports": [
           "Acapulco",
           "Veracruz"
@@ -1176,6 +1246,9 @@
         "notes": "Known for silver jewelry today. Closest major mine to Mexico City.",
         "sources": [
           "West - The Mining Community in Northern New Spain"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Taxco"
         ]
       },
       {
@@ -1197,6 +1270,9 @@
         "notes": "Cornish miners left cultural legacy including football (soccer).",
         "sources": [
           "Randall - Real del Monte: A British Mining Venture in Mexico"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Mineral_del_Monte"
         ]
       },
       {
@@ -1217,11 +1293,15 @@
         "notes": "Still producing. Muzo emeralds command highest prices. Color called 'Muzo green'.",
         "sources": [
           "Lane - Colour of Paradise"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Muzo",
+          "https://en.wikipedia.org/wiki/Colombian_emeralds"
         ]
       },
       {
         "id": "buritica",
-        "name": "Buritic\u00e1",
+        "name": "Buriticá",
         "country": "Colombia",
         "lat": 6.7344,
         "lng": -75.8786,
@@ -1237,11 +1317,14 @@
         "notes": "Antioquia region remained Colombia's gold center.",
         "sources": [
           "West - Colonial Placer Mining in Colombia"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Buritic%C3%A1"
         ]
       },
       {
         "id": "choco",
-        "name": "Choc\u00f3",
+        "name": "Chocó",
         "country": "Colombia",
         "lat": 5.6919,
         "lng": -76.6583,
@@ -1257,11 +1340,14 @@
         "notes": "Platinum considered worthless until 18th century scientific interest. Still gold panning today.",
         "sources": [
           "Sharp - Slavery on the Spanish Frontier"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Choc%C3%B3_Department"
         ]
       },
       {
         "id": "almaden",
-        "name": "Almad\u00e9n",
+        "name": "Almadén",
         "country": "Spain",
         "lat": 38.775,
         "lng": -4.8381,
@@ -1272,11 +1358,15 @@
         "peak_output": "World's largest mercury mine - supplied Mexican silver refining",
         "description": "Critical to silver production. Mercury shipped to Veracruz for Mexican mines. Roman, Moorish, then Spanish exploitation. Brutal convict labor. UNESCO World Heritage.",
         "connected_ports": [
-          "Seville/C\u00e1diz"
+          "Seville/Cádiz"
         ],
         "notes": "Mercury essential for patio process silver extraction. Fugger banking family had lease 1525-1645.",
         "sources": [
           "Whitaker - The Huancavelica Mercury Mine"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Almad%C3%A9n",
+          "https://whc.unesco.org/en/list/1313"
         ]
       }
     ]
@@ -1286,7 +1376,7 @@
     "mints": [
       {
         "id": "mexico-city",
-        "name": "Casa de Moneda de M\u00e9xico (Mexico City Mint)",
+        "name": "Casa de Moneda de México (Mexico City Mint)",
         "country": "Mexico",
         "city": "Mexico City",
         "lat": 19.4326,
@@ -1311,6 +1401,10 @@
         ],
         "sources": [
           "Pradeau - Numismatic History of Mexico"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Casa_de_Moneda_de_M%C3%A9xico",
+          "https://en.wikipedia.org/wiki/Spanish_colonial_real"
         ]
       },
       {
@@ -1322,7 +1416,7 @@
         "lng": -77.0428,
         "founded": 1568,
         "mint_mark": "L, LIMAE, LM",
-        "description": "Second mint in Americas. Processed silver from Upper Peru (Bolivia). Intermittent operation - sometimes closed when Potos\u00ed mint active.",
+        "description": "Second mint in Americas. Processed silver from Upper Peru (Bolivia). Intermittent operation - sometimes closed when Potosí mint active.",
         "denominations": [
           "8 reales",
           "4 reales",
@@ -1330,20 +1424,24 @@
           "1 real",
           "escudos (gold)"
         ],
-        "notes": "Competed with Potos\u00ed mint. Produced cobs and later milled coinage.",
+        "notes": "Competed with Potosí mint. Produced cobs and later milled coinage.",
         "connected_mines": [
-          "Potos\u00ed (via Callao)",
+          "Potosí (via Callao)",
           "Huancavelica area mines"
         ],
         "sources": [
           "Craig - Spanish Colonial Silver Coins"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Lima",
+          "https://en.wikipedia.org/wiki/Spanish_colonial_real"
         ]
       },
       {
         "id": "potosi-mint",
-        "name": "Casa de Moneda de Potos\u00ed (Potos\u00ed Mint)",
+        "name": "Casa de Moneda de Potosí (Potosí Mint)",
         "country": "Bolivia",
-        "city": "Potos\u00ed",
+        "city": "Potosí",
         "lat": -19.5836,
         "lng": -65.7531,
         "founded": 1572,
@@ -1358,20 +1456,24 @@
         ],
         "notes": "Building is now museum. Most treasure fleet silver came from here. 'P' mint mark most common on colonial cobs.",
         "connected_mines": [
-          "Potos\u00ed (Cerro Rico)",
+          "Potosí (Cerro Rico)",
           "Oruro",
           "Porco"
         ],
         "sources": [
           "Craig - Spanish Colonial Silver Coins",
           "Cunietti-Ferrando - Monedas y Medallas"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Potos%C3%AD",
+          "https://en.wikipedia.org/wiki/Spanish_colonial_real"
         ]
       },
       {
         "id": "bogota",
-        "name": "Casa de Moneda de Bogot\u00e1 (Bogot\u00e1 Mint)",
+        "name": "Casa de Moneda de Bogotá (Bogotá Mint)",
         "country": "Colombia",
-        "city": "Bogot\u00e1",
+        "city": "Bogotá",
         "lat": 4.5981,
         "lng": -74.0758,
         "founded": 1622,
@@ -1387,12 +1489,16 @@
         ],
         "notes": "Colombia was gold country - more gold coins than silver. Now Museo Casa de la Moneda.",
         "connected_mines": [
-          "Buritic\u00e1",
-          "Choc\u00f3 gold fields",
+          "Buriticá",
+          "Chocó gold fields",
           "Antioquia"
         ],
         "sources": [
-          "Restrepo - Monedas de la Rep\u00fablica de Colombia"
+          "Restrepo - Monedas de la República de Colombia"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Bogot%C3%A1",
+          "https://en.wikipedia.org/wiki/Spanish_colonial_real"
         ]
       },
       {
@@ -1418,6 +1524,10 @@
         ],
         "sources": [
           "Craig - Spanish Colonial Silver Coins"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Guatemala_City",
+          "https://en.wikipedia.org/wiki/Spanish_colonial_real"
         ]
       },
       {
@@ -1438,10 +1548,14 @@
         "notes": "La Moneda palace (site of 1973 coup) is former mint building.",
         "connected_mines": [
           "Chilean gold deposits",
-          "some Potos\u00ed silver"
+          "some Potosí silver"
         ],
         "sources": [
           "Medina - Las monedas coloniales hispano-americanas"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/La_Moneda",
+          "https://en.wikipedia.org/wiki/Santiago"
         ]
       }
     ]
@@ -1451,7 +1565,7 @@
     "routes": [
       {
         "id": "potosi-arica",
-        "name": "Potos\u00ed to Arica Silver Road",
+        "name": "Potosí to Arica Silver Road",
         "type": "Mule Train Route",
         "period": "1545-1825",
         "cargo": [
@@ -1459,10 +1573,10 @@
           "Silver coins",
           "Mercury (return)"
         ],
-        "description": "Primary route for Potos\u00ed silver to reach Pacific coast. Llama and mule trains crossed high Andes. 400km journey taking 15-20 days.",
+        "description": "Primary route for Potosí silver to reach Pacific coast. Llama and mule trains crossed high Andes. 400km journey taking 15-20 days.",
         "waypoints": [
           {
-            "name": "Potos\u00ed",
+            "name": "Potosí",
             "lat": -19.5836,
             "lng": -65.7531,
             "notes": "Departure - silver loaded from mint and refineries"
@@ -1496,11 +1610,15 @@
         "notes": "This route made Arica wealthy. Mercury transported in reverse direction.",
         "sources": [
           "Bakewell - Miners of the Red Mountain"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Potos%C3%AD",
+          "https://en.wikipedia.org/wiki/Arica"
         ]
       },
       {
         "id": "potosi-lima",
-        "name": "Potos\u00ed to Lima (via Arequipa)",
+        "name": "Potosí to Lima (via Arequipa)",
         "type": "Mule Train Route",
         "period": "1545-1825",
         "cargo": [
@@ -1510,7 +1628,7 @@
         "description": "Alternative route via Arequipa for silver destined directly for Lima. Longer but lower altitude in places.",
         "waypoints": [
           {
-            "name": "Potos\u00ed",
+            "name": "Potosí",
             "lat": -19.5836,
             "lng": -65.7531,
             "notes": "Departure"
@@ -1547,19 +1665,23 @@
           "Weather"
         ],
         "sources": [
-          "Cole - The Potos\u00ed Mita"
+          "Cole - The Potosí Mita"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Potos%C3%AD",
+          "https://en.wikipedia.org/wiki/Lima"
         ]
       },
       {
         "id": "huancavelica-potosi",
-        "name": "Huancavelica to Potos\u00ed Mercury Route",
+        "name": "Huancavelica to Potosí Mercury Route",
         "type": "Mercury Transport Route",
         "period": "1563-1800",
         "cargo": [
           "Mercury (cinnabar)",
           "Supplies (return)"
         ],
-        "description": "Critical supply route. Mercury from Huancavelica essential for silver extraction at Potos\u00ed. 1500km journey.",
+        "description": "Critical supply route. Mercury from Huancavelica essential for silver extraction at Potosí. 1500km journey.",
         "waypoints": [
           {
             "name": "Huancavelica",
@@ -1586,7 +1708,7 @@
             "notes": "High plateau crossing"
           },
           {
-            "name": "Potos\u00ed",
+            "name": "Potosí",
             "lat": -19.5836,
             "lng": -65.7531,
             "notes": "Destination - mercury delivered to refineries"
@@ -1598,9 +1720,13 @@
           "Altitude",
           "Bandits"
         ],
-        "notes": "Without this route, Potos\u00ed production would have collapsed. Mercury monopoly critical to Crown revenue.",
+        "notes": "Without this route, Potosí production would have collapsed. Mercury monopoly critical to Crown revenue.",
         "sources": [
           "Whitaker - The Huancavelica Mercury Mine"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Huancavelica",
+          "https://en.wikipedia.org/wiki/Mercury_(element)"
         ]
       },
       {
@@ -1646,9 +1772,13 @@
           "Storms",
           "Doldrums"
         ],
-        "notes": "This route made Pacific coast vulnerable - Drake captured Nuestra Se\u00f1ora de la Concepci\u00f3n (Cacafuego) 1579.",
+        "notes": "This route made Pacific coast vulnerable - Drake captured Nuestra Señora de la Concepción (Cacafuego) 1579.",
         "sources": [
           "Clayton - Pirates and the California Coast"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Callao",
+          "https://en.wikipedia.org/wiki/Panama_City"
         ]
       },
       {
@@ -1703,6 +1833,10 @@
         "notes": "Panama Railroad (1855) finally replaced mule trains. Morgan used same route in reverse for Panama City raid 1671.",
         "sources": [
           "Ward - Imperial Panama"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Camino_Real_de_Cruces",
+          "https://en.wikipedia.org/wiki/Portobelo,_Col%C3%B3n"
         ]
       },
       {
@@ -1716,7 +1850,7 @@
           "Cochineal",
           "Hides"
         ],
-        "description": "Mexican Silver Road. Connected northern silver mines to Gulf coast port. Later extended to San Luis Potos\u00ed, Durango, and beyond.",
+        "description": "Mexican Silver Road. Connected northern silver mines to Gulf coast port. Later extended to San Luis Potosí, Durango, and beyond.",
         "waypoints": [
           {
             "name": "Zacatecas",
@@ -1725,13 +1859,13 @@
             "notes": "Northern mining center"
           },
           {
-            "name": "San Luis Potos\u00ed",
+            "name": "San Luis Potosí",
             "lat": 22.1565,
             "lng": -100.9855,
             "notes": "Mining and commerce center"
           },
           {
-            "name": "Quer\u00e9taro",
+            "name": "Querétaro",
             "lat": 20.5888,
             "lng": -100.3899,
             "notes": "Major colonial city"
@@ -1767,9 +1901,13 @@
           "Chichimec attacks (early period)",
           "Disease at Veracruz (yellow fever)"
         ],
-        "notes": "Fortified convoys needed due to bandits. Baj\u00edo region grew wealthy from trade.",
+        "notes": "Fortified convoys needed due to bandits. Bajío region grew wealthy from trade.",
         "sources": [
           "West - The Mining Community in Northern New Spain"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Camino_Real_de_Tierra_Adentro",
+          "https://en.wikipedia.org/wiki/Veracruz_(city)"
         ]
       },
       {
@@ -1826,11 +1964,15 @@
         "notes": "Chinese silk became so popular in Spain that domestic silk industry protested. Trade restrictions imposed but widely evaded.",
         "sources": [
           "Schurz - The Manila Galleon"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Manila_galleon",
+          "https://en.wikipedia.org/wiki/Acapulco"
         ]
       },
       {
         "id": "potosi-buenos-aires",
-        "name": "Potos\u00ed to Buenos Aires (Contraband Route)",
+        "name": "Potosí to Buenos Aires (Contraband Route)",
         "type": "Illegal Trade Route",
         "period": "1580-1778",
         "cargo": [
@@ -1838,10 +1980,10 @@
           "Imported goods (return)",
           "Slaves (return)"
         ],
-        "description": "Illegal route bypassing Lima and Spain's trade monopoly. Silver smuggled to Buenos Aires, traded with Portuguese and later British ships. Estimated 20-50% of Potos\u00ed silver left this way.",
+        "description": "Illegal route bypassing Lima and Spain's trade monopoly. Silver smuggled to Buenos Aires, traded with Portuguese and later British ships. Estimated 20-50% of Potosí silver left this way.",
         "waypoints": [
           {
-            "name": "Potos\u00ed",
+            "name": "Potosí",
             "lat": -19.5836,
             "lng": -65.7531,
             "notes": "Source of contraband silver"
@@ -1853,13 +1995,13 @@
             "notes": "Colonial capital of Upper Peru"
           },
           {
-            "name": "Tucum\u00e1n",
+            "name": "Tucumán",
             "lat": -26.8083,
             "lng": -65.2176,
             "notes": "Trade hub, mule breeding"
           },
           {
-            "name": "C\u00f3rdoba",
+            "name": "Córdoba",
             "lat": -31.4201,
             "lng": -64.1888,
             "notes": "Major colonial city"
@@ -1879,6 +2021,10 @@
         "notes": "This route drained so much silver that Spain eventually legalized Buenos Aires trade (1778 free trade reforms). Portuguese in Colonia del Sacramento were main trading partners.",
         "sources": [
           "Socolow - The Merchants of Buenos Aires"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Buenos_Aires",
+          "https://en.wikipedia.org/wiki/Colonia_del_Sacramento"
         ]
       }
     ]
@@ -1900,7 +2046,10 @@
         ],
         "potential_origin": "Unknown Spanish vessel",
         "status": "Under investigation",
-        "notes": "Florida coast has many undocumented losses. Not all AGI records survive."
+        "notes": "Florida coast has many undocumented losses. Not all AGI records survive.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Shipwreck"
+        ]
       },
       {
         "id": "melbourne-beach-coins",
@@ -1915,7 +2064,10 @@
         ],
         "potential_origin": "Unknown treasure ship",
         "status": "Active metal detecting area",
-        "notes": "Could be extension of 1715 fleet debris or separate earlier loss."
+        "notes": "Could be extension of 1715 fleet debris or separate earlier loss.",
+        "links": [
+          "https://en.wikipedia.org/wiki/1715_Treasure_Fleet"
+        ]
       },
       {
         "id": "beeswax-wreck",
@@ -1934,6 +2086,9 @@
         "notes": "Would be northernmost Manila Galleon wreck. Native oral histories describe 'Ship that came ashore'. Nehalem Bay area.",
         "sources": [
           "LaLande - The Beeswax Wreck Project"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Beeswax_Wreck"
         ]
       },
       {
@@ -1942,13 +2097,16 @@
         "type": "Unexplored Area",
         "lat": 20.6,
         "lng": -69.75,
-        "description": "Areas around known Concepci\u00f3n (1641) wreck site showing artifacts potentially from other vessels. Multiple ships may have wrecked on these reefs.",
+        "description": "Areas around known Concepción (1641) wreck site showing artifacts potentially from other vessels. Multiple ships may have wrecked on these reefs.",
         "artifacts_found": [
           "Scattered artifacts outside main site"
         ],
         "potential_origin": "Multiple unknown wrecks",
         "status": "Limited exploration",
-        "notes": "Silver Shoals extremely dangerous - many ships wrecked here over centuries."
+        "notes": "Silver Shoals extremely dangerous - many ships wrecked here over centuries.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Silver_Bank"
+        ]
       },
       {
         "id": "turks-caicos-scatter",
@@ -1965,7 +2123,10 @@
         ],
         "potential_origin": "Multiple unknown wrecks",
         "status": "Various states of investigation",
-        "notes": "Many reefs made this area ship graveyard. Salt trade, then treasure route."
+        "notes": "Many reefs made this area ship graveyard. Salt trade, then treasure route.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Turks_and_Caicos_Islands"
+        ]
       },
       {
         "id": "gulf-artifact-scatter-desoto",
@@ -1979,7 +2140,10 @@
         ],
         "potential_origin": "Unknown - possibly colonial Spanish, possibly later",
         "status": "Unexcavated",
-        "notes": "Deep water (300-600m) makes investigation difficult. May include 1559 Luna fleet vessels."
+        "notes": "Deep water (300-600m) makes investigation difficult. May include 1559 Luna fleet vessels.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Shipwreck"
+        ]
       },
       {
         "id": "lost-ship-desert",
@@ -1993,9 +2157,12 @@
         ],
         "potential_origin": "Possibly Manila Galleon exploring Gulf of California, or pearl fishing vessel",
         "status": "Legendary - unconfirmed",
-        "notes": "Could relate to 1612 Nicol\u00e1s Cardona expedition or earlier exploration. Ancient Lake Cahuilla did connect to Gulf of California. Probably myth, but Gulf exploration did occur.",
+        "notes": "Could relate to 1612 Nicolás Cardona expedition or earlier exploration. Ancient Lake Cahuilla did connect to Gulf of California. Probably myth, but Gulf exploration did occur.",
         "sources": [
           "Pepper - The Lost Ship of the Desert"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Lost_Ship_of_the_Desert"
         ]
       },
       {
@@ -2012,7 +2179,10 @@
         ],
         "potential_origin": "Unknown colonial vessels",
         "status": "Difficult diving conditions limit investigation",
-        "notes": "Major shipping hazard - many undocumented losses likely."
+        "notes": "Major shipping hazard - many undocumented losses likely.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Frying_Pan_Shoals"
+        ]
       },
       {
         "id": "san-augustin-extension",
@@ -2020,14 +2190,17 @@
         "type": "Unexplored Area",
         "lat": 38.04,
         "lng": -122.99,
-        "description": "Beyond known San Agust\u00edn (1595) site, artifacts suggest larger debris field or possibly second vessel.",
+        "description": "Beyond known San Agustín (1595) site, artifacts suggest larger debris field or possibly second vessel.",
         "artifacts_found": [
           "Porcelain extending beyond main site",
           "Ming dynasty ceramics"
         ],
-        "potential_origin": "San Agust\u00edn debris field or unknown second vessel",
+        "potential_origin": "San Agustín debris field or unknown second vessel",
         "status": "National Park Service monitoring",
-        "notes": "San Agust\u00edn carried full Manila Galleon cargo - extensive debris expected."
+        "notes": "San Agustín carried full Manila Galleon cargo - extensive debris expected.",
+        "links": [
+          "https://en.wikipedia.org/wiki/San_Agust%C3%ADn_(ship)"
+        ]
       },
       {
         "id": "florida-keys-unidentified",
@@ -2042,7 +2215,10 @@
         ],
         "potential_origin": "Unknown Spanish/English vessels",
         "status": "Various - some protected, some actively worked",
-        "notes": "Keys saw centuries of traffic. Many small vessels never documented."
+        "notes": "Keys saw centuries of traffic. Many small vessels never documented.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Florida_Keys"
+        ]
       },
       {
         "id": "trinidad-colonial-finds",
@@ -2056,21 +2232,27 @@
         ],
         "potential_origin": "Unknown",
         "status": "Minimal archaeological survey",
-        "notes": "Lesser Antilles generally less explored than Greater Antilles."
+        "notes": "Lesser Antilles generally less explored than Greater Antilles.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Trinidad"
+        ]
       },
       {
         "id": "chiloe-galleon",
-        "name": "Chilo\u00e9 Island Galleon Legends",
+        "name": "Chiloé Island Galleon Legends",
         "type": "Legend/Possible Wreck",
         "lat": -42.5,
         "lng": -73.9,
-        "description": "Local legends of Spanish galleon wrecked on Chilo\u00e9 archipelago, Chile. Area was on Pacific route.",
+        "description": "Local legends of Spanish galleon wrecked on Chiloé archipelago, Chile. Area was on Pacific route.",
         "artifacts_found": [
           "Unverified local reports"
         ],
         "potential_origin": "Possibly Pacific supply ship or storm-driven treasure ship",
         "status": "No formal investigation",
-        "notes": "Chile's southern coast extremely hazardous. Many colonial ships lost without records."
+        "notes": "Chile's southern coast extremely hazardous. Many colonial ships lost without records.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Chilo%C3%A9_Archipelago"
+        ]
       },
       {
         "id": "bahia-offshore",
@@ -2084,7 +2266,10 @@
         ],
         "potential_origin": "Portuguese India fleet vessels, sugar ships, or others",
         "status": "Brazilian government jurisdiction - limited private exploration",
-        "notes": "Salvador was major port for sugar trade and Portuguese India fleet stops."
+        "notes": "Salvador was major port for sugar trade and Portuguese India fleet stops.",
+        "links": [
+          "https://en.wikipedia.org/wiki/Salvador,_Bahia"
+        ]
       }
     ]
   },
@@ -2112,6 +2297,11 @@
         "sources": [
           "Breverton - Admiral Sir Henry Morgan",
           "Pawson & Buisseret - Port Royal, Jamaica"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Port_Royal",
+          "https://en.wikipedia.org/wiki/1692_Jamaica_earthquake",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2138,11 +2328,16 @@
         "sources": [
           "Woodard - The Republic of Pirates",
           "Konstam - Piracy: Complete History"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Nassau,_Bahamas",
+          "https://en.wikipedia.org/wiki/Republic_of_Pirates",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
         "id": "tortuga",
-        "name": "Tortuga (\u00cele de la Tortue), Haiti",
+        "name": "Tortuga (Île de la Tortue), Haiti",
         "lat": 20.05,
         "lng": -72.7833,
         "period": "1630-1700",
@@ -2160,11 +2355,16 @@
         "sources": [
           "Exquemelin - Buccaneers of America (1678)",
           "Konstam - Piracy"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Tortuga_(Haiti)",
+          "https://en.wikipedia.org/wiki/Buccaneers",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
         "id": "saint-marie",
-        "name": "\u00cele Sainte-Marie (Nosy Boraha), Madagascar",
+        "name": "Île Sainte-Marie (Nosy Boraha), Madagascar",
         "lat": -16.85,
         "lng": 49.9167,
         "period": "1690-1720",
@@ -2186,6 +2386,11 @@
         "sources": [
           "Rogozinski - Honor Among Thieves",
           "Konstam - Piracy"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Nosy_Boraha",
+          "https://en.wikipedia.org/wiki/Pirate_cemetery",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2207,6 +2412,11 @@
         "current_status": "Barataria Preserve (national park).",
         "sources": [
           "Davis - The Pirates Laffite"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Barataria_Bay",
+          "https://en.wikipedia.org/wiki/Jean_Lafitte",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2227,6 +2437,11 @@
         "current_status": "Ocracoke Island, tourist area.",
         "sources": [
           "Lee - Blackbeard the Pirate"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Ocracoke,_North_Carolina",
+          "https://en.wikipedia.org/wiki/Blackbeard",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2246,18 +2461,21 @@
         "sources": [
           "Johnson - General History of the Pyrates (1724)",
           "Rediker - Villains of All Nations"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Libertatia"
         ]
       },
       {
         "id": "petit-goave",
-        "name": "Petit-Go\u00e2ve, Saint-Domingue (Haiti)",
+        "name": "Petit-Goâve, Saint-Domingue (Haiti)",
         "lat": 18.4311,
         "lng": -72.8667,
         "period": "1660-1700",
         "peak_years": "1680-1697",
         "status": "Major Base",
         "nation_affiliation": "French",
-        "description": "French buccaneer capital of Saint-Domingue. Governor de Pouan\u00e7ay and de Cussy issued privateering commissions freely. Major raid staging point.",
+        "description": "French buccaneer capital of Saint-Domingue. Governor de Pouançay and de Cussy issued privateering commissions freely. Major raid staging point.",
         "notable_pirates": [
           "Jean-Baptiste du Casse",
           "Laurens de Graaf",
@@ -2268,6 +2486,10 @@
         "sources": [
           "Lane - Pillaging the Empire",
           "Marley - Pirates of the Americas"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Petit-Go%C3%A2ve",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2288,6 +2510,11 @@
         "sources": [
           "Rogozinski - Pirates!",
           "Rediker - Villains of All Nations"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Saint_Thomas,_U.S._Virgin_Islands",
+          "https://en.wikipedia.org/wiki/Danish_West_Indies",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2308,6 +2535,11 @@
         "current_status": "City of Galveston.",
         "sources": [
           "Davis - The Pirates Laffite"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Galveston,_Texas",
+          "https://en.wikipedia.org/wiki/Jean_Lafitte",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2318,13 +2550,17 @@
         "period": "1690-1720",
         "status": "Careening Base",
         "nation_affiliation": "None",
-        "description": "Southwest Madagascar. Pirates renamed it 'Ranter Bay'. Good for careening (cleaning ship bottoms). Less famous than \u00cele Sainte-Marie but regularly used.",
+        "description": "Southwest Madagascar. Pirates renamed it 'Ranter Bay'. Good for careening (cleaning ship bottoms). Less famous than Île Sainte-Marie but regularly used.",
         "notable_pirates": [
           "Various Madagascar pirates"
         ],
         "features": "Protected bay, careening beach, native trade",
         "sources": [
           "Rogozinski - Honor Among Thieves"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Toliara",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2343,6 +2579,10 @@
         "current_status": "Part of Comoros.",
         "sources": [
           "Fox - King of the Pirates"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Anjouan",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2362,11 +2602,16 @@
         "current_status": "Colombian city. UNESCO World Heritage fortifications.",
         "sources": [
           "Lane - Pillaging the Empire"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Cartagena,_Colombia",
+          "https://en.wikipedia.org/wiki/Drake%27s_raid_on_Cartagena",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
         "id": "sallee",
-        "name": "Sal\u00e9 (Sallee), Morocco",
+        "name": "Salé (Sallee), Morocco",
         "lat": 34.0389,
         "lng": -6.8067,
         "period": "1627-1700s",
@@ -2383,6 +2628,11 @@
         "sources": [
           "Milton - White Gold",
           "Konstam - Piracy"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Sal%C3%A9",
+          "https://en.wikipedia.org/wiki/Republic_of_Sal%C3%A9",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2406,6 +2656,11 @@
         "sources": [
           "Konstam - Piracy",
           "Lane - Pillaging the Empire"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Algiers",
+          "https://en.wikipedia.org/wiki/Barbary_pirates",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2425,6 +2680,11 @@
         "current_status": "Capital of Tunisia.",
         "sources": [
           "Konstam - Piracy"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Tunis",
+          "https://en.wikipedia.org/wiki/Barbary_pirates",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2445,6 +2705,11 @@
         "sources": [
           "Konstam - Piracy",
           "Lambert - The Barbary Wars"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Tripoli,_Libya",
+          "https://en.wikipedia.org/wiki/First_Barbary_War",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2466,6 +2731,11 @@
         "current_status": "French port city.",
         "sources": [
           "Stradling - The Armada of Flanders"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Dunkirk",
+          "https://en.wikipedia.org/wiki/Dunkirkers",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2485,6 +2755,10 @@
         "current_status": "Colombian island, tourist destination.",
         "sources": [
           "Kupperman - Providence Island 1630-1641"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Providencia_Island",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2502,11 +2776,16 @@
         "current_status": "Charleston, SC.",
         "sources": [
           "Woodard - Republic of Pirates"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Charleston,_South_Carolina",
+          "https://en.wikipedia.org/wiki/Blackbeard#Blockade_of_Charles_Town",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
         "id": "trist-island",
-        "name": "Trist Island / \u00cele-\u00e0-Vache, Haiti",
+        "name": "Trist Island / Île-à-Vache, Haiti",
         "lat": 18.0692,
         "lng": -73.6436,
         "period": "1660-1690",
@@ -2520,11 +2799,15 @@
         "current_status": "Small Haitian island.",
         "sources": [
           "Exquemelin - Buccaneers of America"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/%C3%8Ele_%C3%A0_Vache",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
         "id": "roatan",
-        "name": "Roat\u00e1n, Bay Islands, Honduras",
+        "name": "Roatán, Bay Islands, Honduras",
         "lat": 16.33,
         "lng": -86.55,
         "period": "1640-1780s",
@@ -2539,6 +2822,10 @@
         "current_status": "Honduran island, major cruise ship destination.",
         "sources": [
           "Marley - Pirates of the Americas"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Roat%C3%A1n",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2556,6 +2843,10 @@
         "features": "Large protected bay, native trade",
         "sources": [
           "Rogozinski - Honor Among Thieves"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Antongil_Bay",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -2574,6 +2865,11 @@
         "current_status": "Yemeni island.",
         "sources": [
           "Fox - King of the Pirates"
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Perim",
+          "https://en.wikipedia.org/wiki/Bab-el-Mandeb",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       }
     ]
@@ -2630,7 +2926,7 @@
         {
           "type": "archive",
           "title": "Archivo General de Indias",
-          "reference": "Contrataci\u00f3n 2898",
+          "reference": "Contratación 2898",
           "location": "Seville, Spain"
         }
       ],
@@ -2640,7 +2936,7 @@
     },
     {
       "id": "espiritu-santo-1554",
-      "name": "Esp\u00edritu Santo",
+      "name": "Espíritu Santo",
       "type": "Spanish Carrack",
       "date": "1554-04-29",
       "year": 1554,
@@ -2693,7 +2989,7 @@
     },
     {
       "id": "santa-maria-yciar-1554",
-      "name": "Santa Mar\u00eda de Yciar",
+      "name": "Santa María de Yciar",
       "type": "Spanish Carrack",
       "date": "1554-04-29",
       "year": 1554,
@@ -2757,7 +3053,7 @@
       "casualties": 1291,
       "recovered": true,
       "dive_accessible": true,
-      "notes": "Spanish Armada galleass. Only 9 survivors from 1,300. Treasure recovered 1967-68 by Robert St\u00e9nuit. Ulster Museum Belfast exhibits. Carried treasure and refugees from wrecked Armada ships.",
+      "notes": "Spanish Armada galleass. Only 9 survivors from 1,300. Treasure recovered 1967-68 by Robert Sténuit. Ulster Museum Belfast exhibits. Carried treasure and refugees from wrecked Armada ships.",
       "treasure_type": [
         "gold_coins",
         "silver",
@@ -2773,7 +3069,7 @@
         {
           "type": "book",
           "title": "Treasures of the Armada",
-          "author": "Robert St\u00e9nuit",
+          "author": "Robert Sténuit",
           "year": 1972,
           "publisher": "E.P. Dutton",
           "isbn": "0-525-22245-6"
@@ -2781,7 +3077,7 @@
         {
           "type": "article",
           "title": "Priceless Relics of the Spanish Armada",
-          "author": "Robert St\u00e9nuit",
+          "author": "Robert Sténuit",
           "publication": "National Geographic Magazine",
           "year": 1969,
           "month": "June",
@@ -2794,7 +3090,7 @@
     },
     {
       "id": "santa-maria-de-la-rosa-1588",
-      "name": "Santa Mar\u00eda de la Rosa",
+      "name": "Santa María de la Rosa",
       "type": "Spanish Armada Nao",
       "date": "1588-09-21",
       "year": 1588,
@@ -2834,7 +3130,7 @@
         {
           "type": "book",
           "title": "Treasures of the Armada",
-          "author": "Robert St\u00e9nuit",
+          "author": "Robert Sténuit",
           "year": 1972
         }
       ],
@@ -2878,7 +3174,7 @@
         {
           "type": "book",
           "title": "Treasures of the Armada",
-          "author": "Robert St\u00e9nuit",
+          "author": "Robert Sténuit",
           "year": 1972
         },
         {
@@ -2921,7 +3217,7 @@
       ],
       "origin": "Malacca/Siam",
       "route": {
-        "type": "Carreira da \u00cdndia Extension",
+        "type": "Carreira da Índia Extension",
         "origin": "Malacca (conquered 1511)",
         "destination": "Goa then Lisbon",
         "route_id": "carreira-da-india-return",
@@ -2939,7 +3235,7 @@
             "lat": 15.4909,
             "lng": 73.8278,
             "date": "1502",
-            "notes": "First voyage under Estev\u00e3o da Gama (cousin of Vasco da Gama). Part of 4th Portuguese India Armada."
+            "notes": "First voyage under Estevão da Gama (cousin of Vasco da Gama). Part of 4th Portuguese India Armada."
           },
           {
             "name": "Mozambique Channel (Repairs)",
@@ -2953,7 +3249,7 @@
             "lat": 15.4909,
             "lng": 73.8278,
             "date": "1505",
-            "notes": "Second voyage under Jo\u00e3o da Nova with 7th India Armada (22 ships). Carried first Viceroy Francisco de Almeida."
+            "notes": "Second voyage under João da Nova with 7th India Armada (22 ships). Carried first Viceroy Francisco de Almeida."
           },
           {
             "name": "Stuck in Mozambique",
@@ -2967,7 +3263,7 @@
             "lat": 12.5,
             "lng": 54.0,
             "date": "1507",
-            "notes": "Participated under Trist\u00e3o da Cunha's command"
+            "notes": "Participated under Tristão da Cunha's command"
           },
           {
             "name": "Conquest of Muscat/Ormuz",
@@ -3009,7 +3305,7 @@
         "historical_significance": "Prototype for typical 16th-century India nau. Experience led to 'outer route' east of Madagascar for heavy ships.",
         "route_sources": [
           "Afonso de Albuquerque - Commentaries (1880)",
-          "Jo\u00e3o de Barros - D\u00e9cadas da \u00c1sia (1552)",
+          "João de Barros - Décadas da Ásia (1552)",
           "Wikipedia"
         ]
       },
@@ -3022,8 +3318,8 @@
         },
         {
           "type": "book",
-          "title": "D\u00e9cadas da \u00c1sia",
-          "author": "Jo\u00e3o de Barros",
+          "title": "Décadas da Ásia",
+          "author": "João de Barros",
           "year": 1552
         }
       ],
@@ -3033,7 +3329,7 @@
     },
     {
       "id": "atocha-1622",
-      "name": "Nuestra Se\u00f1ora de Atocha",
+      "name": "Nuestra Señora de Atocha",
       "type": "Spanish Galleon",
       "date": "1622-09-06",
       "year": 1622,
@@ -3087,7 +3383,7 @@
         {
           "type": "archive",
           "title": "Archivo General de Indias",
-          "reference": "Contrataci\u00f3n",
+          "reference": "Contratación",
           "location": "Seville, Spain"
         }
       ],
@@ -3151,7 +3447,7 @@
     },
     {
       "id": "nuestra-senora-rosario-1622",
-      "name": "Nuestra Se\u00f1ora del Rosario",
+      "name": "Nuestra Señora del Rosario",
       "type": "Spanish Galleon (Almiranta)",
       "date": "1622-09-06",
       "year": 1622,
@@ -3193,15 +3489,17 @@
         {
           "type": "archive",
           "title": "Archivo General de Indias",
-          "reference": "Contrataci\u00f3n 2898",
+          "reference": "Contratación 2898",
           "location": "Seville, Spain"
         }
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/1622_Tierra_Firme_fleet"
+      ]
     },
     {
       "id": "juncal-1631",
-      "name": "Nuestra Se\u00f1ora del Juncal",
+      "name": "Nuestra Señora del Juncal",
       "type": "Spanish Galleon (Capitana)",
       "date": "1631-10-31",
       "year": 1631,
@@ -3221,7 +3519,7 @@
       "casualties": 300,
       "recovered": false,
       "dive_accessible": false,
-      "notes": "NEVER FOUND! Flagship of 1631 New Spain fleet. Most valuable unfound Spanish treasure ship after San Jos\u00e9. Spain & Mexico jointly searching. Contemporary accounts place loss ~50 leagues from Veracruz.",
+      "notes": "NEVER FOUND! Flagship of 1631 New Spain fleet. Most valuable unfound Spanish treasure ship after San José. Spain & Mexico jointly searching. Contemporary accounts place loss ~50 leagues from Veracruz.",
       "treasure_type": [
         "silver_coins",
         "silver_bars",
@@ -3256,7 +3554,7 @@
             "lat": 21.5,
             "lng": -92.5,
             "date": "1631-10-31",
-            "notes": "NEVER FOUND. Sank 8 leagues north of 'Bajo de las \u00c1reas' (location unknown). Only 35-39 of 335 aboard survived in small boat."
+            "notes": "NEVER FOUND. Sank 8 leagues north of 'Bajo de las Áreas' (location unknown). Only 35-39 of 335 aboard survived in small boat."
           }
         ],
         "cargo_documented": "3,644,198 pesos silver/gold, 135,200 lbs cochineal, 385,325 lbs indigo, 10,018 lbs Chinese silk",
@@ -3282,7 +3580,7 @@
         {
           "type": "archive",
           "title": "Archivo General de Indias",
-          "reference": "Contrataci\u00f3n 2981",
+          "reference": "Contratación 2981",
           "location": "Seville, Spain"
         }
       ],
@@ -3292,7 +3590,7 @@
     },
     {
       "id": "concepcion-1641",
-      "name": "Nuestra Se\u00f1ora de la Concepci\u00f3n",
+      "name": "Nuestra Señora de la Concepción",
       "type": "Spanish Galleon",
       "date": "1641-10-31",
       "year": 1641,
@@ -3307,7 +3605,7 @@
         "location_notes": "General area known, debris scattered across reef system"
       },
       "cause": "Hurricane, ran aground on reef",
-      "cargo": "34 tons Peruvian silver (from Potos\u00ed mines)",
+      "cargo": "34 tons Peruvian silver (from Potosí mines)",
       "cargo_detail": "Silver bars and coins from Peru via Panama",
       "casualties": 200,
       "recovered": true,
@@ -3317,7 +3615,7 @@
         "silver_bars",
         "silver_coins"
       ],
-      "origin": "Peru (Potos\u00ed)",
+      "origin": "Peru (Potosí)",
       "route": {
         "type": "Tierra Firme Fleet Return",
         "origin": "Portobelo (Peruvian silver via Panama) via Havana",
@@ -3326,7 +3624,7 @@
         "position_in_voyage": "North of Hispaniola, blown off course by hurricane",
         "waypoints": [
           {
-            "name": "Potos\u00ed, Bolivia (Silver Origin)",
+            "name": "Potosí, Bolivia (Silver Origin)",
             "lat": -19.5836,
             "lng": -65.7531,
             "date": "1641",
@@ -3351,7 +3649,7 @@
             "lat": 9.555,
             "lng": -79.6536,
             "date": "1641",
-            "notes": "Silver loaded onto Tierra Firme fleet ships including Concepci\u00f3n"
+            "notes": "Silver loaded onto Tierra Firme fleet ships including Concepción"
           },
           {
             "name": "Havana, Cuba",
@@ -3403,7 +3701,7 @@
     },
     {
       "id": "maravillas-1656",
-      "name": "Nuestra Se\u00f1ora de las Maravillas",
+      "name": "Nuestra Señora de las Maravillas",
       "type": "Spanish Galleon (Almiranta)",
       "date": "1656-01-04",
       "year": 1656,
@@ -3454,17 +3752,18 @@
         {
           "type": "archive",
           "title": "Archivo General de Indias",
-          "reference": "Contrataci\u00f3n 5574",
+          "reference": "Contratación 5574",
           "location": "Seville, Spain"
         }
       ],
       "links": [
-        "https://www.allenexploration.com/maravillas"
+        "https://www.allenexploration.com/maravillas",
+        "https://en.wikipedia.org/wiki/Spanish_treasure_fleet"
       ]
     },
     {
       "id": "encarnacion-1681",
-      "name": "Nuestra Se\u00f1ora de Encarnaci\u00f3n",
+      "name": "Nuestra Señora de Encarnación",
       "type": "Spanish Nao (Carrack)",
       "date": "1681-12-03",
       "year": 1681,
@@ -3478,7 +3777,7 @@
         "location_notes": "Discovered 2011, precisely mapped"
       },
       "cause": "Storm (Tierra Firme fleet disaster)",
-      "cargo": "Peruvian silver (from Potos\u00ed via Callao)",
+      "cargo": "Peruvian silver (from Potosí via Callao)",
       "cargo_detail": "Swords, nails, cloth, horseshoes, ceramics, Peruvian silver",
       "casualties": 50,
       "recovered": false,
@@ -3487,7 +3786,7 @@
       "treasure_type": [
         "silver"
       ],
-      "origin": "Peru (Potos\u00ed)",
+      "origin": "Peru (Potosí)",
       "route": {
         "type": "Tierra Firme Fleet",
         "origin": "Portobelo, Panama",
@@ -3498,7 +3797,7 @@
       "sources": [
         {
           "type": "academic",
-          "title": "Discovery of the Spanish Merchant Vessel Nuestra Se\u00f1ora de Encarnaci\u00f3n",
+          "title": "Discovery of the Spanish Merchant Vessel Nuestra Señora de Encarnación",
           "author": "Fritz Hanselmann et al.",
           "publication": "International Journal of Nautical Archaeology",
           "year": 2013
@@ -3510,7 +3809,7 @@
     },
     {
       "id": "soledad-1681",
-      "name": "Nuestra Se\u00f1ora de la Soledad",
+      "name": "Nuestra Señora de la Soledad",
       "type": "Spanish Galleon",
       "date": "1681-12-03",
       "year": 1681,
@@ -3529,7 +3828,7 @@
       "casualties": 280,
       "recovered": false,
       "dive_accessible": false,
-      "notes": "Same Tierra Firme fleet as Encarnaci\u00f3n. Captain Antonio de Lima drowned. All treasure lost. Exact wreck site not definitively located.",
+      "notes": "Same Tierra Firme fleet as Encarnación. Captain Antonio de Lima drowned. All treasure lost. Exact wreck site not definitively located.",
       "treasure_type": [
         "silver",
         "gold"
@@ -3550,7 +3849,9 @@
           "year": 1971
         }
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Spanish_treasure_fleet"
+      ]
     },
     {
       "id": "henrietta-marie-1700",
@@ -3600,7 +3901,7 @@
     },
     {
       "id": "san-jose-1708",
-      "name": "San Jos\u00e9",
+      "name": "San José",
       "type": "Spanish Treasure Galleon",
       "date": "1708-06-08",
       "year": 1708,
@@ -3609,7 +3910,7 @@
         "lng": -76.0833,
         "depth_m": 600,
         "depth_ft": 1970,
-        "description": "Off Bar\u00fa Peninsula, Colombia",
+        "description": "Off Barú Peninsula, Colombia",
         "location_uncertainty_km": 5,
         "location_notes": "Colombian government classified exact location"
       },
@@ -3708,7 +4009,7 @@
       ],
       "notes": "Only authenticated Golden Age pirate shipwreck ever found. Captain 'Black Sam' Bellamy. Found by Barry Clifford 1984. Ship's bell (1985) and brass placard (2013) proved identity.",
       "route": {
-        "type": "Triangle Trade (slave ship) \u2192 Pirate Voyage",
+        "type": "Triangle Trade (slave ship) → Pirate Voyage",
         "original_purpose": "Slave ship completing maiden triangle trade voyage",
         "pirate_captain": "Samuel 'Black Sam' Bellamy",
         "waypoints": [
@@ -3745,7 +4046,7 @@
             "lat": 25.0,
             "lng": -77.0,
             "date": "1717-02-late",
-            "notes": "Captain Lawrence Prince surrendered. Bellamy gave him Sultana plus \u00a320 in silver/gold."
+            "notes": "Captain Lawrence Prince surrendered. Bellamy gave him Sultana plus £20 in silver/gold."
           },
           {
             "name": "Blanco Islet, BVI (Pirate Base)",
@@ -3796,7 +4097,7 @@
     },
     {
       "id": "1715-fleet-capitana",
-      "name": "1715 Fleet - Capitana (Nuestra Se\u00f1ora de la Regla)",
+      "name": "1715 Fleet - Capitana (Nuestra Señora de la Regla)",
       "type": "Spanish Treasure Fleet",
       "date": "1715-07-31",
       "year": 1715,
@@ -3836,7 +4137,7 @@
             "lat": 9.555,
             "lng": -79.6536,
             "date": "1715",
-            "notes": "Tierra Firme Fleet collected Peruvian silver (Potos\u00ed)"
+            "notes": "Tierra Firme Fleet collected Peruvian silver (Potosí)"
           },
           {
             "name": "Havana, Cuba (Fleet Consolidation)",
@@ -3877,10 +4178,10 @@
             "name": "Douglass Beach Wreck",
             "lat": 27.48,
             "lng": -80.29,
-            "notes": "May be Santa Rita y Las Animas renamed Nuestra Se\u00f1ora de Regla"
+            "notes": "May be Santa Rita y Las Animas renamed Nuestra Señora de Regla"
           }
         ],
-        "historical_aftermath": "Pirates Henry Jennings and Charles Vane raided Spanish salvage camp December 1715, taking \u00a387,500 in gold and silver",
+        "historical_aftermath": "Pirates Henry Jennings and Charles Vane raided Spanish salvage camp December 1715, taking £87,500 in gold and silver",
         "route_sources": [
           "Wikipedia - 1715 Treasure Fleet",
           "Kip Wagner - Pieces of Eight (1966)",
@@ -4046,7 +4347,10 @@
       "treasure_type": [
         "silver_coins"
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Urca_de_Lima",
+        "https://en.wikipedia.org/wiki/1715_Treasure_Fleet"
+      ]
     },
     {
       "id": "queen-annes-revenge-1718",
@@ -4095,12 +4399,14 @@
       "casualties": 221,
       "recovered": true,
       "dive_accessible": true,
-      "notes": "Dutch VOC ship. St\u00e9nuit 1974-75.",
+      "notes": "Dutch VOC ship. Sténuit 1974-75.",
       "treasure_type": [
         "gold_coins",
         "silver_coins"
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Dutch_East_India_Company"
+      ]
     },
     {
       "id": "1733-fleet-wrecks",
@@ -4153,7 +4459,10 @@
       "treasure_type": [
         "silver_coins"
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/San_Pedro_Underwater_Archaeological_Preserve_State_Park",
+        "https://en.wikipedia.org/wiki/1733_Spanish_treasure_fleet"
+      ]
     },
     {
       "id": "witte-leeuw-1613",
@@ -4174,16 +4483,19 @@
       "casualties": 100,
       "recovered": true,
       "dive_accessible": true,
-      "notes": "Massive Ming porcelain collection. St\u00e9nuit 1976-77.",
+      "notes": "Massive Ming porcelain collection. Sténuit 1976-77.",
       "treasure_type": [
         "porcelain",
         "spices"
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Dutch_East_India_Company",
+        "https://en.wikipedia.org/wiki/St_Helena"
+      ]
     },
     {
       "id": "mercedes-1804",
-      "name": "Nuestra Se\u00f1ora de las Mercedes",
+      "name": "Nuestra Señora de las Mercedes",
       "type": "Spanish Frigate",
       "date": "1804-10-05",
       "year": 1804,
@@ -4233,7 +4545,9 @@
         "gold",
         "artifacts"
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Tumbaga"
+      ]
     },
     {
       "id": "uss-monitor-1862",
@@ -4664,7 +4978,9 @@
       "treasure_type": [
         "artifacts"
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Gulf_of_Mexico"
+      ]
     },
     {
       "id": "ss-gulfpenn-1942",
@@ -4687,7 +5003,9 @@
       "dive_accessible": false,
       "notes": "Battle of Atlantic 'Second Happy Time'.",
       "treasure_type": [],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Second_Happy_Time"
+      ]
     },
     {
       "id": "jesus-maria-limpia-concepcion-1654",
@@ -4731,7 +5049,9 @@
           "note": "Listed as 'Spanish treasure ship also known as the Capitana, lost after striking a reef off Chanduy'"
         }
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Spanish_treasure_fleet"
+      ]
     },
     {
       "id": "santa-maria-consolacion-1681",
@@ -4775,7 +5095,9 @@
           "note": "Spanish treasure ship laden with gold, silver, and precious gems run against a reef by pursuing pirates. Discovered in 1998."
         }
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Spanish_treasure_fleet"
+      ]
     },
     {
       "id": "callao-1746-fleet",
@@ -4884,7 +5206,9 @@
         ]
       },
       "sources": [],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Spanish_treasure_fleet"
+      ]
     },
     {
       "id": "uss-maine-1898",
@@ -5333,7 +5657,10 @@
           "year": 1994
         }
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Havana",
+        "https://en.wikipedia.org/wiki/Spanish_treasure_fleet"
+      ]
     },
     {
       "id": "jardines-de-la-reina-wrecks",
@@ -5387,7 +5714,7 @@
       "location": {
         "description": "Cape San Antonio, western tip of Cuba",
         "lat": 21.864,
-        "lng": -84.920,
+        "lng": -84.92,
         "depth_m": 20,
         "depth_ft": 66,
         "location_uncertainty_km": 50,
@@ -5458,7 +5785,9 @@
           "note": "Mentioned as earlier cruiser that sank off Cuba 1895"
         }
       ],
-      "links": []
+      "links": [
+        "https://en.wikipedia.org/wiki/Spanish_Navy"
+      ]
     }
   ],
   "voyage_incidents": {
@@ -5480,17 +5809,38 @@
         "lng": -74.5,
         "location_name": "Windward Passage (between Cuba and Hispaniola)",
         "type": "pirate_capture",
-        "ships_involved": ["Whydah Gally", "Sultana", "Marianne"],
-        "pirates_involved": ["Samuel Bellamy", "Paulsgrave Williams"],
+        "ships_involved": [
+          "Whydah Gally",
+          "Sultana",
+          "Marianne"
+        ],
+        "pirates_involved": [
+          "Samuel Bellamy",
+          "Paulsgrave Williams"
+        ],
         "description": "Sam Bellamy's pirate fleet spotted the Whydah Gally, a 300-ton slave ship returning from the Caribbean laden with treasure from selling 312 slaves. After a three-day chase, Captain Lawrence Prince surrendered with only a desultory exchange of cannon fire. Bellamy took the Whydah as his flagship and gave Sultana to Prince as a gesture of goodwill.",
         "outcome": "Whydah captured; became Bellamy's flagship",
         "treasure_value": "Estimated 4.5 tons of gold and silver",
         "casualties": 0,
         "linked_wreck_id": "whydah-1717",
-        "linked_pirate_ids": ["bellamy-sam", "williams-paulsgrave"],
+        "linked_pirate_ids": [
+          "bellamy-sam",
+          "williams-paulsgrave"
+        ],
         "sources": [
-          {"type": "primary", "title": "Thomas Baker testimony (Bellamy's crew)", "note": "They spread a large black flag, with a Death's Head and Bones across, and gave chase"},
-          {"type": "secondary", "title": "Wikipedia - Whydah Gally", "url": "https://en.wikipedia.org/wiki/Whydah_Gally"}
+          {
+            "type": "primary",
+            "title": "Thomas Baker testimony (Bellamy's crew)",
+            "note": "They spread a large black flag, with a Death's Head and Bones across, and gave chase"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Whydah Gally",
+            "url": "https://en.wikipedia.org/wiki/Whydah_Gally"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5501,18 +5851,40 @@
         "lng": -69.9594,
         "location_name": "Wellfleet, Cape Cod, Massachusetts",
         "type": "storm_loss",
-        "ships_involved": ["Whydah Gally", "Mary Anne"],
-        "pirates_involved": ["Samuel Bellamy"],
+        "ships_involved": [
+          "Whydah Gally",
+          "Mary Anne"
+        ],
+        "pirates_involved": [
+          "Samuel Bellamy"
+        ],
         "description": "The Whydah Gally was caught in a violent nor'easter storm off Cape Cod. At midnight she hit a sandbar in 16 feet of water about 500 feet from shore. Pummeled by 70 mph winds and 30-40 foot waves, the main mast snapped, capsizing the ship. Over 4.5 tons of treasure, 60+ cannons, and 144 men went to the ocean floor.",
         "outcome": "Ship lost; 144 of 146 crew killed; only 2 survivors",
         "treasure_value": "4.5 tons of silver and gold; 180 fifty-pound sacks of treasure",
         "casualties": 144,
         "linked_wreck_id": "whydah-1717",
-        "linked_pirate_ids": ["bellamy-sam"],
+        "linked_pirate_ids": [
+          "bellamy-sam"
+        ],
         "sources": [
-          {"type": "primary", "title": "Cyprian Southack map and report (1717)", "note": "The riches, with the guns, would be buried in the sand"},
-          {"type": "primary", "title": "Thomas Davis testimony", "note": "In a quarter of an hour after the ship struck, the Mainmast was carried by the board"},
-          {"type": "secondary", "title": "Wikipedia - Whydah Gally", "url": "https://en.wikipedia.org/wiki/Whydah_Gally"}
+          {
+            "type": "primary",
+            "title": "Cyprian Southack map and report (1717)",
+            "note": "The riches, with the guns, would be buried in the sand"
+          },
+          {
+            "type": "primary",
+            "title": "Thomas Davis testimony",
+            "note": "In a quarter of an hour after the ship struck, the Mainmast was carried by the board"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Whydah Gally",
+            "url": "https://en.wikipedia.org/wiki/Whydah_Gally"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Atlantic_hurricane"
         ]
       },
       {
@@ -5523,7 +5895,19 @@
         "lng": -80.3561,
         "location_name": "Florida East Coast (Treasure Coast)",
         "type": "storm_loss",
-        "ships_involved": ["Nuestra Señora de la Regla", "Urca de Lima", "Santo Cristo de San Roman", "Nuestra Señora de las Nieves", "Nuestra Señora del Rosario", "Nuestra Señora del Carmen", "Nuestra Señora de la Popa", "Santa Rita y Las Animas", "HMS Hampton Court (captured)", "San Francisco", "El Ciervo"],
+        "ships_involved": [
+          "Nuestra Señora de la Regla",
+          "Urca de Lima",
+          "Santo Cristo de San Roman",
+          "Nuestra Señora de las Nieves",
+          "Nuestra Señora del Rosario",
+          "Nuestra Señora del Carmen",
+          "Nuestra Señora de la Popa",
+          "Santa Rita y Las Animas",
+          "HMS Hampton Court (captured)",
+          "San Francisco",
+          "El Ciervo"
+        ],
         "pirates_involved": [],
         "description": "All eleven ships of the combined Nueva España and Tierra Firme treasure fleets were lost in a hurricane along Florida's east coast, seven days after departing Havana. Only the French frigate Le Grifon, which stayed further out to sea, survived. The disaster created an immediate target for pirates who rushed to salvage the treasure.",
         "outcome": "11 ships lost; ~1,500 sailors perished; massive salvage operations began",
@@ -5532,8 +5916,19 @@
         "linked_wreck_id": "1715-fleet",
         "linked_pirate_ids": [],
         "sources": [
-          {"type": "academic", "title": "Newton, Lowell W. - Juan Esteban de Ubilla and the Flota of 1715 (The Americas, 1976)"},
-          {"type": "secondary", "title": "Wikipedia - 1715 Treasure Fleet", "url": "https://en.wikipedia.org/wiki/1715_Treasure_Fleet"}
+          {
+            "type": "academic",
+            "title": "Newton, Lowell W. - Juan Esteban de Ubilla and the Flota of 1715 (The Americas, 1976)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - 1715 Treasure Fleet",
+            "url": "https://en.wikipedia.org/wiki/1715_Treasure_Fleet"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Atlantic_hurricane",
+          "https://en.wikipedia.org/wiki/1715_Treasure_Fleet"
         ]
       },
       {
@@ -5544,18 +5939,41 @@
         "lng": -80.37,
         "location_name": "Palma de Ayz (near Vero Beach), Florida",
         "type": "pirate_attack",
-        "ships_involved": ["Bersheba", "Eagle"],
-        "pirates_involved": ["Henry Jennings", "Charles Vane", "John Wills"],
+        "ships_involved": [
+          "Bersheba",
+          "Eagle"
+        ],
+        "pirates_involved": [
+          "Henry Jennings",
+          "Charles Vane",
+          "John Wills"
+        ],
         "description": "Henry Jennings led a fleet of 3 vessels and 150-300 men to attack the Spanish salvage camp recovering treasure from the 1715 fleet disaster. The pirates surprised the camp with superior numbers, forcing the retreat of 60 Spanish soldiers and stealing approximately £87,500 in gold and silver - equivalent to a ten-year salary for sailors.",
         "outcome": "Pirates stole £87,500 in treasure; sparked Golden Age of Piracy in Nassau",
         "treasure_value": "£87,500 (120,000 pieces of eight)",
         "casualties": 0,
         "linked_wreck_id": "1715-fleet",
-        "linked_pirate_ids": ["jennings-henry", "vane-charles"],
+        "linked_pirate_ids": [
+          "jennings-henry",
+          "vane-charles"
+        ],
         "sources": [
-          {"type": "primary", "title": "Captain Charles Johnson - A General History of the Pyrates (1724)"},
-          {"type": "secondary", "title": "Wikipedia - Henry Jennings", "url": "https://en.wikipedia.org/wiki/Henry_Jennings"},
-          {"type": "book", "title": "Colin Woodard - The Republic of Pirates"}
+          {
+            "type": "primary",
+            "title": "Captain Charles Johnson - A General History of the Pyrates (1724)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Henry Jennings",
+            "url": "https://en.wikipedia.org/wiki/Henry_Jennings"
+          },
+          {
+            "type": "book",
+            "title": "Colin Woodard - The Republic of Pirates"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5566,16 +5984,28 @@
         "lng": -80.37,
         "location_name": "Florida Treasure Coast salvage site",
         "type": "pirate_attack",
-        "ships_involved": ["Bathsheba"],
-        "pirates_involved": ["Henry Jennings"],
+        "ships_involved": [
+          "Bathsheba"
+        ],
+        "pirates_involved": [
+          "Henry Jennings"
+        ],
         "description": "Jennings returned to the Spanish wrecks a second time. The Spanish salvage leader offered him 25,000 pieces of eight to leave them alone. Jennings took the bribe but continued pillaging anyway, taking even personal possessions and Spanish cannons.",
         "outcome": "Additional plunder seized despite bribe payment",
         "treasure_value": "25,000+ pieces of eight",
         "casualties": 0,
         "linked_wreck_id": "1715-fleet",
-        "linked_pirate_ids": ["jennings-henry"],
+        "linked_pirate_ids": [
+          "jennings-henry"
+        ],
         "sources": [
-          {"type": "book", "title": "McCarthy - Twenty Pirates (1994)"}
+          {
+            "type": "book",
+            "title": "McCarthy - Twenty Pirates (1994)"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5586,7 +6016,13 @@
         "lng": -82.8306,
         "location_name": "Florida Keys (Marquesas Keys to Dry Tortugas)",
         "type": "storm_loss",
-        "ships_involved": ["Nuestra Señora de Atocha", "Santa Margarita", "Nuestra Señora del Rosario", "San Ignacio", "San Juan de Portorico"],
+        "ships_involved": [
+          "Nuestra Señora de Atocha",
+          "Santa Margarita",
+          "Nuestra Señora del Rosario",
+          "San Ignacio",
+          "San Juan de Portorico"
+        ],
         "pirates_involved": [],
         "description": "A 28-ship convoy departed Havana six weeks late on September 4, 1622. On September 6, a hurricane struck in the Florida Straits. Eight ships sank, scattered from Marquesas Key to Dry Tortugas. The Atocha lost 265 of her crew and passengers, with only 3 sailors and 2 slaves surviving by clinging to the mizzenmast. Among the dead was explorer Bartolomé García de Nodal.",
         "outcome": "8 ships lost; 260+ killed on Atocha alone; treasure remained undiscovered until 1985",
@@ -5595,9 +6031,23 @@
         "linked_wreck_id": "atocha-1622",
         "linked_pirate_ids": [],
         "sources": [
-          {"type": "primary", "title": "Archivo General de Indias - fleet manifests"},
-          {"type": "book", "title": "Eugene Lyon - The Search for the Atocha (1979)"},
-          {"type": "secondary", "title": "Wikipedia - Nuestra Señora de Atocha", "url": "https://en.wikipedia.org/wiki/Nuestra_Se%C3%B1ora_de_Atocha"}
+          {
+            "type": "primary",
+            "title": "Archivo General de Indias - fleet manifests"
+          },
+          {
+            "type": "book",
+            "title": "Eugene Lyon - The Search for the Atocha (1979)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Nuestra Señora de Atocha",
+            "url": "https://en.wikipedia.org/wiki/Nuestra_Se%C3%B1ora_de_Atocha"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Atlantic_hurricane",
+          "https://en.wikipedia.org/wiki/1622_Tierra_Firme_fleet"
         ]
       },
       {
@@ -5608,11 +6058,26 @@
         "lng": -76.2569,
         "location_name": "Off Barú Island, near Cartagena, Colombia",
         "type": "naval_battle",
-        "ships_involved": ["San José", "San Joaquín", "Santa Cruz", "HMS Expedition", "HMS Kingston", "HMS Portland"],
+        "ships_involved": [
+          "San José",
+          "San Joaquín",
+          "Santa Cruz",
+          "HMS Expedition",
+          "HMS Kingston",
+          "HMS Portland"
+        ],
         "pirates_involved": [],
         "combatants": {
-          "spanish": {"commander": "José Fernández de Santillán", "ships": 3, "fleet": "Spanish Treasure Fleet"},
-          "british": {"commander": "Charles Wager", "ships": 4, "fleet": "Royal Navy squadron"}
+          "spanish": {
+            "commander": "José Fernández de Santillán",
+            "ships": 3,
+            "fleet": "Spanish Treasure Fleet"
+          },
+          "british": {
+            "commander": "Charles Wager",
+            "ships": 4,
+            "fleet": "Royal Navy squadron"
+          }
         },
         "description": "Wager's Action: British squadron under Charles Wager attacked the Spanish treasure fleet near Cartagena during the War of Spanish Succession. After fierce fighting, the San José's powder magazines detonated around 7 PM, destroying the ship instantly. Of 600 aboard, only 11 survived. The San José carried 7-11 million pesos in gold, silver, and emeralds - now called the 'Holy Grail of Shipwrecks'.",
         "outcome": "San José exploded and sank; Santa Cruz captured; San Joaquín escaped to Cartagena",
@@ -5621,9 +6086,22 @@
         "linked_wreck_id": "san-jose-1708",
         "linked_pirate_ids": [],
         "sources": [
-          {"type": "primary", "title": "Fernández Duro - Armada española (1898)"},
-          {"type": "museum", "title": "Samuel Scott painting - Wager's Action off Cartagena (c. 1747)"},
-          {"type": "secondary", "title": "Wikipedia - Wager's Action", "url": "https://en.wikipedia.org/wiki/Wager%27s_Action"}
+          {
+            "type": "primary",
+            "title": "Fernández Duro - Armada española (1898)"
+          },
+          {
+            "type": "museum",
+            "title": "Samuel Scott painting - Wager's Action off Cartagena (c. 1747)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Wager's Action",
+            "url": "https://en.wikipedia.org/wiki/Wager%27s_Action"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/San_Jos%C3%A9_(1698_ship)"
         ]
       },
       {
@@ -5635,16 +6113,30 @@
         "location_name": "Portobelo, Panama",
         "type": "buccaneer_raid",
         "ships_involved": [],
-        "pirates_involved": ["Henry Morgan"],
+        "pirates_involved": [
+          "Henry Morgan"
+        ],
         "description": "Henry Morgan and his privateer fleet landed 23 canoes of men three miles from Portobelo, approaching at night. They took the three castles and town quickly despite Portobelo being the third largest and strongest port on the Spanish Main. Morgan's men remained for a month, extracting a ransom of 100,000 pesos. The raid demonstrated Morgan's brilliant military tactics.",
         "outcome": "City captured; 100,000 pesos ransom paid; £70,000-100,000 total plunder",
         "treasure_value": "£70,000-100,000",
         "casualties": 18,
         "linked_wreck_id": null,
-        "linked_pirate_ids": ["morgan-henry"],
+        "linked_pirate_ids": [
+          "morgan-henry"
+        ],
         "sources": [
-          {"type": "primary", "title": "Alexandre Exquemelin - Buccaneers of America (1678)"},
-          {"type": "secondary", "title": "Wikipedia - Henry Morgan", "url": "https://en.wikipedia.org/wiki/Henry_Morgan"}
+          {
+            "type": "primary",
+            "title": "Alexandre Exquemelin - Buccaneers of America (1678)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Henry Morgan",
+            "url": "https://en.wikipedia.org/wiki/Henry_Morgan"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan"
         ]
       },
       {
@@ -5656,16 +6148,29 @@
         "location_name": "Lake Maracaibo, Venezuela",
         "type": "buccaneer_raid",
         "ships_involved": [],
-        "pirates_involved": ["Henry Morgan"],
+        "pirates_involved": [
+          "Henry Morgan"
+        ],
         "description": "Morgan's fleet sailed to Maracaibo and Gibraltar on Lake Maracaibo. After plundering both cities over two months, Morgan found his exit blocked by a Spanish squadron. He destroyed the Spanish fleet using a fire ship, then escaped by having his men feign a land attack while actually slipping past the fort at night.",
         "outcome": "Both cities plundered; Spanish squadron destroyed; Morgan escaped",
         "treasure_value": "Substantial plunder (amount unknown)",
         "casualties": 0,
         "linked_wreck_id": null,
-        "linked_pirate_ids": ["morgan-henry"],
+        "linked_pirate_ids": [
+          "morgan-henry"
+        ],
         "sources": [
-          {"type": "primary", "title": "Alexandre Exquemelin - Buccaneers of America (1678)"},
-          {"type": "secondary", "title": "Wikipedia - Henry Morgan's raid on Lake Maracaibo"}
+          {
+            "type": "primary",
+            "title": "Alexandre Exquemelin - Buccaneers of America (1678)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Henry Morgan's raid on Lake Maracaibo"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan"
         ]
       },
       {
@@ -5677,16 +6182,29 @@
         "location_name": "Panama City (Panamá Viejo), Panama",
         "type": "buccaneer_raid",
         "ships_involved": [],
-        "pirates_involved": ["Henry Morgan"],
+        "pirates_involved": [
+          "Henry Morgan"
+        ],
         "description": "Morgan's most ambitious raid. He landed on the Caribbean coast with 1,400 men and traversed the isthmus through jungle to attack Panama City on the Pacific coast. The city, located at the key transshipment point for Peruvian silver, was captured and burned. This attack occurred after the Treaty of Madrid (1670), leading to Morgan's arrest and summons to London - though he was later knighted.",
         "outcome": "Panama City captured and burned; Morgan arrested but later knighted",
         "treasure_value": "Substantial (much hidden or escaped)",
         "casualties": 500,
         "linked_wreck_id": null,
-        "linked_pirate_ids": ["morgan-henry"],
+        "linked_pirate_ids": [
+          "morgan-henry"
+        ],
         "sources": [
-          {"type": "primary", "title": "Alexandre Exquemelin - Buccaneers of America (1678)"},
-          {"type": "secondary", "title": "Wikipedia - Henry Morgan's Panama expedition"}
+          {
+            "type": "primary",
+            "title": "Alexandre Exquemelin - Buccaneers of America (1678)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Henry Morgan's Panama expedition"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan"
         ]
       },
       {
@@ -5698,16 +6216,31 @@
         "location_name": "Maracaibo and Gibraltar, Lake Maracaibo, Venezuela",
         "type": "buccaneer_raid",
         "ships_involved": [],
-        "pirates_involved": ["François l'Olonnais", "Michel le Basque"],
+        "pirates_involved": [
+          "François l'Olonnais",
+          "Michel le Basque"
+        ],
         "description": "L'Olonnais sailed from Tortuga with 8 ships and 440 pirates. En route he captured a Spanish treasure ship with 260,000 Spanish dollars and gemstones. He then attacked Maracaibo and Gibraltar, taking the supposedly impregnable San Carlos de la Barra Fortress from the undefended landward side. He spent two months torturing residents to reveal hidden wealth, earning his nickname 'Flail of the Spanish'.",
         "outcome": "Both cities sacked; 260,000 pieces of eight + gems + slaves taken",
         "treasure_value": "260,000 pieces of eight + gemstones",
         "casualties": 500,
         "linked_wreck_id": null,
-        "linked_pirate_ids": ["lolonnais"],
+        "linked_pirate_ids": [
+          "lolonnais"
+        ],
         "sources": [
-          {"type": "primary", "title": "Alexandre Exquemelin - The History of the Buccaneers of America (1684)"},
-          {"type": "secondary", "title": "Wikipedia - François l'Olonnais", "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_l%27Olonnais"}
+          {
+            "type": "primary",
+            "title": "Alexandre Exquemelin - The History of the Buccaneers of America (1684)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - François l'Olonnais",
+            "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_l%27Olonnais"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5718,16 +6251,30 @@
         "lng": -61.0,
         "location_name": "Near Martinique, West Indies",
         "type": "pirate_capture",
-        "ships_involved": ["La Concorde", "Revenge"],
-        "pirates_involved": ["Edward Teach (Blackbeard)"],
+        "ships_involved": [
+          "La Concorde",
+          "Revenge"
+        ],
+        "pirates_involved": [
+          "Edward Teach (Blackbeard)"
+        ],
         "description": "Blackbeard captured the French slave ship La Concorde near Martinique. The 200-ton frigate had just completed the Middle Passage and was laden with cargo from the sale of slaves. Blackbeard converted her into his flagship, adding more cannons and renaming her Queen Anne's Revenge - possibly a reference to Queen Anne's War or Jacobite sympathies.",
         "outcome": "La Concorde captured; renamed Queen Anne's Revenge; became Blackbeard's flagship",
         "treasure_value": "Unknown",
         "casualties": 0,
         "linked_wreck_id": "queen-annes-revenge-1718",
-        "linked_pirate_ids": ["blackbeard"],
+        "linked_pirate_ids": [
+          "blackbeard"
+        ],
         "sources": [
-          {"type": "secondary", "title": "Wikipedia - Queen Anne's Revenge", "url": "https://en.wikipedia.org/wiki/Queen_Anne%27s_Revenge"}
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Queen Anne's Revenge",
+            "url": "https://en.wikipedia.org/wiki/Queen_Anne%27s_Revenge"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5738,17 +6285,33 @@
         "lng": -79.93,
         "location_name": "Charleston Harbor, South Carolina",
         "type": "blockade",
-        "ships_involved": ["Queen Anne's Revenge", "Adventure"],
-        "pirates_involved": ["Edward Teach (Blackbeard)"],
+        "ships_involved": [
+          "Queen Anne's Revenge",
+          "Adventure"
+        ],
+        "pirates_involved": [
+          "Edward Teach (Blackbeard)"
+        ],
         "description": "Blackbeard blockaded Charleston harbor for nearly a week with his fleet of 4 ships and 400 men. He captured 8 or 9 vessels entering or leaving the port, including one carrying prominent Charleston citizens. He demanded a chest of medicine as ransom (his crew suffering from syphilis), threatening to execute the hostages and burn the ships.",
         "outcome": "Medicine ransom paid; hostages released; Charleston humiliated",
         "treasure_value": "Minimal (medicine chest)",
         "casualties": 0,
         "linked_wreck_id": "queen-annes-revenge-1718",
-        "linked_pirate_ids": ["blackbeard"],
+        "linked_pirate_ids": [
+          "blackbeard"
+        ],
         "sources": [
-          {"type": "primary", "title": "Captain Charles Johnson - A General History of the Pyrates (1724)"},
-          {"type": "secondary", "title": "Wikipedia - Blackbeard"}
+          {
+            "type": "primary",
+            "title": "Captain Charles Johnson - A General History of the Pyrates (1724)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Blackbeard"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Blackbeard"
         ]
       },
       {
@@ -5759,17 +6322,35 @@
         "lng": -76.689,
         "location_name": "Beaufort Inlet (Topsail Inlet), North Carolina",
         "type": "grounding",
-        "ships_involved": ["Queen Anne's Revenge", "Adventure"],
-        "pirates_involved": ["Edward Teach (Blackbeard)"],
+        "ships_involved": [
+          "Queen Anne's Revenge",
+          "Adventure"
+        ],
+        "pirates_involved": [
+          "Edward Teach (Blackbeard)"
+        ],
         "description": "Shortly after the Charleston blockade, Blackbeard deliberately (some historians believe) ran Queen Anne's Revenge aground at Beaufort Inlet. The Adventure ran aground trying to kedge her off. Blackbeard used this as an excuse to maroon most of his crew and escape with the treasure on smaller vessels. He then accepted the King's Pardon from Governor Charles Eden at Bath.",
         "outcome": "Ship lost (possibly deliberately); crew marooned; Blackbeard escaped with treasure",
         "treasure_value": "Unknown (Blackbeard kept it)",
         "casualties": 0,
         "linked_wreck_id": "queen-annes-revenge-1718",
-        "linked_pirate_ids": ["blackbeard"],
+        "linked_pirate_ids": [
+          "blackbeard"
+        ],
         "sources": [
-          {"type": "primary", "title": "David Herriot deposition", "note": "Thatch's ship Queen Anne's Revenge run a-ground off of the Bar of Topsail-Inlet"},
-          {"type": "secondary", "title": "Wikipedia - Queen Anne's Revenge", "url": "https://en.wikipedia.org/wiki/Queen_Anne%27s_Revenge"}
+          {
+            "type": "primary",
+            "title": "David Herriot deposition",
+            "note": "Thatch's ship Queen Anne's Revenge run a-ground off of the Bar of Topsail-Inlet"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Queen Anne's Revenge",
+            "url": "https://en.wikipedia.org/wiki/Queen_Anne%27s_Revenge"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5780,21 +6361,45 @@
         "lng": -75.9849,
         "location_name": "Ocracoke Inlet, North Carolina",
         "type": "naval_battle",
-        "ships_involved": ["Adventure", "HMS Jane", "HMS Ranger"],
-        "pirates_involved": ["Edward Teach (Blackbeard)"],
+        "ships_involved": [
+          "Adventure",
+          "HMS Jane",
+          "HMS Ranger"
+        ],
+        "pirates_involved": [
+          "Edward Teach (Blackbeard)"
+        ],
         "combatants": {
-          "pirates": {"commander": "Edward Teach (Blackbeard)", "ships": 1},
-          "british": {"commander": "Lt. Robert Maynard", "ships": 2}
+          "pirates": {
+            "commander": "Edward Teach (Blackbeard)",
+            "ships": 1
+          },
+          "british": {
+            "commander": "Lt. Robert Maynard",
+            "ships": 2
+          }
         },
         "description": "Virginia's Lt. Governor Alexander Spotswood, at the request of Carolina planters, dispatched Lt. Robert Maynard to hunt Blackbeard. Maynard found him anchored at Ocracoke Inlet. After a fierce battle, Maynard killed Blackbeard - who reportedly received 5 gunshot wounds and 20 sword cuts before dying. Blackbeard's head was cut off and hung from Maynard's bowsprit.",
         "outcome": "Blackbeard killed; head displayed on bowsprit; crew captured and hanged",
         "treasure_value": "Unknown",
         "casualties": 10,
         "linked_wreck_id": null,
-        "linked_pirate_ids": ["blackbeard"],
+        "linked_pirate_ids": [
+          "blackbeard"
+        ],
         "sources": [
-          {"type": "primary", "title": "Captain Charles Johnson - A General History of the Pyrates (1724)"},
-          {"type": "secondary", "title": "Wikipedia - Blackbeard", "url": "https://en.wikipedia.org/wiki/Blackbeard"}
+          {
+            "type": "primary",
+            "title": "Captain Charles Johnson - A General History of the Pyrates (1724)"
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Blackbeard",
+            "url": "https://en.wikipedia.org/wiki/Blackbeard"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Blackbeard"
         ]
       },
       {
@@ -5805,8 +6410,12 @@
         "lng": -80.8,
         "location_name": "Off Ecuador coast (near Peru border)",
         "type": "pirate_chase",
-        "ships_involved": ["Santa Maria de la Consolacion"],
-        "pirates_involved": ["Unknown buccaneers"],
+        "ships_involved": [
+          "Santa Maria de la Consolacion"
+        ],
+        "pirates_involved": [
+          "Unknown buccaneers"
+        ],
         "description": "The Santa Maria de la Consolacion, laden with gold, silver, and precious gems from Peru, was chased by pursuing pirates. Rather than surrender, the ship was run against a reef off the Ecuador coast. The wreck was discovered in 1998.",
         "outcome": "Ship wrecked to avoid capture; treasure lost",
         "treasure_value": "Gold, silver, gems from Peru",
@@ -5814,7 +6423,13 @@
         "linked_wreck_id": "santa-maria-consolacion-1681",
         "linked_pirate_ids": [],
         "sources": [
-          {"type": "secondary", "title": "Wikipedia - List of shipwrecks of South America"}
+          {
+            "type": "secondary",
+            "title": "Wikipedia - List of shipwrecks of South America"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5825,16 +6440,29 @@
         "lng": -75.0,
         "location_name": "Off Carolina coast",
         "type": "sighting",
-        "ships_involved": ["Whydah Gally", "Captain Beer's sloop"],
-        "pirates_involved": ["Samuel Bellamy"],
+        "ships_involved": [
+          "Whydah Gally",
+          "Captain Beer's sloop"
+        ],
+        "pirates_involved": [
+          "Samuel Bellamy"
+        ],
         "description": "Bellamy's Whydah overtook a sloop commanded by Captain Beer. Bellamy wanted to let Beer keep his ship, but his crew voted to burn it. When Beer declined an invitation to join the pirates, Bellamy delivered his famous speech: 'They rob the poor under the cover of law... and we plunder the rich under the protection of our own courage.'",
         "outcome": "Beer's sloop burned; famous speech delivered",
         "treasure_value": "Minimal",
         "casualties": 0,
         "linked_wreck_id": "whydah-1717",
-        "linked_pirate_ids": ["bellamy-sam"],
+        "linked_pirate_ids": [
+          "bellamy-sam"
+        ],
         "sources": [
-          {"type": "primary", "title": "Captain Charles Johnson - A General History of the Pyrates (1724)"}
+          {
+            "type": "primary",
+            "title": "Captain Charles Johnson - A General History of the Pyrates (1724)"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5845,16 +6473,30 @@
         "lng": 50.0,
         "location_name": "Bab-el-Mandeb Strait, Red Sea",
         "type": "pirate_attack",
-        "ships_involved": ["Fancy", "Gang-i-Sawai", "Fateh Muhammad"],
-        "pirates_involved": ["Henry Every"],
+        "ships_involved": [
+          "Fancy",
+          "Gang-i-Sawai",
+          "Fateh Muhammad"
+        ],
+        "pirates_involved": [
+          "Henry Every"
+        ],
         "description": "Henry Every's ship Fancy attacked the Mughal convoy returning from Mecca. After a fierce battle, they captured the Gang-i-Sawai (Gunsway), the treasure ship of the Mughal Emperor Aurangzeb. The plunder included gold, silver, jewels, and ivory worth £600,000 - one of the largest pirate hauls in history. The attack caused an international incident threatening East India Company operations.",
         "outcome": "Mughal treasure ship captured; £600,000+ plundered; international crisis",
         "treasure_value": "£600,000 (one of largest pirate hauls ever)",
         "casualties": 0,
         "linked_wreck_id": null,
-        "linked_pirate_ids": ["every-henry"],
+        "linked_pirate_ids": [
+          "every-henry"
+        ],
         "sources": [
-          {"type": "secondary", "title": "Wikipedia - Henry Every"}
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Henry Every"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5865,16 +6507,28 @@
         "lng": -10.0,
         "location_name": "Off Cape St. Vincent, Portugal",
         "type": "privateer_capture",
-        "ships_involved": ["San Felipe"],
-        "pirates_involved": ["Francis Drake"],
+        "ships_involved": [
+          "San Felipe"
+        ],
+        "pirates_involved": [
+          "Francis Drake"
+        ],
         "description": "During his 'singeing of the King of Spain's beard' expedition, Drake captured the San Felipe, a Portuguese carrack (Portugal was then under Spanish rule) returning from the East Indies. The cargo included spices, silks, gold, and Chinese porcelain worth £114,000 - funding English war efforts against Spain.",
         "outcome": "San Felipe captured; £114,000 cargo seized",
         "treasure_value": "£114,000",
         "casualties": 0,
         "linked_wreck_id": null,
-        "linked_pirate_ids": ["drake-francis"],
+        "linked_pirate_ids": [
+          "drake-francis"
+        ],
         "sources": [
-          {"type": "historical", "title": "English State Papers"}
+          {
+            "type": "historical",
+            "title": "English State Papers"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5885,7 +6539,20 @@
         "lng": -80.6,
         "location_name": "Florida Keys",
         "type": "storm_loss",
-        "ships_involved": ["El Rubi", "San José", "El Gallo Indiano", "San Fernando", "Tres Puentes", "Herrera", "El Infante", "Chavez", "San Ignacio", "El Sueco de Arizon", "San Francisco", "El Lerri"],
+        "ships_involved": [
+          "El Rubi",
+          "San José",
+          "El Gallo Indiano",
+          "San Fernando",
+          "Tres Puentes",
+          "Herrera",
+          "El Infante",
+          "Chavez",
+          "San Ignacio",
+          "El Sueco de Arizon",
+          "San Francisco",
+          "El Lerri"
+        ],
         "pirates_involved": [],
         "description": "The 1733 Spanish Plate Fleet of 21 ships departed Havana on July 13 and was struck by a hurricane on July 15. Most ships were driven onto the Florida Keys reefs. Unlike 1715, there was no major pirate salvage activity as Spanish salvage operations were swift and effective. Many ships are now underwater archaeological preserves.",
         "outcome": "Most of 21-ship fleet wrecked on Florida Keys; effective Spanish salvage",
@@ -5894,7 +6561,13 @@
         "linked_wreck_id": "1733-fleet",
         "linked_pirate_ids": [],
         "sources": [
-          {"type": "secondary", "title": "Florida Underwater Archaeological Preserves"}
+          {
+            "type": "secondary",
+            "title": "Florida Underwater Archaeological Preserves"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Atlantic_hurricane"
         ]
       },
       {
@@ -5905,11 +6578,21 @@
         "lng": -81.5667,
         "location_name": "Bay of Matanzas, Cuba",
         "type": "naval_battle",
-        "ships_involved": ["Spanish Treasure Fleet (21 vessels)", "Dutch West India Company squadron (31 vessels)"],
+        "ships_involved": [
+          "Spanish Treasure Fleet (21 vessels)",
+          "Dutch West India Company squadron (31 vessels)"
+        ],
         "pirates_involved": [],
         "combatants": {
-          "dutch": {"commander": "Admiral Piet Hein", "second": "Witte de With", "ships": 31},
-          "spanish": {"commander": "Juan de Benavides Bazán", "ships": 21}
+          "dutch": {
+            "commander": "Admiral Piet Hein",
+            "second": "Witte de With",
+            "ships": 31
+          },
+          "spanish": {
+            "commander": "Juan de Benavides Bazán",
+            "ships": 21
+          }
         },
         "description": "ONLY complete capture of a Spanish treasure fleet in history! Dutch Admiral Piet Hein's squadron spotted the Spanish New Spain fleet entering Matanzas Bay to shelter. Spanish commander ran ships aground in shallow water to prevent capture. Following day, Dutch attacked with boats and the Spanish surrendered without terms - no casualties on either side. Treasure included 177,537 lbs silver, 135 lbs gold, 37,375 hides, cochineal, indigo, and sugar worth 11.5 million guilders. Dutch gave Spanish crews supplies for march to Havana. Piet Hein became national hero.",
         "outcome": "Complete Dutch victory; entire treasure fleet captured intact; 11.5 million guilders seized",
@@ -5919,8 +6602,20 @@
         "linked_pirate_ids": [],
         "historical_significance": "Only complete capture of Spanish treasure fleet in 200+ years of operation. Funded Dutch war against Spain, including 1629 siege of 's-Hertogenbosch. Piet Hein still celebrated in Dutch children's song.",
         "sources": [
-          {"type": "book", "title": "History of Holland", "author": "George Edmundson", "year": 1922},
-          {"type": "secondary", "title": "Wikipedia - Battle in the Bay of Matanzas", "url": "https://en.wikipedia.org/wiki/Battle_in_the_Bay_of_Matanzas"}
+          {
+            "type": "book",
+            "title": "History of Holland",
+            "author": "George Edmundson",
+            "year": 1922
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Battle in the Bay of Matanzas",
+            "url": "https://en.wikipedia.org/wiki/Battle_in_the_Bay_of_Matanzas"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Battle_in_the_Bay_of_Matanzas"
         ]
       },
       {
@@ -5931,7 +6626,9 @@
         "lng": -82.358,
         "location_name": "Havana Harbor, Cuba",
         "type": "explosion",
-        "ships_involved": ["USS Maine"],
+        "ships_involved": [
+          "USS Maine"
+        ],
         "pirates_involved": [],
         "combatants": {},
         "description": "The armored cruiser USS Maine exploded and sank at 9:40 PM while at anchor in Havana Harbor, killing 268 of 374 crew. Maine had been sent to protect US interests during Cuban War of Independence. The cause remains disputed - 1898 Naval Court of Inquiry blamed an external mine, but 1976 Rickover investigation suggested spontaneous coal fire igniting magazines. Yellow journalism ('Remember the Maine!') blamed Spain and inflamed American public opinion, contributing to the outbreak of Spanish-American War two months later.",
@@ -5942,8 +6639,20 @@
         "linked_pirate_ids": [],
         "historical_significance": "Catalyst for Spanish-American War. 'Remember the Maine! To hell with Spain!' rallying cry led to US declaration of war April 25, 1898.",
         "sources": [
-          {"type": "book", "title": "How the Battleship Maine Was Destroyed", "author": "Hyman G. Rickover", "year": 1976},
-          {"type": "secondary", "title": "Wikipedia - USS Maine (1889)", "url": "https://en.wikipedia.org/wiki/USS_Maine_(1889)"}
+          {
+            "type": "book",
+            "title": "How the Battleship Maine Was Destroyed",
+            "author": "Hyman G. Rickover",
+            "year": 1976
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - USS Maine (1889)",
+            "url": "https://en.wikipedia.org/wiki/USS_Maine_(1889)"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -5954,11 +6663,35 @@
         "lng": -75.875,
         "location_name": "Off Santiago de Cuba, south coast of Cuba",
         "type": "naval_battle",
-        "ships_involved": ["Infanta Maria Teresa", "Vizcaya", "Almirante Oquendo", "Cristóbal Colón", "Furor", "Plutón", "USS Iowa", "USS Indiana", "USS Massachusetts", "USS Texas", "USS Oregon", "USS Brooklyn", "USS New York", "USS Gloucester"],
+        "ships_involved": [
+          "Infanta Maria Teresa",
+          "Vizcaya",
+          "Almirante Oquendo",
+          "Cristóbal Colón",
+          "Furor",
+          "Plutón",
+          "USS Iowa",
+          "USS Indiana",
+          "USS Massachusetts",
+          "USS Texas",
+          "USS Oregon",
+          "USS Brooklyn",
+          "USS New York",
+          "USS Gloucester"
+        ],
         "pirates_involved": [],
         "combatants": {
-          "american": {"commander": "Rear Admiral William T. Sampson / Commodore Winfield Scott Schley", "battleships": 4, "armored_cruisers": 2, "other": 2},
-          "spanish": {"commander": "Vice Admiral Pascual Cervera y Topete", "armored_cruisers": 4, "destroyers": 2}
+          "american": {
+            "commander": "Rear Admiral William T. Sampson / Commodore Winfield Scott Schley",
+            "battleships": 4,
+            "armored_cruisers": 2,
+            "other": 2
+          },
+          "spanish": {
+            "commander": "Vice Admiral Pascual Cervera y Topete",
+            "armored_cruisers": 4,
+            "destroyers": 2
+          }
         },
         "description": "Decisive naval battle of the Spanish-American War. After 37-day blockade of Santiago de Cuba, Admiral Cervera attempted breakout on July 3. Spanish ships emerged in line-ahead formation, turning west to run for open sea. American squadron in hot pursuit destroyed entire Spanish fleet: Infanta Maria Teresa and Almirante Oquendo beached within first hour, Vizcaya beached at 11:06 AM, destroyers Furor and Plutón sunk by armed yacht Gloucester, and Cristóbal Colón - the last survivor - scuttled after 50-mile chase. Only 1 American killed, 1 wounded. Spanish losses: 343 killed, 151 wounded, 1,889 captured including Admiral Cervera.",
         "outcome": "Complete American victory; entire Spanish Caribbean squadron destroyed; sealed American victory in Cuba",
@@ -5968,8 +6701,20 @@
         "linked_pirate_ids": [],
         "historical_significance": "Ended Spanish naval presence in Caribbean. Ensured Cuban independence from Spain. Established US as major naval power. Wrecks now form Naval Battle Underwater Park of Santiago de Cuba - popular dive site.",
         "sources": [
-          {"type": "book", "title": "The Spanish-American War, 1898", "author": "Albert A. Nofi", "year": 1996},
-          {"type": "secondary", "title": "Wikipedia - Battle of Santiago de Cuba", "url": "https://en.wikipedia.org/wiki/Battle_of_Santiago_de_Cuba"}
+          {
+            "type": "book",
+            "title": "The Spanish-American War, 1898",
+            "author": "Albert A. Nofi",
+            "year": 1996
+          },
+          {
+            "type": "secondary",
+            "title": "Wikipedia - Battle of Santiago de Cuba",
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Santiago_de_Cuba"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Battle_of_Santiago_de_Cuba"
         ]
       }
     ]
@@ -6004,8 +6749,19 @@
         "casualties_pirates": "18 killed, 32 wounded",
         "description": "Morgan's most audacious early raid. Third largest Spanish Main port, thought impregnable with three castles. Approached from landward at night. Used captured clergy as human shields (controversial). Demanded 350,000 peso ransom, settled for 100,000 after Spanish counterattack failed. Each buccaneer received £120 - six years' sailor wages.",
         "sources": [
-          {"book": "Empire of Blue Water", "author": "Stephan Talty"},
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "Empire of Blue Water",
+            "author": "Stephan Talty"
+          },
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan",
+          "https://en.wikipedia.org/wiki/Portobelo,_Col%C3%B3n",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6024,8 +6780,19 @@
         "casualties_pirates": "Minimal",
         "description": "Morgan repeated L'Olonnais's 1666 raid. Landed and took San Carlos fortress from landward. Maracaibo found largely deserted - inhabitants fled. Tortured residents to reveal hidden valuables. Spent 3 weeks stripping city before moving to Gibraltar.",
         "sources": [
-          {"book": "Empire of Blue Water", "author": "Stephan Talty"},
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "Empire of Blue Water",
+            "author": "Stephan Talty"
+          },
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan",
+          "https://en.wikipedia.org/wiki/Raid_on_Maracaibo",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6044,7 +6811,14 @@
         "casualties_pirates": "Minimal",
         "description": "After Maracaibo, Morgan sailed across Lake Maracaibo to Gibraltar. Town refused surrender, fort opened fire, but Morgan landed and attacked from jungle. Most inhabitants had fled. Five weeks of torture and looting. On return, Spanish Armada de Barlovento (3 warships, 126 guns) blocked exit - Morgan destroyed them with fireship.",
         "sources": [
-          {"book": "Empire of Blue Water", "author": "Stephan Talty"}
+          {
+            "book": "Empire of Blue Water",
+            "author": "Stephan Talty"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6063,9 +6837,23 @@
         "casualties_pirates": "~15 killed",
         "description": "Morgan's greatest and most controversial raid. Landed at San Lorenzo fortress (captured after bloody fight), crossed isthmus via Chagres River and Camino de Cruces for 9 days through jungle. Spanish army of 1,200 infantry + 400 cavalry + 2 herds of cattle (to stampede) met them at Panama. Cattle panicked wrong way. Spanish routed. City burned (disputed whether Morgan or Spanish did it). Occurred AFTER Treaty of Madrid signed - Morgan arrested, sent to London, but returned as knight and Lt. Governor.",
         "sources": [
-          {"book": "Empire of Blue Water", "author": "Stephan Talty"},
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"},
-          {"book": "Under the Black Flag", "author": "David Cordingly"}
+          {
+            "book": "Empire of Blue Water",
+            "author": "Stephan Talty"
+          },
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          },
+          {
+            "book": "Under the Black Flag",
+            "author": "David Cordingly"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan",
+          "https://en.wikipedia.org/wiki/Sack_of_Panama",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6084,7 +6872,14 @@
         "casualties_pirates": "~100 killed, 70 wounded",
         "description": "Critical fortress at mouth of Chagres River - gateway to Panama. Bradley's assault force attacked up cliff face. Spanish commander blew up powder magazine rather than surrender. Bradley mortally wounded. Victory opened river route for Morgan's main force.",
         "sources": [
-          {"book": "Empire of Blue Water", "author": "Stephan Talty"}
+          {
+            "book": "Empire of Blue Water",
+            "author": "Stephan Talty"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Fort_San_Lorenzo",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6103,8 +6898,18 @@
         "casualties_pirates": "Minimal",
         "description": "Morgan's first raid as admiral. Original target was Havana (too well defended). Marched 50 miles inland to surprise Puerto del Príncipe. Town captured but treasure disappointing - residents had advance warning and hid valuables. French buccaneers left in disgust after English sailor killed French crewmate. Morgan later hung the killer.",
         "sources": [
-          {"book": "Empire of Blue Water", "author": "Stephan Talty"},
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "Empire of Blue Water",
+            "author": "Stephan Talty"
+          },
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6123,8 +6928,18 @@
         "casualties_pirates": "Unknown",
         "description": "L'Olonnais ('Flail of the Spanish') led the first major raid on Maracaibo. Took San Carlos fortress from landward. Tortured residents viciously to reveal hidden treasure - roasted prisoners alive, cut out hearts. Two months of pillaging. Captured Spanish treasure ship en route with 260,000 silver dollars and gems.",
         "sources": [
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"},
-          {"book": "Under the Black Flag", "author": "David Cordingly"}
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          },
+          {
+            "book": "Under the Black Flag",
+            "author": "David Cordingly"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Fran%C3%A7ois_l%27Olonnais",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6143,7 +6958,14 @@
         "casualties_pirates": "Unknown, lighter",
         "description": "After Maracaibo, L'Olonnais moved to Gibraltar on east shore of lake. Despite being outnumbered, pirates slaughtered 500-man garrison. Town held for ransom - paid 20,000 pieces of eight and 500 cattle. L'Olonnais's extreme cruelty made him most feared pirate of the era.",
         "sources": [
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Fran%C3%A7ois_l%27Olonnais",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6162,7 +6984,14 @@
         "casualties_pirates": "Unknown",
         "description": "After successful Maracaibo/Gibraltar raids, L'Olonnais organized massive expedition of 700 pirates. Raided Puerto Cabello before heading to Honduras. His fleet was the largest buccaneer force assembled to that date.",
         "sources": [
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Fran%C3%A7ois_l%27Olonnais",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6181,7 +7010,14 @@
         "casualties_pirates": "Heavy",
         "description": "L'Olonnais's expedition to Central America went badly. After pillaging Puerto Cavallo (Honduras coast), he was ambushed en route to San Pedro. Most of his fleet deserted. Captured two Spanish soldiers - cut out one's heart and gnawed it, threatening the other with same fate unless he showed another route. Eventually wrecked near Pearl Islands, then killed and eaten by Kuna natives in Darién.",
         "sources": [
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Fran%C3%A7ois_l%27Olonnais",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6200,9 +7036,23 @@
         "casualties_pirates": "None",
         "description": "Most audacious pirate action of the Golden Age. Blackbeard blockaded Charleston harbor for 5-6 days, capturing 9 vessels including one with prominent citizens (Samuel Wragg, Council member). Demanded ransom of medicine chest (pirates suffering from syphilis and other diseases). Held hostages including women and children. Governor had no warships to respond. After receiving medicine, released prisoners (stripped of valuables) and sailed away.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"},
-          {"book": "The Republic of Pirates", "author": "Colin Woodard"},
-          {"book": "Blackbeard: America's Most Notorious Pirate", "author": "Angus Konstam"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          },
+          {
+            "book": "The Republic of Pirates",
+            "author": "Colin Woodard"
+          },
+          {
+            "book": "Blackbeard: America's Most Notorious Pirate",
+            "author": "Angus Konstam"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Blackbeard",
+          "https://en.wikipedia.org/wiki/Blackbeard#Blockade_of_Charles_Town",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6221,8 +7071,18 @@
         "casualties_pirates": "None",
         "description": "Roberts sailed into Trepassey harbor flying black flags. All 22 merchant ships and 150 fishing vessels immediately abandoned by crews. Roberts was so angered by captains' cowardice that he had them paraded daily under threat of burning their ships. Took one Bristol brig as new ship, burned all others when departing. Terror spread throughout Newfoundland fishing fleet.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"},
-          {"book": "Villains of All Nations", "author": "Marcus Rediker"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          },
+          {
+            "book": "Villains of All Nations",
+            "author": "Marcus Rediker"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Bartholomew_Roberts",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6241,7 +7101,14 @@
         "casualties_pirates": "None",
         "description": "Roberts raided Ferryland harbor before Trepassey, capturing a dozen vessels. Part of his devastating Newfoundland campaign that effectively halted the fishing season.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Bartholomew_Roberts",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6260,8 +7127,18 @@
         "casualties_pirates": "Captain Howell Davis killed in ambush",
         "description": "Roberts' first action as captain. Captain Davis was killed in Portuguese ambush at Príncipe. Newly-elected captain Roberts led revenge raid - landed at night, killed many men, stole everything valuable. This cemented crew loyalty and began Roberts' legendary career. He would capture 400+ ships over next 3 years.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"},
-          {"book": "Villains of All Nations", "author": "Marcus Rediker"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          },
+          {
+            "book": "Villains of All Nations",
+            "author": "Marcus Rediker"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Bartholomew_Roberts",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6280,7 +7157,15 @@
         "casualties_pirates": "None",
         "description": "Roberts sailed into Ouidah flying black flags. 11 slave ships at anchor immediately struck their colors. Roberts demanded 8 pounds gold dust ransom per ship. When one captain refused, Roberts had his crew board and burn the ship - 80 enslaved Africans died by fire or drowning/sharks. This was Roberts' last major action before his death at Cape Lopez one month later.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Bartholomew_Roberts",
+          "https://en.wikipedia.org/wiki/Ouidah",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6299,7 +7184,14 @@
         "casualties_pirates": "None",
         "description": "Just months after Blackbeard's blockade, Vane raided Charleston again. Took 8 ships at harbor entrance. When slave ship was captured, his associate Charles Yeats took the slaves and surrendered to governor for pardon, betraying Vane. Charleston merchants outfitted sloops under William Rhett to hunt Vane - they captured Stede Bonnet instead.",
         "sources": [
-          {"book": "The Republic of Pirates", "author": "Colin Woodard"}
+          {
+            "book": "The Republic of Pirates",
+            "author": "Colin Woodard"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Charles_Vane",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6318,14 +7210,21 @@
         "casualties_pirates": "None",
         "description": "Low attacked 13 New England fishing vessels sheltering at Port Roseway. Hoisted Jolly Roger and promised no mercy if they resisted. All surrendered. Low took the largest (80-ton schooner) as new flagship 'Fancy', armed with 10 guns. Sank remaining vessels. Several fishermen forcibly pressed into piracy, including Philip Ashton who later escaped and wrote account of his ordeal.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Edward_Low",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
         "id": "braziliano-campeche-raids",
         "date": "1660-01-01",
         "lat": 19.8501,
-        "lng": -90.5260,
+        "lng": -90.526,
         "type": "land_raid",
         "target": "Campeche region, Mexico",
         "pirate_leader": "Roche Braziliano",
@@ -6337,7 +7236,14 @@
         "casualties_pirates": "Unknown",
         "description": "Dutch buccaneer Roche Braziliano conducted multiple raids around Campeche in the 1660s. Notorious for extreme cruelty - roasted Spanish prisoners alive on wooden spits when they refused to surrender their pigs. So feared that Spanish mothers used his name to frighten children. Once captured and sent to Spain but escaped. Disappeared around 1671.",
         "sources": [
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Roche_Braziliano",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6356,8 +7262,18 @@
         "casualties_pirates": "Unknown",
         "description": "William Dampier (later famous explorer/naturalist) joined buccaneer raid across Darién. Group crossed isthmus using Kuna guides, captured Spanish ships on Pacific coast, raided settlements in Peru. Dampier documented flora/fauna throughout. His later book 'A New Voyage Round the World' made him famous and influenced Cook, Darwin, and Nelson.",
         "sources": [
-          {"book": "A Pirate of Exquisite Mind", "author": "Diana & Michael Preston"},
-          {"book": "A New Voyage Round the World", "author": "William Dampier"}
+          {
+            "book": "A Pirate of Exquisite Mind",
+            "author": "Diana & Michael Preston"
+          },
+          {
+            "book": "A New Voyage Round the World",
+            "author": "William Dampier"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/William_Dampier",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6376,7 +7292,14 @@
         "casualties_pirates": "Minimal",
         "description": "Before his infamous later career, Kidd was a legitimate privateer. Commanded Blessed William as part of fleet defending Nevis. When governor refused to pay crews, told them to 'take their pay from the French.' Kidd attacked French island Marie-Galante, destroyed its only town, looted approximately £2,000.",
         "sources": [
-          {"book": "The Pirate Hunter", "author": "Richard Zacks"}
+          {
+            "book": "The Pirate Hunter",
+            "author": "Richard Zacks"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/William_Kidd",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       }
     ]
@@ -6389,13 +7312,27 @@
         "name": "Morgan's Buccaneers / Brethren of the Coast",
         "leader": "Henry Morgan",
         "active_period": "1665-1671",
-        "base": ["Port Royal, Jamaica", "Île-à-Vache, Haiti"],
+        "base": [
+          "Port Royal, Jamaica",
+          "Île-à-Vache, Haiti"
+        ],
         "territory": "Spanish Main - Panama, Venezuela, Cuba",
         "peak_strength": "1,400+ men, 37 ships (Panama raid)",
         "ships": [
-          {"name": "Satisfaction", "guns": 22, "role": "Flagship (1669)"},
-          {"name": "Oxford", "guns": 34, "role": "Flagship (exploded 1669)"},
-          {"name": "Various captured vessels", "role": "Fleet"}
+          {
+            "name": "Satisfaction",
+            "guns": 22,
+            "role": "Flagship (1669)"
+          },
+          {
+            "name": "Oxford",
+            "guns": 34,
+            "role": "Flagship (exploded 1669)"
+          },
+          {
+            "name": "Various captured vessels",
+            "role": "Fleet"
+          }
         ],
         "notable_members": [
           "Henry Morgan (Admiral)",
@@ -6413,8 +7350,19 @@
         "organization": "Operated under English letters of marque. Democratic articles - all shared plunder. Compensation for injuries. Elected officers.",
         "fate": "Dissolved after Panama raid 1671. Morgan arrested but later knighted and made Lt. Governor of Jamaica.",
         "sources": [
-          {"book": "Empire of Blue Water", "author": "Stephan Talty"},
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "Empire of Blue Water",
+            "author": "Stephan Talty"
+          },
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Morgan",
+          "https://en.wikipedia.org/wiki/Brethren_of_the_Coast",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6422,13 +7370,30 @@
         "name": "Blackbeard's Fleet",
         "leader": "Edward Teach (Blackbeard)",
         "active_period": "1716-1718",
-        "base": ["Nassau, Bahamas", "Ocracoke Inlet, NC", "Bath, NC"],
+        "base": [
+          "Nassau, Bahamas",
+          "Ocracoke Inlet, NC",
+          "Bath, NC"
+        ],
         "territory": "Atlantic coast - Caribbean to Virginia",
         "peak_strength": "~300 men, 4 ships",
         "ships": [
-          {"name": "Queen Anne's Revenge", "guns": 40, "tons": 200, "role": "Flagship (grounded June 1718)"},
-          {"name": "Adventure", "guns": 10, "role": "Sloop"},
-          {"name": "Revenge", "guns": 10, "role": "Consort (Bonnet's ship)"}
+          {
+            "name": "Queen Anne's Revenge",
+            "guns": 40,
+            "tons": 200,
+            "role": "Flagship (grounded June 1718)"
+          },
+          {
+            "name": "Adventure",
+            "guns": 10,
+            "role": "Sloop"
+          },
+          {
+            "name": "Revenge",
+            "guns": 10,
+            "role": "Consort (Bonnet's ship)"
+          }
         ],
         "notable_members": [
           "Edward Teach (Captain)",
@@ -6443,9 +7408,23 @@
         "organization": "Standard pirate articles. Blackbeard cultivated terrifying image - lit fuses in beard during battle.",
         "fate": "Blackbeard killed at Battle of Ocracoke, November 22, 1718 by Lt. Robert Maynard.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"},
-          {"book": "The Republic of Pirates", "author": "Colin Woodard"},
-          {"book": "Blackbeard: America's Most Notorious Pirate", "author": "Angus Konstam"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          },
+          {
+            "book": "The Republic of Pirates",
+            "author": "Colin Woodard"
+          },
+          {
+            "book": "Blackbeard: America's Most Notorious Pirate",
+            "author": "Angus Konstam"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Blackbeard",
+          "https://en.wikipedia.org/wiki/Queen_Anne%27s_Revenge",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6453,13 +7432,28 @@
         "name": "Roberts' Fleet (Black Bart's Fleet)",
         "leader": "Bartholomew Roberts",
         "active_period": "1719-1722",
-        "base": ["Mobile - no fixed base", "West African coast"],
+        "base": [
+          "Mobile - no fixed base",
+          "West African coast"
+        ],
         "territory": "Americas (Caribbean, Brazil, Newfoundland) and West Africa",
         "peak_strength": "~400 men, 4 ships",
         "ships": [
-          {"name": "Royal Fortune", "guns": 42, "role": "Flagship (had 4 ships with this name)"},
-          {"name": "Ranger", "guns": 32, "role": "Consort"},
-          {"name": "Little Ranger", "guns": 16, "role": "Storeship"}
+          {
+            "name": "Royal Fortune",
+            "guns": 42,
+            "role": "Flagship (had 4 ships with this name)"
+          },
+          {
+            "name": "Ranger",
+            "guns": 32,
+            "role": "Consort"
+          },
+          {
+            "name": "Little Ranger",
+            "guns": 16,
+            "role": "Storeship"
+          }
         ],
         "notable_members": [
           "Bartholomew Roberts (Captain)",
@@ -6476,8 +7470,18 @@
         "organization": "Famous 'Roberts' Articles' - detailed pirate code. Roberts dressed flamboyantly.",
         "fate": "Roberts killed by grapeshot at Battle of Cape Lopez, February 10, 1722. 52 crew hanged.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"},
-          {"book": "Villains of All Nations", "author": "Marcus Rediker"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          },
+          {
+            "book": "Villains of All Nations",
+            "author": "Marcus Rediker"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Bartholomew_Roberts",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6485,11 +7489,16 @@
         "name": "L'Olonnais's Buccaneers",
         "leader": "François l'Olonnais (Jean-David Nau)",
         "active_period": "1660-1668",
-        "base": ["Tortuga, Haiti"],
+        "base": [
+          "Tortuga, Haiti"
+        ],
         "territory": "Spanish Main - Venezuela, Honduras",
         "peak_strength": "700 men, 8 ships",
         "ships": [
-          {"name": "Various vessels", "role": "Fleet of 8 ships"}
+          {
+            "name": "Various vessels",
+            "role": "Fleet of 8 ships"
+          }
         ],
         "notable_members": [
           "François l'Olonnais (Captain)",
@@ -6504,7 +7513,14 @@
         "organization": "Standard buccaneer articles. L'Olonnais infamous for sadistic torture.",
         "fate": "L'Olonnais killed and eaten by Kuna people in Darién after failed Honduras expedition.",
         "sources": [
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"}
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Fran%C3%A7ois_l%27Olonnais",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6512,13 +7528,28 @@
         "name": "Bellamy's Crew (Whydah Pirates)",
         "leader": "Samuel Bellamy",
         "active_period": "1716-1717",
-        "base": ["Blanco Islet, Tortola (Bellamy Cay)"],
+        "base": [
+          "Blanco Islet, Tortola (Bellamy Cay)"
+        ],
         "territory": "Caribbean, Atlantic coast",
         "peak_strength": "~180 men, 2-3 ships",
         "ships": [
-          {"name": "Whydah Gally", "guns": 28, "tons": 300, "role": "Flagship (captured Feb 1717)"},
-          {"name": "Sultana", "guns": 10, "role": "Former flagship"},
-          {"name": "Marianne", "guns": 8, "role": "Consort under Paulsgrave Williams"}
+          {
+            "name": "Whydah Gally",
+            "guns": 28,
+            "tons": 300,
+            "role": "Flagship (captured Feb 1717)"
+          },
+          {
+            "name": "Sultana",
+            "guns": 10,
+            "role": "Former flagship"
+          },
+          {
+            "name": "Marianne",
+            "guns": 8,
+            "role": "Consort under Paulsgrave Williams"
+          }
         ],
         "notable_members": [
           "Samuel Bellamy (Captain - 'Black Sam')",
@@ -6532,8 +7563,19 @@
         "organization": "Democratic - Bellamy known for mercy. Called 'Robin Hood of the Sea.'",
         "fate": "Whydah wrecked off Cape Cod April 26, 1717. Bellamy and 144 men killed. Wreck found 1984.",
         "sources": [
-          {"book": "The Republic of Pirates", "author": "Colin Woodard"},
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"}
+          {
+            "book": "The Republic of Pirates",
+            "author": "Colin Woodard"
+          },
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Samuel_Bellamy",
+          "https://en.wikipedia.org/wiki/Whydah_Gally",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6541,12 +7583,25 @@
         "name": "Adventure Galley Crew",
         "leader": "William Kidd",
         "active_period": "1696-1699",
-        "base": ["New York", "Madagascar"],
+        "base": [
+          "New York",
+          "Madagascar"
+        ],
         "territory": "Indian Ocean, Red Sea, Caribbean",
         "peak_strength": "~150 men, 1-2 ships",
         "ships": [
-          {"name": "Adventure Galley", "guns": 34, "tons": 287, "role": "Flagship (abandoned 1698)"},
-          {"name": "Quedagh Merchant", "guns": 40, "tons": 400, "role": "Prize ship"}
+          {
+            "name": "Adventure Galley",
+            "guns": 34,
+            "tons": 287,
+            "role": "Flagship (abandoned 1698)"
+          },
+          {
+            "name": "Quedagh Merchant",
+            "guns": 40,
+            "tons": 400,
+            "role": "Prize ship"
+          }
         ],
         "notable_members": [
           "William Kidd (Captain)",
@@ -6558,7 +7613,14 @@
         "organization": "Started as legitimate privateer with royal commission.",
         "fate": "Kidd hanged for piracy and murder May 23, 1701. Legend of buried treasure.",
         "sources": [
-          {"book": "The Pirate Hunter", "author": "Richard Zacks"}
+          {
+            "book": "The Pirate Hunter",
+            "author": "Richard Zacks"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/William_Kidd",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6566,12 +7628,22 @@
         "name": "Vane's Crew",
         "leader": "Charles Vane",
         "active_period": "1717-1719",
-        "base": ["Nassau, Bahamas"],
+        "base": [
+          "Nassau, Bahamas"
+        ],
         "territory": "Bahamas, Carolinas, Caribbean",
         "peak_strength": "~90 men, 2 ships",
         "ships": [
-          {"name": "Lark/Ranger", "guns": 6, "role": "Sloop"},
-          {"name": "Katherine", "guns": 24, "role": "Captured sloop"}
+          {
+            "name": "Lark/Ranger",
+            "guns": 6,
+            "role": "Sloop"
+          },
+          {
+            "name": "Katherine",
+            "guns": 24,
+            "role": "Captured sloop"
+          }
         ],
         "notable_members": [
           "Charles Vane (Captain)",
@@ -6587,8 +7659,18 @@
         "organization": "Notorious for cruelty and torture. Refused King's Pardon.",
         "fate": "Vane hanged at Port Royal March 1721.",
         "sources": [
-          {"book": "The Republic of Pirates", "author": "Colin Woodard"},
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"}
+          {
+            "book": "The Republic of Pirates",
+            "author": "Colin Woodard"
+          },
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Charles_Vane",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6596,11 +7678,17 @@
         "name": "Rackham's Crew (Calico Jack's Pirates)",
         "leader": "John Rackham",
         "active_period": "1718-1720",
-        "base": ["Nassau, Bahamas", "Cuba"],
+        "base": [
+          "Nassau, Bahamas",
+          "Cuba"
+        ],
         "territory": "Bahamas, Jamaica, Cuba",
         "peak_strength": "~20 men, 1 sloop",
         "ships": [
-          {"name": "William", "role": "Stolen sloop from Nassau"}
+          {
+            "name": "William",
+            "role": "Stolen sloop from Nassau"
+          }
         ],
         "notable_members": [
           "John Rackham (Captain - 'Calico Jack')",
@@ -6613,8 +7701,20 @@
         "organization": "Small-time operation. Notable for two famous female pirates.",
         "fate": "Captured October 1720. Rackham hanged November 18, 1720 at Port Royal.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"},
-          {"book": "The Republic of Pirates", "author": "Colin Woodard"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          },
+          {
+            "book": "The Republic of Pirates",
+            "author": "Colin Woodard"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Calico_Jack",
+          "https://en.wikipedia.org/wiki/Anne_Bonny",
+          "https://en.wikipedia.org/wiki/Mary_Read",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6622,11 +7722,18 @@
         "name": "Bonnet's Crew (Gentleman Pirate)",
         "leader": "Stede Bonnet",
         "active_period": "1717-1718",
-        "base": ["Barbados (origin)", "Nassau"],
+        "base": [
+          "Barbados (origin)",
+          "Nassau"
+        ],
         "territory": "Atlantic coast - Caribbean to Delaware Bay",
         "peak_strength": "~70 men, 1 sloop",
         "ships": [
-          {"name": "Revenge", "guns": 10, "role": "Sloop, later renamed Royal James"}
+          {
+            "name": "Revenge",
+            "guns": 10,
+            "role": "Sloop, later renamed Royal James"
+          }
         ],
         "notable_members": [
           "Stede Bonnet (Captain - 'Gentleman Pirate')",
@@ -6639,8 +7746,18 @@
         "organization": "Unusual - Bonnet bought his ship outright. Had no sailing experience.",
         "fate": "Captured September 1718. Hanged at Charleston December 10, 1718.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"},
-          {"book": "The Republic of Pirates", "author": "Colin Woodard"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          },
+          {
+            "book": "The Republic of Pirates",
+            "author": "Colin Woodard"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Stede_Bonnet",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6648,11 +7765,16 @@
         "name": "The Flying Gang (Nassau Pirates)",
         "leader": "Collective leadership",
         "active_period": "1713-1718",
-        "base": ["Nassau, New Providence, Bahamas"],
+        "base": [
+          "Nassau, New Providence, Bahamas"
+        ],
         "territory": "Bahamas, Florida Straits, Caribbean",
         "peak_strength": "~1,000 pirates total",
         "ships": [
-          {"name": "Various vessels", "role": "Multiple crews, multiple ships"}
+          {
+            "name": "Various vessels",
+            "role": "Multiple crews, multiple ships"
+          }
         ],
         "notable_members": [
           "Benjamin Hornigold (early leader)",
@@ -6671,7 +7793,14 @@
         "organization": "Loose confederation of pirate crews. Democratic governance.",
         "fate": "Ended when Woodes Rogers arrived as governor July 1718 with pardons and warships.",
         "sources": [
-          {"book": "The Republic of Pirates", "author": "Colin Woodard"}
+          {
+            "book": "The Republic of Pirates",
+            "author": "Colin Woodard"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Republic_of_Pirates",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6679,11 +7808,17 @@
         "name": "Every's Fleet (King of Pirates)",
         "leader": "Henry Every (Avery)",
         "active_period": "1694-1695",
-        "base": ["Mobile - Madagascar area"],
+        "base": [
+          "Mobile - Madagascar area"
+        ],
         "territory": "Atlantic, Indian Ocean, Red Sea",
         "peak_strength": "~150 men, 6 ships combined fleet",
         "ships": [
-          {"name": "Fancy", "guns": 46, "role": "Flagship"}
+          {
+            "name": "Fancy",
+            "guns": 46,
+            "role": "Flagship"
+          }
         ],
         "notable_members": [
           "Henry Every (Captain)"
@@ -6694,7 +7829,14 @@
         "organization": "Started as mutiny. Every elected captain.",
         "fate": "After Gang-i-Sawai capture, Every disappeared. Never caught despite first global manhunt.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Henry_Every",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6702,11 +7844,16 @@
         "name": "Buccaneers of Tortuga",
         "leader": "Various (loose confederation)",
         "active_period": "1630-1700",
-        "base": ["Tortuga (Île de la Tortue), Haiti"],
+        "base": [
+          "Tortuga (Île de la Tortue), Haiti"
+        ],
         "territory": "Spanish Main, Caribbean",
         "peak_strength": "2,000+ at peak",
         "ships": [
-          {"name": "Various small vessels", "role": "Typically small sloops"}
+          {
+            "name": "Various small vessels",
+            "role": "Typically small sloops"
+          }
         ],
         "notable_members": [
           "Pierre Le Grand",
@@ -6722,8 +7869,19 @@
         "organization": "Originally hunters. Loose brotherhood with democratic customs.",
         "fate": "Gradually absorbed into colonial systems. Nassau inherited traditions.",
         "sources": [
-          {"book": "The Buccaneers of America", "author": "Alexandre Exquemelin"},
-          {"book": "Under the Black Flag", "author": "David Cordingly"}
+          {
+            "book": "The Buccaneers of America",
+            "author": "Alexandre Exquemelin"
+          },
+          {
+            "book": "Under the Black Flag",
+            "author": "David Cordingly"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Buccaneers",
+          "https://en.wikipedia.org/wiki/Tortuga_(Haiti)",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       },
       {
@@ -6731,13 +7889,27 @@
         "name": "Low's Fleet (Ned Low's Pirates)",
         "leader": "Edward Low",
         "active_period": "1721-1724",
-        "base": ["Mobile - no fixed base"],
+        "base": [
+          "Mobile - no fixed base"
+        ],
         "territory": "New England, Nova Scotia, Azores, Caribbean",
         "peak_strength": "~100 men, 3-4 ships",
         "ships": [
-          {"name": "Fancy", "guns": 10, "role": "Flagship (schooner)"},
-          {"name": "Ranger", "guns": 8, "role": "Consort"},
-          {"name": "Rose Pink", "guns": 14, "role": "Later flagship"}
+          {
+            "name": "Fancy",
+            "guns": 10,
+            "role": "Flagship (schooner)"
+          },
+          {
+            "name": "Ranger",
+            "guns": 8,
+            "role": "Consort"
+          },
+          {
+            "name": "Rose Pink",
+            "guns": 14,
+            "role": "Later flagship"
+          }
         ],
         "notable_members": [
           "Edward Low (Captain)",
@@ -6751,9 +7923,1064 @@
         "organization": "Notorious for sadistic cruelty - even other pirates feared him.",
         "fate": "Uncertain. Possibly hanged by French at Martinique 1724 or escaped to Brazil.",
         "sources": [
-          {"book": "A General History of the Pyrates", "author": "Captain Charles Johnson"}
+          {
+            "book": "A General History of the Pyrates",
+            "author": "Captain Charles Johnson"
+          }
+        ],
+        "links": [
+          "https://en.wikipedia.org/wiki/Edward_Low",
+          "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy"
         ]
       }
     ]
+  },
+  "gulf_oil_wells": {
+    "metadata": {
+      "description": "Oil and gas platforms/wells in Gulf of Mexico - major installations, historic firsts, disaster sites, and deepwater pioneers",
+      "source": "BOEM, Wikipedia, offshore-technology.com, industry publications",
+      "updated": "2026-02-03",
+      "coverage": "US Federal waters (OCS), Mexican waters (Bay of Campeche)",
+      "notes": "Focus on named/notable platforms, deepwater installations, disaster sites, and historic firsts. There are 2000+ platforms in the Gulf - this is a curated selection of significant installations."
+    },
+    "platforms": [
+      {
+        "id": "deepwater-horizon",
+        "name": "Deepwater Horizon",
+        "operator": "BP (leased from Transocean)",
+        "lat": 28.7417,
+        "lng": -88.3842,
+        "status": "destroyed",
+        "type": "semi-submersible",
+        "water_depth_ft": 5000,
+        "install_date": "2001",
+        "destroyed_date": "2010-04-20",
+        "production": "drilling rig",
+        "area": "Mississippi Canyon Block 252 (Macondo Prospect)",
+        "notes": "Exploded April 20, 2010 killing 11 workers. Caused largest marine oil spill in history (134-206 million barrels). Rig sank April 22, 2010, now rests at 5000ft depth. Previously drilled world's deepest oil well at Tiber field (35,055 ft).",
+        "disaster_deaths": 11,
+        "sources": [
+          "Wikipedia - Deepwater Horizon"
+        ]
+      },
+      {
+        "id": "thunder-horse-pdq",
+        "name": "Thunder Horse PDQ",
+        "operator": "BP (75%), ExxonMobil (25%)",
+        "lat": 28.1091,
+        "lng": -88.4944,
+        "status": "active",
+        "type": "semi-submersible",
+        "water_depth_ft": 6300,
+        "install_date": "2005",
+        "production_start": "2008",
+        "production": "both",
+        "capacity_bpd": 250000,
+        "capacity_gas_mcfd": 200,
+        "area": "Mississippi Canyon Blocks 776-778, 822",
+        "notes": "Largest moored semi-submersible production platform in the world. Estimated 1+ billion barrels reserves. Survived Hurricane Dennis (2005) with severe listing due to incorrectly plumbed ballast system. Originally named 'Crazy Horse' - renamed out of respect for Lakota heritage.",
+        "sources": [
+          "Wikipedia - Thunder Horse Oil Field"
+        ]
+      },
+      {
+        "id": "atlantis-pq",
+        "name": "Atlantis PQ",
+        "operator": "BP (56%), Woodside Energy (44%)",
+        "lat": 27.195278,
+        "lng": -90.026944,
+        "status": "active",
+        "type": "semi-submersible",
+        "water_depth_ft": 7100,
+        "install_date": "2007",
+        "production_start": "2007-10",
+        "production": "both",
+        "capacity_bpd": 200000,
+        "capacity_gas_mcfd": 180,
+        "area": "Green Canyon Blocks 699, 700, 742-744",
+        "notes": "Third largest oil field in Gulf of Mexico. Estimated 600 million barrels reserves. Subject of whistleblower safety concerns in 2010 regarding incomplete engineering documentation.",
+        "sources": [
+          "Wikipedia - Atlantis Oil Field"
+        ]
+      },
+      {
+        "id": "perdido",
+        "name": "Perdido",
+        "operator": "Shell (35%), Chevron (37.5%), BP (27.5%)",
+        "lat": 26.12889,
+        "lng": -94.89806,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 8040,
+        "install_date": "2010",
+        "production_start": "2010",
+        "production": "both",
+        "capacity_bpd": 100000,
+        "capacity_gas_mcfd": 200,
+        "area": "Alaminos Canyon, Perdido Fold Belt",
+        "notes": "Deepest floating oil platform in the world at 2,450m (8,040 ft). Hub for Great White, Tobago, and Silvertip fields. Spar hull built in Finland, transported 13,200 km to Gulf. 168-person crew. Spanish name means 'lost'.",
+        "sources": [
+          "Wikipedia - Perdido (oil platform)"
+        ]
+      },
+      {
+        "id": "mars-tlp",
+        "name": "Mars TLP",
+        "operator": "Shell (majority), BP (minority)",
+        "lat": 28.1695,
+        "lng": -89.2229,
+        "status": "active",
+        "type": "tension-leg",
+        "water_depth_ft": 2940,
+        "install_date": "1996",
+        "production_start": "1996-07-08",
+        "production": "both",
+        "capacity_bpd": 220000,
+        "capacity_gas_mcfd": 220,
+        "area": "Mississippi Canyon Blocks 762, 763, 806, 807, 850, 851",
+        "notes": "Was deepest TLP when installed. Severely damaged by Hurricane Katrina (2005) but returned to production May 2006. Recovery project encompassed 1+ million man-hours. Oil exported 116 miles to Clovelly, LA.",
+        "sources": [
+          "Wikipedia - Mars (oil platform)"
+        ]
+      },
+      {
+        "id": "olympus-tlp",
+        "name": "Olympus TLP",
+        "operator": "Shell (71.5%), BP (28.5%)",
+        "lat": 28.159886,
+        "lng": -89.239128,
+        "status": "active",
+        "type": "tension-leg",
+        "water_depth_ft": 3000,
+        "install_date": "2013",
+        "production_start": "2014-02",
+        "production": "both",
+        "capacity_bpd": 100000,
+        "area": "Mississippi Canyon Blocks 762-764, 805-807, 850-851",
+        "notes": "Mars B development - second platform for Mars field. Combined with Mars A enables 48 wells and 350,000+ bpd capacity. Hull fabricated in South Korea, transported by MV Blue Marlin.",
+        "sources": [
+          "Wikipedia - Olympus tension leg platform"
+        ]
+      },
+      {
+        "id": "petronius",
+        "name": "Petronius Compliant Tower",
+        "operator": "Chevron (originally Texaco), Marathon Oil",
+        "lat": 29.10833,
+        "lng": -87.94167,
+        "status": "active",
+        "type": "compliant-tower",
+        "water_depth_ft": 1754,
+        "total_height_ft": 2100,
+        "install_date": "2000",
+        "production_start": "2000",
+        "production": "both",
+        "capacity_bpd": 60000,
+        "capacity_gas_mcfd": 100,
+        "area": "Viosca Knoll Block 786",
+        "notes": "Was tallest freestanding structure in world 2000-2006 until surpassed by Burj Khalifa. Total height 640m (2,100 ft) from mudline. Named after Roman writer Petronius. Can sway >2% of height. Cost $500 million.",
+        "sources": [
+          "Wikipedia - Petronius (oil platform)"
+        ]
+      },
+      {
+        "id": "baldpate",
+        "name": "Baldpate Compliant Tower",
+        "operator": "Hess Corporation (originally Amerada Hess)",
+        "lat": 27.7,
+        "lng": -93.167,
+        "status": "active",
+        "type": "compliant-tower",
+        "water_depth_ft": 1647,
+        "total_height_ft": 1908,
+        "install_date": "1998",
+        "production": "both",
+        "area": "Garden Banks",
+        "notes": "Second tallest freestanding structure in water. First freestanding compliant tower (Lena was guyed). Designed to move up to 10 feet laterally in severe storms. Weight 38,700 tons total. Was world's tallest freestanding structure 1998-2000.",
+        "sources": [
+          "Wikipedia - Baldpate (oil platform)"
+        ]
+      },
+      {
+        "id": "bullwinkle",
+        "name": "Bullwinkle Platform",
+        "operator": "Talos Energy (originally Shell)",
+        "lat": 27.88361,
+        "lng": -90.90111,
+        "status": "active",
+        "type": "fixed",
+        "water_depth_ft": 1352,
+        "total_height_ft": 1736,
+        "install_date": "1988",
+        "production": "both",
+        "area": "Green Canyon Block 65",
+        "notes": "Third tallest freestanding structure ever built at completion (after CN Tower and Ostankino Tower). Tallest in US at time - 6ft taller than Sears Tower pinnacle. Weight 77,000 tons (jacket 49,375 tons). Jacket is second tallest object ever moved. Cost $500 million. Planned for decommissioning.",
+        "sources": [
+          "Wikipedia - Bullwinkle (oil platform)"
+        ]
+      },
+      {
+        "id": "mad-dog",
+        "name": "Mad Dog Spar",
+        "operator": "BP (60.5%), Woodside Energy (23.9%), Chevron (15.6%)",
+        "lat": 27.18833,
+        "lng": -91.08667,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 6000,
+        "install_date": "2005",
+        "production_start": "2005",
+        "production": "both",
+        "capacity_bpd": 100000,
+        "capacity_gas_mcfd": 60,
+        "area": "Green Canyon Blocks 782, 825, 826",
+        "notes": "Truss spar platform manufactured in Finland. Hull 128ft diameter, 555ft length. Reserves 200-450 million barrels. Drilling derrick toppled by Hurricane Ike (2008), replaced 2012. Oil via Caesar pipeline, gas via Cleopatra pipeline.",
+        "sources": [
+          "Wikipedia - Mad Dog oil field"
+        ]
+      },
+      {
+        "id": "magnolia",
+        "name": "Magnolia ETLP",
+        "operator": "ConocoPhillips (formerly)",
+        "lat": 27.20385,
+        "lng": -92.2026,
+        "status": "active",
+        "type": "tension-leg",
+        "water_depth_ft": 4698,
+        "install_date": "2004",
+        "production": "both",
+        "capacity_bpd": 50000,
+        "capacity_gas_mcfd": 150,
+        "area": "Garden Banks Blocks 783, 784",
+        "notes": "Was world's deepest Extended Tension Leg Platform at 1,432m until Big Foot (2018). Located along southern edge of Titan Mini-Basin. Four circular columns connected by rectangular pontoons.",
+        "sources": [
+          "Wikipedia - Magnolia (oil platform)"
+        ]
+      },
+      {
+        "id": "eugene-island-330",
+        "name": "Eugene Island Block 330 Complex",
+        "operator": "Apache, Devon Energy, Shell, Chevron (various blocks)",
+        "lat": 28.233,
+        "lng": -91.733,
+        "status": "active",
+        "type": "fixed",
+        "water_depth_ft": 250,
+        "install_date": "1972",
+        "production_start": "1972-09",
+        "production": "both",
+        "peak_bpd": 95290,
+        "area": "Eugene Island Blocks 313, 314, 330, 331, 332, 337, 338",
+        "notes": "Major producing field - largest in Federal OCS 1975-1980. Famous for anomalous production recovery in 1990s (production increased after decline, leading to abiotic oil theories). Peak 95,290 bpd (1977). Nine platforms at peak.",
+        "sources": [
+          "Wikipedia - Eugene Island block 330 oil field"
+        ]
+      },
+      {
+        "id": "tiber",
+        "name": "Tiber Oil Field",
+        "operator": "BP (62%), Petrobras (20%), ConocoPhillips (18%)",
+        "lat": 26.878333,
+        "lng": -93.268333,
+        "status": "inactive",
+        "type": "subsea",
+        "water_depth_ft": 4130,
+        "discovery_date": "2009-09",
+        "production": "oil",
+        "area": "Keathley Canyon Block 102",
+        "notes": "Giant deepwater discovery - estimated 4-6 billion barrels in place. Drilled by Deepwater Horizon (35,055 ft well - world's deepest at time). Lower Tertiary formation. Development on hold after Deepwater Horizon disaster. ~250 miles SE of Houston.",
+        "sources": [
+          "Wikipedia - Tiber Oil Field"
+        ]
+      },
+      {
+        "id": "kaskida",
+        "name": "Kaskida Oil Field",
+        "operator": "BP (100%)",
+        "lat": 26.85,
+        "lng": -93.5,
+        "status": "inactive",
+        "type": "subsea",
+        "water_depth_ft": 5860,
+        "discovery_date": "2006",
+        "production": "oil",
+        "area": "Keathley Canyon Blocks 291, 292",
+        "notes": "Giant Paleogene discovery - estimated 3 billion barrels in place. Also drilled by Deepwater Horizon. One of largest Lower Tertiary discoveries. 250 miles SW of New Orleans. Well depth ~32,500 ft.",
+        "sources": [
+          "Wikipedia - Kaskida Oil Field"
+        ]
+      },
+      {
+        "id": "cognac",
+        "name": "Cognac Platform",
+        "operator": "Shell",
+        "lat": 29.0,
+        "lng": -88.5,
+        "status": "active",
+        "type": "fixed",
+        "water_depth_ft": 1027,
+        "total_height_ft": 1265,
+        "install_date": "1977",
+        "production": "both",
+        "area": "Mississippi Canyon",
+        "notes": "Historic platform - was deepest fixed platform in world when built. Jacket weight 59,000 tons. Cost $100-265 million. Built by McDermott Engineering. Pioneered deep water fixed platform technology.",
+        "sources": [
+          "Wikipedia - List of tallest oil platforms"
+        ]
+      },
+      {
+        "id": "lena",
+        "name": "Lena Platform",
+        "operator": "Exxon",
+        "lat": 28.25,
+        "lng": -89.0,
+        "status": "active",
+        "type": "compliant-tower",
+        "water_depth_ft": 1014,
+        "total_height_ft": 1300,
+        "install_date": "1983",
+        "production": "both",
+        "area": "Mississippi Canyon",
+        "notes": "FIRST compliant tower platform ever built (guyed design). Historic engineering milestone. Jacket height 328.5m (1,078 ft). Weight 24,000-27,000 tons. Built by Brown & Root. Proved viability of compliant tower concept for deep water.",
+        "sources": [
+          "Wikipedia - List of tallest oil platforms"
+        ]
+      },
+      {
+        "id": "pompano",
+        "name": "Pompano Platform",
+        "operator": "Stone Energy (originally BP)",
+        "lat": 28.6,
+        "lng": -89.1,
+        "status": "active",
+        "type": "fixed",
+        "water_depth_ft": 1289,
+        "total_height_ft": 1565,
+        "install_date": "1994",
+        "production": "both",
+        "area": "Viosca Knoll",
+        "notes": "Truss tower design. Jacket weight 39,890 tons. Built by McDermott Engineering.",
+        "sources": [
+          "Wikipedia - List of tallest oil platforms"
+        ]
+      },
+      {
+        "id": "coelacanth",
+        "name": "Coelacanth Platform",
+        "operator": "Walter Oil & Gas Corporation (50.5%)",
+        "lat": 28.4,
+        "lng": -88.8,
+        "status": "active",
+        "type": "fixed",
+        "water_depth_ft": 1186,
+        "total_height_ft": 1312,
+        "install_date": "2016",
+        "production": "both",
+        "area": "Mississippi Canyon",
+        "notes": "Modern fixed platform. Jacket height 366m (1,200 ft). Weight 30,000 tons. Built by Gulf Marine Fabricators. Named after the prehistoric fish (coelacanth).",
+        "sources": [
+          "Wikipedia - List of tallest oil platforms"
+        ]
+      },
+      {
+        "id": "cerveza",
+        "name": "Cerveza Platform",
+        "operator": "Unocal (now Chevron)",
+        "lat": 28.1,
+        "lng": -90.2,
+        "status": "active",
+        "type": "fixed",
+        "water_depth_ft": 935,
+        "total_height_ft": 1073,
+        "install_date": "1981",
+        "production": "both",
+        "area": "Green Canyon",
+        "notes": "Truss tower. Jacket weight 26,000 tons. Built by McDermott Engineering. Cost $90 million. Jacket height 952 ft. Spanish for 'beer'.",
+        "sources": [
+          "Wikipedia - List of tallest oil platforms"
+        ]
+      },
+      {
+        "id": "harmony",
+        "name": "Harmony Platform",
+        "operator": "Exxon",
+        "lat": 34.44,
+        "lng": -120.25,
+        "status": "active",
+        "type": "fixed",
+        "water_depth_ft": 1198,
+        "total_height_ft": 1200,
+        "install_date": "1992",
+        "production": "both",
+        "area": "Santa Barbara Channel, California",
+        "notes": "Pacific offshore - not Gulf of Mexico but included for comparison. Tallest steel jacket built outside US. Jacket fabricated in South Korea by Hyundai. Weight 42,900 tons.",
+        "sources": [
+          "Wikipedia - List of tallest oil platforms"
+        ]
+      },
+      {
+        "id": "ixtoc-i",
+        "name": "Ixtoc I",
+        "operator": "Pemex",
+        "lat": 19.408333,
+        "lng": -92.325,
+        "status": "destroyed",
+        "type": "semi-submersible",
+        "water_depth_ft": 164,
+        "install_date": "1979",
+        "destroyed_date": "1979-06-03",
+        "production": "drilling rig",
+        "area": "Bay of Campeche, Mexico",
+        "notes": "MAJOR DISASTER: Blowout June 3, 1979 caused second largest marine oil spill in history (~3 million barrels over 10 months). Rig (Sedco 135) caught fire and sank. Capped March 23, 1980. Red Adair brought in to help. Pemex paid $100 million cleanup, avoided most claims via sovereign immunity.",
+        "disaster_deaths": 0,
+        "oil_spilled_barrels": 3000000,
+        "sources": [
+          "Wikipedia - Ixtoc I oil spill"
+        ]
+      },
+      {
+        "id": "na-kika",
+        "name": "Na Kika",
+        "operator": "BP (50%), Shell (50%)",
+        "lat": 27.9,
+        "lng": -89.4,
+        "status": "active",
+        "type": "semi-submersible",
+        "water_depth_ft": 6340,
+        "install_date": "2003",
+        "production_start": "2003",
+        "production": "both",
+        "area": "Mississippi Canyon",
+        "notes": "Hawaiian name meaning 'to dance'. Hosts production from 6 subsea fields. First permanent production facility at this water depth when installed.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "genesis",
+        "name": "Genesis Spar",
+        "operator": "Chevron",
+        "lat": 28.15,
+        "lng": -89.6,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 2590,
+        "install_date": "1999",
+        "production_start": "1999",
+        "production": "both",
+        "area": "Green Canyon Block 205",
+        "notes": "First spar platform in Gulf of Mexico. Proved viability of spar concept for deepwater. Classic spar design.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "hoover-diana",
+        "name": "Hoover Diana",
+        "operator": "ExxonMobil",
+        "lat": 27.55,
+        "lng": -91.2,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 4825,
+        "install_date": "2000",
+        "production_start": "2000",
+        "production": "both",
+        "area": "Alaminos Canyon",
+        "notes": "Large spar serving both Hoover and Diana fields. ExxonMobil operated.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "marco-polo",
+        "name": "Marco Polo TLP",
+        "operator": "Anadarko",
+        "lat": 27.5,
+        "lng": -90.5,
+        "status": "active",
+        "type": "tension-leg",
+        "water_depth_ft": 4300,
+        "install_date": "2004",
+        "production_start": "2004",
+        "production": "both",
+        "area": "Green Canyon Block 608",
+        "notes": "Was world's deepest TLP when installed at 1,311m. Dry tree TLP design.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "neptune",
+        "name": "Neptune Spar",
+        "operator": "BHP",
+        "lat": 28.3,
+        "lng": -89.7,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 1930,
+        "install_date": "1997",
+        "production_start": "1997",
+        "production": "both",
+        "area": "Viosca Knoll",
+        "notes": "Early spar development. First spar with dry tree wells.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "ursa",
+        "name": "Ursa TLP",
+        "operator": "Shell",
+        "lat": 28.1,
+        "lng": -89.0,
+        "status": "active",
+        "type": "tension-leg",
+        "water_depth_ft": 3950,
+        "install_date": "1999",
+        "production_start": "1999",
+        "production": "both",
+        "capacity_bpd": 150000,
+        "area": "Mississippi Canyon Block 809",
+        "notes": "Large TLP development. One of Shell's major Gulf producers. Near Mars field.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "auger",
+        "name": "Auger TLP",
+        "operator": "Shell",
+        "lat": 27.9,
+        "lng": -90.9,
+        "status": "active",
+        "type": "tension-leg",
+        "water_depth_ft": 2860,
+        "install_date": "1994",
+        "production_start": "1994",
+        "production": "both",
+        "area": "Garden Banks Block 426",
+        "notes": "First TLP in deepwater Gulf of Mexico. Proved viability of TLP concept for deep water. Historic platform.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "devils-tower",
+        "name": "Devils Tower",
+        "operator": "Dominion (now Williams)",
+        "lat": 27.25,
+        "lng": -90.8,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 5610,
+        "install_date": "2004",
+        "production_start": "2004",
+        "production": "both",
+        "area": "Mississippi Canyon Block 773",
+        "notes": "First cell spar in Gulf. Innovative cell spar truss design.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "horn-mountain",
+        "name": "Horn Mountain",
+        "operator": "BP",
+        "lat": 27.5,
+        "lng": -89.9,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 5400,
+        "install_date": "2002",
+        "production_start": "2002",
+        "production": "both",
+        "area": "Mississippi Canyon",
+        "notes": "BP operated spar platform.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "front-runner",
+        "name": "Front Runner",
+        "operator": "Murphy Oil",
+        "lat": 27.4,
+        "lng": -90.4,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 3350,
+        "install_date": "2004",
+        "production_start": "2004",
+        "production": "both",
+        "area": "Green Canyon Blocks 338, 339",
+        "notes": "Murphy Oil operated spar.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "medusa",
+        "name": "Medusa Spar",
+        "operator": "Murphy Oil",
+        "lat": 27.3,
+        "lng": -89.3,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 2223,
+        "install_date": "2003",
+        "production_start": "2003",
+        "production": "both",
+        "area": "Mississippi Canyon Block 582",
+        "notes": "Murphy Oil operated spar platform.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "constitution",
+        "name": "Constitution Spar",
+        "operator": "Anadarko",
+        "lat": 27.2,
+        "lng": -90.3,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 4966,
+        "install_date": "2006",
+        "production_start": "2006",
+        "production": "both",
+        "area": "Green Canyon Block 680",
+        "notes": "Anadarko operated deepwater spar.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "red-hawk",
+        "name": "Red Hawk",
+        "operator": "Kerr-McGee (now Anadarko)",
+        "lat": 27.6,
+        "lng": -90.7,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 5300,
+        "install_date": "2004",
+        "production_start": "2004",
+        "production": "gas",
+        "area": "Garden Banks Block 877",
+        "notes": "First cell spar. Primarily gas production. Now Anadarko operated.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "gunnison",
+        "name": "Gunnison Spar",
+        "operator": "Anadarko",
+        "lat": 27.4,
+        "lng": -90.1,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 3150,
+        "install_date": "2004",
+        "production_start": "2004",
+        "production": "both",
+        "area": "Garden Banks Block 668",
+        "notes": "Anadarko operated truss spar.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "boomvang",
+        "name": "Boomvang",
+        "operator": "Kerr-McGee (now Anadarko)",
+        "lat": 27.65,
+        "lng": -91.5,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 3500,
+        "install_date": "2002",
+        "production_start": "2002",
+        "production": "both",
+        "area": "East Breaks Block 643",
+        "notes": "Mini-spar platform. Nautical term for 'boom vang' - sailing equipment.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "nansen",
+        "name": "Nansen",
+        "operator": "Kerr-McGee (now Anadarko)",
+        "lat": 27.6,
+        "lng": -91.4,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 3650,
+        "install_date": "2001",
+        "production_start": "2001",
+        "production": "both",
+        "area": "East Breaks Block 602",
+        "notes": "Twin to Boomvang spar. Named after Norwegian explorer Fridtjof Nansen.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "morpeth",
+        "name": "Morpeth",
+        "operator": "Arena (originally Conoco)",
+        "lat": 27.45,
+        "lng": -91.2,
+        "status": "active",
+        "type": "spar",
+        "water_depth_ft": 1710,
+        "install_date": "1998",
+        "production_start": "1998",
+        "production": "both",
+        "area": "Ewing Bank Block 921",
+        "notes": "Small field development spar. One of early Gulf spars.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "typhoon",
+        "name": "Typhoon TLP",
+        "operator": "Chevron",
+        "lat": 27.5,
+        "lng": -89.5,
+        "status": "inactive",
+        "type": "tension-leg",
+        "water_depth_ft": 2100,
+        "install_date": "2001",
+        "production_start": "2001",
+        "production": "both",
+        "area": "Green Canyon Block 237",
+        "notes": "Chevron operated mini-TLP. SeaStar design.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "brutus",
+        "name": "Brutus TLP",
+        "operator": "Shell",
+        "lat": 27.8,
+        "lng": -89.65,
+        "status": "active",
+        "type": "tension-leg",
+        "water_depth_ft": 2985,
+        "install_date": "2001",
+        "production_start": "2001",
+        "production": "both",
+        "area": "Green Canyon Block 158",
+        "notes": "Shell operated TLP near other Shell deepwater assets.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "jolliet",
+        "name": "Jolliet TLP",
+        "operator": "Conoco (now ConocoPhillips)",
+        "lat": 27.55,
+        "lng": -89.45,
+        "status": "inactive",
+        "type": "tension-leg",
+        "water_depth_ft": 1760,
+        "install_date": "1989",
+        "production_start": "1989",
+        "production": "both",
+        "area": "Green Canyon Block 184",
+        "notes": "First TLP in Gulf of Mexico. Historic platform that proved TLP concept. Named after French explorer Louis Jolliet.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "who-dat",
+        "name": "Who Dat",
+        "operator": "LLOG Exploration",
+        "lat": 27.45,
+        "lng": -89.55,
+        "status": "active",
+        "type": "semi-submersible",
+        "water_depth_ft": 3000,
+        "install_date": "2011",
+        "production_start": "2011",
+        "production": "both",
+        "area": "Mississippi Canyon",
+        "notes": "Named after New Orleans Saints' rallying cry 'Who Dat'. Independent operator development.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "delta-house",
+        "name": "Delta House",
+        "operator": "LLOG Exploration",
+        "lat": 27.35,
+        "lng": -89.45,
+        "status": "active",
+        "type": "floating-production",
+        "water_depth_ft": 4500,
+        "install_date": "2015",
+        "production_start": "2015",
+        "production": "both",
+        "area": "Mississippi Canyon",
+        "notes": "LLOG operated FPS. Hub for multiple deepwater fields.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "big-foot",
+        "name": "Big Foot",
+        "operator": "Chevron",
+        "lat": 27.0,
+        "lng": -91.8,
+        "status": "active",
+        "type": "tension-leg",
+        "water_depth_ft": 5180,
+        "install_date": "2018",
+        "production_start": "2018",
+        "production": "both",
+        "area": "Walker Ridge Block 29",
+        "notes": "World's deepest Extended Tension Leg Platform at 1,580m. 15 dry tree wells. Overcame significant installation challenges.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "appomattox",
+        "name": "Appomattox",
+        "operator": "Shell",
+        "lat": 27.0,
+        "lng": -89.8,
+        "status": "active",
+        "type": "semi-submersible",
+        "water_depth_ft": 7400,
+        "install_date": "2019",
+        "production_start": "2019",
+        "production": "both",
+        "capacity_bpd": 175000,
+        "area": "Mississippi Canyon",
+        "notes": "Shell's largest floating platform. Hosts Appomattox and Vicksburg fields. Civil War battle naming theme.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      },
+      {
+        "id": "vito",
+        "name": "Vito",
+        "operator": "Shell",
+        "lat": 27.1,
+        "lng": -89.9,
+        "status": "active",
+        "type": "floating-production",
+        "water_depth_ft": 4000,
+        "install_date": "2023",
+        "production_start": "2023",
+        "production": "both",
+        "area": "Mississippi Canyon",
+        "notes": "Shell's newest deepwater development. Semi-submersible FPU design.",
+        "sources": [
+          "Offshore industry sources"
+        ]
+      }
+    ],
+    "areas": {
+      "description": "Major OCS (Outer Continental Shelf) planning areas and lease blocks in the Gulf",
+      "areas": [
+        {
+          "name": "Mississippi Canyon",
+          "abbreviation": "MC",
+          "description": "Major deepwater area SE of Louisiana. Location of many large discoveries including Thunder Horse, Mars, Deepwater Horizon disaster site (Macondo).",
+          "water_depth_range_ft": "1000-10000",
+          "major_fields": [
+            "Thunder Horse",
+            "Mars",
+            "Ursa",
+            "Na Kika",
+            "Macondo"
+          ]
+        },
+        {
+          "name": "Green Canyon",
+          "abbreviation": "GC",
+          "description": "Major deepwater area south of Louisiana. Many significant oil and gas discoveries.",
+          "water_depth_range_ft": "1000-8000",
+          "major_fields": [
+            "Atlantis",
+            "Mad Dog",
+            "Bullwinkle",
+            "Auger"
+          ]
+        },
+        {
+          "name": "Garden Banks",
+          "abbreviation": "GB",
+          "description": "Deepwater area in western Gulf. Mix of oil and gas production.",
+          "water_depth_range_ft": "500-6000",
+          "major_fields": [
+            "Magnolia",
+            "Baldpate",
+            "Auger"
+          ]
+        },
+        {
+          "name": "Eugene Island",
+          "abbreviation": "EI",
+          "description": "Prolific shallow water area offshore Louisiana. One of first major federal offshore developments.",
+          "water_depth_range_ft": "50-500",
+          "major_fields": [
+            "Eugene Island 330"
+          ]
+        },
+        {
+          "name": "Keathley Canyon",
+          "abbreviation": "KC",
+          "description": "Ultra-deepwater area with giant Lower Tertiary discoveries.",
+          "water_depth_range_ft": "4000-10000",
+          "major_fields": [
+            "Tiber",
+            "Kaskida"
+          ]
+        },
+        {
+          "name": "Alaminos Canyon",
+          "abbreviation": "AC",
+          "description": "Ultra-deepwater area in western Gulf near Mexico border.",
+          "water_depth_range_ft": "3000-10000",
+          "major_fields": [
+            "Perdido"
+          ]
+        },
+        {
+          "name": "Viosca Knoll",
+          "abbreviation": "VK",
+          "description": "Area SE of Mobile, Alabama. Mix of shallow and deep water.",
+          "water_depth_range_ft": "500-2000",
+          "major_fields": [
+            "Petronius"
+          ]
+        },
+        {
+          "name": "Walker Ridge",
+          "abbreviation": "WR",
+          "description": "Ultra-deepwater area in central Gulf.",
+          "water_depth_range_ft": "5000-10000",
+          "major_fields": [
+            "Big Foot"
+          ]
+        }
+      ]
+    },
+    "platform_types": {
+      "description": "Types of offshore platforms used in Gulf of Mexico",
+      "types": [
+        {
+          "type": "fixed",
+          "description": "Steel jacket structure piled to seafloor. Traditional platform type limited to ~1,500 ft water depth.",
+          "examples": [
+            "Bullwinkle",
+            "Cognac",
+            "Eugene Island platforms"
+          ]
+        },
+        {
+          "type": "compliant-tower",
+          "description": "Tall flexible tower designed to sway with waves. Can reach deeper water than fixed platforms (to ~3,000 ft).",
+          "examples": [
+            "Petronius",
+            "Baldpate",
+            "Lena"
+          ]
+        },
+        {
+          "type": "tension-leg",
+          "description": "Floating platform held in place by vertical tethers. Good for deepwater (3,000-6,000 ft).",
+          "examples": [
+            "Mars",
+            "Ursa",
+            "Auger",
+            "Big Foot"
+          ]
+        },
+        {
+          "type": "spar",
+          "description": "Deep-draft floating cylinder anchored to seafloor. Excellent stability for ultra-deepwater.",
+          "examples": [
+            "Perdido",
+            "Mad Dog",
+            "Genesis",
+            "Devils Tower"
+          ]
+        },
+        {
+          "type": "semi-submersible",
+          "description": "Floating structure with submerged pontoons. Can be moored or dynamically positioned.",
+          "examples": [
+            "Thunder Horse",
+            "Atlantis",
+            "Deepwater Horizon"
+          ]
+        },
+        {
+          "type": "floating-production",
+          "description": "Various floating production systems including FPSOs and FPUs.",
+          "examples": [
+            "Delta House",
+            "Vito"
+          ]
+        },
+        {
+          "type": "subsea",
+          "description": "Wellheads on seafloor tied back to host platform. No surface structure.",
+          "examples": [
+            "Tiber (planned)",
+            "Many tieback developments"
+          ]
+        }
+      ]
+    },
+    "major_disasters": [
+      {
+        "name": "Deepwater Horizon",
+        "date": "2010-04-20",
+        "location": "Mississippi Canyon Block 252",
+        "lat": 28.7417,
+        "lng": -88.3842,
+        "deaths": 11,
+        "oil_spilled_barrels": 4900000,
+        "cause": "Blowout during well cementing operations. BOP failure.",
+        "notes": "Largest marine oil spill in history. 87-day uncontrolled release. $65 billion in BP costs."
+      },
+      {
+        "name": "Ixtoc I",
+        "date": "1979-06-03",
+        "location": "Bay of Campeche, Mexico",
+        "lat": 19.408333,
+        "lng": -92.325,
+        "deaths": 0,
+        "oil_spilled_barrels": 3000000,
+        "cause": "Blowout and loss of drilling mud circulation. BOP failed to seal drill collars.",
+        "notes": "Second largest marine oil spill. 10 months to cap. Pemex operation."
+      }
+    ],
+    "statistics": {
+      "total_platforms_gulf": "~2000 active (US federal waters)",
+      "first_offshore_well": "1938 (Gulf Marine Fabricators, 1 mile offshore)",
+      "first_out_of_sight_well": "1947 (Kerr-McGee, Ship Shoal)",
+      "deepest_floating_platform": "Perdido - 8,040 ft (2,450 m)",
+      "deepest_fixed_platform": "Bullwinkle - 1,352 ft (412 m)",
+      "tallest_platform": "Petronius - 2,100 ft (640 m) total height",
+      "deepest_water_discovery": "Lloyd Ridge 370 (Diamond) - 9,975 ft",
+      "gulf_oil_production_2024": "~1.8 million barrels per day",
+      "gulf_share_us_production": "~15% of US crude oil"
+    }
   }
 }
