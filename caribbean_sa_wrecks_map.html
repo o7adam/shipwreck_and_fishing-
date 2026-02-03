@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caribbean & South American Shipwreck Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        #map { height: 100vh; width: 100%; }
+        .info-panel {
+            position: absolute; top: 10px; right: 10px;
+            background: rgba(255,255,255,0.95); padding: 12px;
+            border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            max-width: 280px; z-index: 1000; max-height: 90vh;
+            overflow-y: auto; font-size: 11px;
+        }
+        .info-panel h3 { margin: 0 0 8px 0; font-size: 14px; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; }
+        .legend-color { width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; border: 1px solid #333; }
+        h4 { margin: 8px 0 4px 0; font-size: 11px; border-bottom: 1px solid #ccc; }
+        .coords { font-family: monospace; font-size: 10px; background: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+        a { color: #0066cc; }
+        .layer-toggle { margin: 3px 0; }
+        .layer-toggle label { cursor: pointer; }
+        .stat { display: inline-block; margin-right: 10px; }
+        .popup-link { color: #0066cc; text-decoration: none; }
+        .popup-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="info-panel">
+        <h3>🏴‍☠️ Caribbean & S. America Wrecks</h3>
+        <div class="coords">
+            <span class="stat">Wrecks: 52</span>
+            <span class="stat">Coverage: Peru to São Luís</span>
+        </div>
+        
+        <h4>Toggle Layers</h4>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleCaribbean" checked> 🌴 Caribbean</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleSouthAmerica" checked> 🌎 South America</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleFlorida" checked> 🌊 Florida</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="togglePirate" checked> 🏴‍☠️ Pirate Ships</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleLeases"> 📜 Salvage Leases</label></div>
+        
+        <h4>Legend</h4>
+        <div class="legend-item"><div class="legend-color" style="background:#FFD700"></div> Spanish Treasure Fleet</div>
+        <div class="legend-item"><div class="legend-color" style="background:#FF6347"></div> Treasure Galleons</div>
+        <div class="legend-item"><div class="legend-color" style="background:#8B0000"></div> Pirate Ships</div>
+        <div class="legend-item"><div class="legend-color" style="background:#4169E1"></div> Naval Vessels</div>
+        <div class="legend-item"><div class="legend-color" style="background:#228B22"></div> Dive Sites</div>
+        <div class="legend-item"><div class="legend-color" style="background:#FF8C00"></div> Modern Wrecks</div>
+        <div class="legend-item"><div class="legend-color" style="background:#9932CC"></div> War of Pacific</div>
+        
+        <h4>Quick Jump</h4>
+        <select id="quickJump" style="width:100%;padding:4px;margin:4px 0;">
+            <option value="">Select location...</option>
+            <option value="-5,-45,4">Brazil (São Luís)</option>
+            <option value="-23,-45,6">Brazil (São Paulo/Rio)</option>
+            <option value="10,-76,5">Colombia (San José)</option>
+            <option value="25,-80,6">Florida Keys</option>
+            <option value="18,-65,6">Caribbean (BVI/PR)</option>
+            <option value="-20,-70,6">Chile/Peru (Pacific)</option>
+            <option value="-55,-65,5">Tierra del Fuego</option>
+        </select>
+        
+        <h4>Data</h4>
+        <a href="../shipwreck_database.json" target="_blank">📊 Full Database (JSON)</a>
+    </div>
+    <script>
+        var map = L.map('map').setView([10, -60], 4);
+        
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap', maxZoom: 19
+        }).addTo(map);
+        
+        var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '© Esri', maxZoom: 19
+        });
+        
+        L.control.layers({"Street": osm, "Satellite": satellite}).addTo(map);
+
+        // Layer groups
+        var caribbeanLayer = L.layerGroup().addTo(map);
+        var southAmericaLayer = L.layerGroup().addTo(map);
+        var floridaLayer = L.layerGroup().addTo(map);
+        var pirateLayer = L.layerGroup().addTo(map);
+        var leasesLayer = L.layerGroup();
+
+        // Lease areas
+        var leases = [
+            {name: "1715 Fleet Lease", coords: [[27.86,-80.45],[27.86,-80.20],[27.25,-80.20],[27.25,-80.35],[27.60,-80.40]], color: "#FFD700"},
+            {name: "1733 Fleet Area", coords: [[25.08,-80.45],[25.08,-80.25],[24.70,-80.55],[24.70,-80.85]], color: "#00CED1"},
+            {name: "1622 Atocha Lease", coords: [[24.65,-81.40],[24.65,-81.90],[24.40,-82.10],[24.40,-81.40]], color: "#FF00FF"},
+            {name: "Maravillas Lease", coords: [[27.25,-78.80],[27.25,-79.20],[26.90,-79.20],[26.90,-78.80]], color: "#FFA500"}
+        ];
+        leases.forEach(function(l) {
+            L.polygon(l.coords, {color: l.color, weight: 2, fillOpacity: 0.15, dashArray: '6,4'})
+                .addTo(leasesLayer).bindPopup('<b>'+l.name+'</b>');
+        });
+
+        function createPopup(w) {
+            var html = '<b>'+w.n+'</b><br>';
+            html += '<i>'+w.t+'</i> ('+w.y+')<br>';
+            html += w.lat.toFixed(4)+'°'+(w.lat>=0?'N':'S')+', '+Math.abs(w.lon).toFixed(4)+'°W<br>';
+            html += 'Depth: '+w.d+'<br>';
+            if(w.cargo) html += 'Cargo: '+w.cargo+'<br>';
+            if(w.notes) html += '<small>'+w.notes+'</small><br>';
+            if(w.link) html += '<a href="'+w.link+'" target="_blank" class="popup-link">📖 More info</a>';
+            return html;
+        }
+
+        function addWreck(w, layer) {
+            var size = w.s || 10;
+            var icon = L.divIcon({
+                className: 'wreck',
+                html: '<div style="background:'+w.c+';width:'+size+'px;height:'+size+'px;border-radius:50%;border:2px solid #333;box-shadow:0 2px 4px rgba(0,0,0,0.4);cursor:pointer"></div>',
+                iconSize: [size, size], iconAnchor: [size/2, size/2]
+            });
+            L.marker([w.lat, w.lon], {icon: icon}).addTo(layer).bindPopup(createPopup(w));
+        }
+
+        // CARIBBEAN WRECKS
+        var caribbean = [
+            {n:"SAN JOSÉ 💎", lat:9.5833, lon:-76.2569, y:1708, t:"Spanish Galleon", d:"1970ft (600m)", c:"#FF6347", s:18, cargo:"$17B gold/silver/emeralds", notes:"Holy Grail of shipwrecks. Located 2015.", link:"https://en.wikipedia.org/wiki/Spanish_galleon_San_Jos%C3%A9"},
+            {n:"RMS Rhone ⭐", lat:18.4433, lon:-64.5167, y:1867, t:"Royal Mail Steamer", d:"80ft", c:"#228B22", s:14, cargo:"Mail, passengers", notes:"Popular BVI dive site. Featured in 'The Deep'.", link:"https://en.wikipedia.org/wiki/RMS_Rhone"},
+            {n:"Concepción (Silver Shoals)", lat:20.75, lon:-69.5, y:1641, t:"Spanish Galleon", d:"49ft", c:"#FF6347", s:12, cargo:"34 tons Peruvian silver", notes:"William Phips salvage 1687. Burt Webber 1978.", link:"https://en.wikipedia.org/wiki/Nuestra_Se%C3%B1ora_de_la_Concepci%C3%B3n"},
+            {n:"Maravillas 💰", lat:27.06, lon:-79.25, y:1656, t:"Spanish Almiranta", d:"26ft", c:"#FF6347", s:14, cargo:"Gold, silver, emeralds", notes:"Allen Exploration ongoing since 2020.", link:"https://www.allenexploration.com/maravillas"},
+            {n:"SS Sapona", lat:25.024, lon:-79.277, y:1926, t:"Concrete Ship", d:"15ft", c:"#FF8C00", s:10, notes:"Visible above water. Bimini landmark."},
+            {n:"San Martín", lat:9.55, lon:-79.65, y:1618, t:"Spanish Galleon", d:"49ft", c:"#FFD700", s:10, cargo:"Peruvian silver", notes:"Wrecked during loading at Portobelo."}
+        ];
+        caribbean.forEach(function(w) { addWreck(w, caribbeanLayer); });
+
+        // FLORIDA WRECKS
+        var florida = [
+            {n:"ATOCHA 💰", lat:24.524, lon:-81.767, y:1622, t:"Spanish Galleon", d:"55ft", c:"#FFD700", s:16, cargo:"40 tons gold/silver, emeralds", notes:"Mel Fisher recovery 1985. Sterncastle still missing.", link:"https://en.wikipedia.org/wiki/Nuestra_Se%C3%B1ora_de_Atocha"},
+            {n:"Santa Margarita", lat:24.53, lon:-81.72, y:1622, t:"Spanish Galleon", d:"40ft", c:"#FFD700", s:12, cargo:"Silver, gold, emeralds", notes:"Sister ship to Atocha."},
+            {n:"1715 Fleet (Corrigan's)", lat:27.7478, lon:-80.3561, y:1715, t:"Fleet of 11 ships", d:"18ft", c:"#FFD700", s:12, cargo:"$400M in gold/silver", notes:"Still yielding finds. Coins wash up on beaches."},
+            {n:"Urca de Lima ⭐", lat:27.4667, lon:-80.2833, y:1715, t:"Storeship", d:"12ft", c:"#228B22", s:11, notes:"Florida Underwater Archaeological Preserve."},
+            {n:"San Pedro ⭐", lat:24.8567, lon:-80.675, y:1733, t:"Spanish Galleon", d:"18ft", c:"#228B22", s:11, notes:"1733 Fleet. State underwater park."},
+            {n:"El Infante", lat:24.93, lon:-80.55, y:1733, t:"Spanish Galleon", d:"20ft", c:"#00CED1", s:10, notes:"1733 Fleet wreck."},
+            {n:"USS Vandenberg", lat:24.5675, lon:-81.7419, y:2009, t:"Navy Transport", d:"140ft", c:"#4169E1", s:10, notes:"523ft ship sunk as artificial reef."},
+            {n:"Spiegel Grove", lat:25.0611, lon:-80.3089, y:2002, t:"Navy Ship", d:"130ft", c:"#4169E1", s:10, notes:"510ft ship. Popular dive site."},
+            {n:"USCGC Duane", lat:24.9867, lon:-80.3833, y:1987, t:"Coast Guard Cutter", d:"120ft", c:"#4169E1", s:10, notes:"327ft cutter sunk as reef."}
+        ];
+        florida.forEach(function(w) { addWreck(w, floridaLayer); });
+
+        // PIRATE SHIPS
+        var pirates = [
+            {n:"Queen Anne's Revenge 🏴‍☠️", lat:34.6956, lon:-76.6889, y:1718, t:"Blackbeard's Flagship", d:"28ft", c:"#8B0000", s:14, cargo:"30+ cannons, pirate loot", notes:"Discovered 1996. 300,000+ artifacts recovered.", link:"https://en.wikipedia.org/wiki/Queen_Anne%27s_Revenge"},
+            {n:"Whydah Gally 🏴‍☠️", lat:41.892, lon:-69.9594, y:1717, t:"'Black Sam' Bellamy", d:"16ft", c:"#8B0000", s:14, cargo:"Pirate gold, African jewelry", notes:"Only authenticated Golden Age pirate wreck.", link:"https://en.wikipedia.org/wiki/Whydah_Gally"},
+            {n:"La Louise 🏴‍☠️", lat:-25.45, lon:-48.35, y:1718, t:"Pirate Ship", d:"49ft", c:"#8B0000", s:10, cargo:"Pirate treasure", notes:"Olivier Levasseur 'La Buse' ship."}
+        ];
+        pirates.forEach(function(w) { addWreck(w, pirateLayer); });
+
+        // SOUTH AMERICA WRECKS
+        var southAmerica = [
+            {n:"Príncipe de Asturias", lat:-23.85, lon:-45.35, y:1916, t:"Ocean Liner", d:"148ft", c:"#FF8C00", s:14, cargo:"Passengers", notes:"'Brazilian Titanic'. 445 dead. Ilhabela.", link:"https://en.wikipedia.org/wiki/Pr%C3%ADncipe_de_Asturias_(ocean_liner)"},
+            {n:"SMS Cap Trafalgar", lat:-20.4833, lon:-29.3, y:1914, t:"German Cruiser", d:"262ft", c:"#4169E1", s:12, notes:"WWI battle off Trindade Island."},
+            {n:"U-128", lat:-11.0, lon:-35.717, y:1943, t:"German U-Boat", d:"197ft", c:"#4169E1", s:10, notes:"WWII. Scuttled off Recife."},
+            {n:"Aquidabã", lat:-23.0167, lon:-44.3167, y:1906, t:"Brazilian Battleship", d:"66ft", c:"#4169E1", s:11, notes:"Magazine explosion. 212 dead."},
+            {n:"RMS Magdalena", lat:-22.9514, lon:-43.125, y:1949, t:"Refrigerator Ship", d:"49ft", c:"#228B22", s:10, notes:"Guanabara Bay. Popular dive site."},
+            {n:"California (1866)", lat:-23.15, lon:-44.25, y:1866, t:"Paddlewheeler", d:"82ft", c:"#FF8C00", s:9, notes:"Rare 1806 engine design."},
+            {n:"Pinguino", lat:-23.14, lon:-44.23, y:1967, t:"Cargo Ship", d:"49ft", c:"#228B22", s:9, notes:"Ilha Grande dive site."},
+            {n:"Independencia", lat:-20.25, lon:-70.15, y:1879, t:"Peruvian Ironclad", d:"33ft", c:"#9932CC", s:11, notes:"War of the Pacific. Battle of Punta Gruesa."},
+            {n:"Esmeralda", lat:-20.217, lon:-70.15, y:1879, t:"Chilean Corvette", d:"131ft", c:"#9932CC", s:12, notes:"Battle of Iquique. Arturo Prat died here."},
+            {n:"Blanco Encalada", lat:-27.067, lon:-70.833, y:1891, t:"Chilean Ironclad", d:"49ft", c:"#9932CC", s:12, notes:"First ship sunk by locomotive torpedo in combat!"},
+            {n:"SMS Dresden", lat:-33.6017, lon:-78.825, y:1915, t:"German Cruiser", d:"230ft", c:"#228B22", s:12, notes:"WWI. Robinson Crusoe Island. Popular dive.", link:"https://en.wikipedia.org/wiki/SMS_Dresden_(1907)"},
+            {n:"BAP Manco Cápac", lat:-18.467, lon:-70.317, y:1880, t:"Peruvian Monitor", d:"26ft", c:"#9932CC", s:10, notes:"War of the Pacific. Scuttled at Arica."},
+            {n:"Mercedes (1804)", lat:36.95, lon:-8.9, y:1804, t:"Spanish Frigate", d:"3609ft", c:"#FFD700", s:12, cargo:"17 tons Peruvian coins", notes:"Odyssey recovered. Spain won 2012 court case."},
+            {n:"Jesús María", lat:-2.4, lon:-80.7, y:1654, t:"Spanish Galleon", d:"16ft", c:"#FFD700", s:10, cargo:"Peruvian silver, gold", notes:"Near Chanduy, Ecuador."},
+            {n:"Cazador", lat:-35.35, lon:-72.42, y:1856, t:"Chilean Steamboat", d:"16ft", c:"#FF8C00", s:11, notes:"300-400 dead. Biggest Chilean maritime disaster."},
+            {n:"ARA General Belgrano", lat:-55.4, lon:-61.533, y:1982, t:"Argentine Cruiser", d:"820ft", c:"#4169E1", s:14, notes:"Falklands War. Controversial sinking.", link:"https://en.wikipedia.org/wiki/ARA_General_Belgrano"},
+            {n:"Desdemona", lat:-54.2976, lon:-66.6997, y:1985, t:"Cargo Ship", d:"0ft", c:"#FF8C00", s:9, notes:"Visible from shore. Tierra del Fuego."},
+            {n:"Olympian", lat:-52.2477, lon:-69.0321, y:1906, t:"Sidewheeler", d:"10ft", c:"#FF8C00", s:9, notes:"Strait of Magellan. Visible at low tide."}
+        ];
+        southAmerica.forEach(function(w) { addWreck(w, southAmericaLayer); });
+
+        // Toggle controls
+        document.getElementById('toggleCaribbean').addEventListener('change', function() {
+            this.checked ? map.addLayer(caribbeanLayer) : map.removeLayer(caribbeanLayer);
+        });
+        document.getElementById('toggleSouthAmerica').addEventListener('change', function() {
+            this.checked ? map.addLayer(southAmericaLayer) : map.removeLayer(southAmericaLayer);
+        });
+        document.getElementById('toggleFlorida').addEventListener('change', function() {
+            this.checked ? map.addLayer(floridaLayer) : map.removeLayer(floridaLayer);
+        });
+        document.getElementById('togglePirate').addEventListener('change', function() {
+            this.checked ? map.addLayer(pirateLayer) : map.removeLayer(pirateLayer);
+        });
+        document.getElementById('toggleLeases').addEventListener('change', function() {
+            this.checked ? map.addLayer(leasesLayer) : map.removeLayer(leasesLayer);
+        });
+
+        // Quick jump
+        document.getElementById('quickJump').addEventListener('change', function() {
+            if(this.value) {
+                var parts = this.value.split(',');
+                map.setView([parseFloat(parts[0]), parseFloat(parts[1])], parseInt(parts[2]));
+            }
+        });
+
+        L.control.scale({imperial: true, metric: true}).addTo(map);
+        
+        map.on('click', function(e) {
+            var latDir = e.latlng.lat >= 0 ? 'N' : 'S';
+            var lonDir = e.latlng.lng >= 0 ? 'E' : 'W';
+            L.popup().setLatLng(e.latlng)
+                .setContent('<b>'+Math.abs(e.latlng.lat).toFixed(4)+'°'+latDir+', '+Math.abs(e.latlng.lng).toFixed(4)+'°'+lonDir+'</b>')
+                .openOn(map);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caribbean Treasure & Fishing Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        #map { height: 100vh; width: 100%; }
+        .info-panel {
+            position: absolute; top: 10px; right: 10px;
+            background: rgba(255,255,255,0.95); padding: 10px;
+            border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            max-width: 260px; z-index: 1000; max-height: 90vh;
+            overflow-y: auto; font-size: 10px;
+        }
+        .info-panel h3 { margin: 0 0 6px 0; font-size: 13px; }
+        .legend-item { display: flex; align-items: center; margin: 2px 0; }
+        .legend-color { width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; border: 1px solid #333; }
+        h4 { margin: 6px 0 3px 0; font-size: 10px; border-bottom: 1px solid #ccc; }
+        .coords { font-family: monospace; font-size: 9px; background: #f0f0f0; padding: 1px 3px; border-radius: 2px; }
+        a { color: #0066cc; }
+        .layer-toggle { margin: 2px 0; }
+        .layer-toggle label { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="info-panel">
+        <h3>🏴‍☠️ Caribbean Map</h3>
+        <div class="coords">Wrecks: 38 | Fishing: 105 | Reefs: 82</div>
+        
+        <h4>Toggle Layers</h4>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleWrecks" checked> 🏴‍☠️ Shipwrecks</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleFishing"> 🎣 Fishing Spots</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleReefs"> 🪸 Artificial Reefs</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleLeases" checked> 📜 Salvage Leases</label></div>
+        
+        <h4>Wrecks Legend</h4>
+        <div class="legend-item"><div class="legend-color" style="background:#FFD700"></div> 1715 Fleet</div>
+        <div class="legend-item"><div class="legend-color" style="background:#FF00FF"></div> 1622 Atocha</div>
+        <div class="legend-item"><div class="legend-color" style="background:#FFA500"></div> Bahamas</div>
+        <div class="legend-item"><div class="legend-color" style="background:#FF6347"></div> Caribbean</div>
+        <div class="legend-item"><div class="legend-color" style="background:#00FF00"></div> State Preserve</div>
+        
+        <h4>Other</h4>
+        <div class="legend-item"><div class="legend-color" style="background:#00BFFF"></div> Fishing Spot</div>
+        <div class="legend-item"><div class="legend-color" style="background:#7B68EE"></div> Artificial Reef</div>
+        <div class="legend-item"><div class="legend-color" style="background:#FFFF00;border:2px solid red"></div> Your Search</div>
+        
+        <h4>Data</h4>
+        <a href="shipwreck_database.json" target="_blank">📊 Wreck DB</a> |
+        <a href="fishing_spots.json" target="_blank">🎣 Fishing DB</a>
+    </div>
+    <script>
+        var map = L.map('map').setView([26, -78], 6);
+        
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap', maxZoom: 19
+        }).addTo(map);
+        
+        var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '© Esri', maxZoom: 19
+        });
+        
+        L.control.layers({"Street": osm, "Satellite": satellite}).addTo(map);
+
+        // Layer groups
+        var wrecksLayer = L.layerGroup().addTo(map);
+        var fishingLayer = L.layerGroup();
+        var reefsLayer = L.layerGroup();
+        var leasesLayer = L.layerGroup().addTo(map);
+
+        // Lease areas
+        var leases = [
+            {name: "1715 Fleet", coords: [[27.86,-80.45],[27.86,-80.20],[27.25,-80.20],[27.25,-80.35],[27.60,-80.40]], color: "#FFD700"},
+            {name: "1733 Fleet", coords: [[25.08,-80.45],[25.08,-80.25],[24.70,-80.55],[24.70,-80.85]], color: "#00CED1"},
+            {name: "1622 Atocha", coords: [[24.65,-81.40],[24.65,-81.90],[24.40,-82.10],[24.40,-81.40]], color: "#FF00FF"},
+            {name: "Maravillas", coords: [[27.25,-78.80],[27.25,-79.20],[26.90,-79.20],[26.90,-78.80]], color: "#FFA500"}
+        ];
+        leases.forEach(function(l) {
+            L.polygon(l.coords, {color: l.color, weight: 2, fillOpacity: 0.1, dashArray: '6,4'})
+                .addTo(leasesLayer).bindPopup('<b>'+l.name+' Lease</b>');
+        });
+
+        // Wrecks
+        var wrecks = [
+            {n:"YOUR SEARCH", lat:28.401, lon:-80.573, y:null, t:"Unknown", d:"24ft", c:"#FFFF00", s:18, b:"#FF0000"},
+            {n:"Corrigan's (1715)", lat:27.7478, lon:-80.3561, y:1715, t:"Galleon", d:"18ft", c:"#FFD700", s:11},
+            {n:"Cabin Wreck (1715)", lat:27.52, lon:-80.32, y:1715, t:"Galleon", d:"18ft", c:"#FFD700", s:9},
+            {n:"Wedge Wreck (1715)", lat:27.4833, lon:-80.30, y:1715, t:"Galleon", d:"18ft", c:"#FFD700", s:9},
+            {n:"Sandy Point (1715)", lat:27.575, lon:-80.333, y:1715, t:"Galleon", d:"15ft", c:"#FFD700", s:9},
+            {n:"Rio Mar (1715)", lat:27.4167, lon:-80.2667, y:1715, t:"Galleon", d:"20ft", c:"#FFD700", s:9},
+            {n:"Douglas Beach (1715)", lat:27.35, lon:-80.25, y:1715, t:"Galleon", d:"18ft", c:"#FFD700", s:9},
+            {n:"Green Cabin (1715)", lat:27.60, lon:-80.35, y:1715, t:"Galleon", d:"16ft", c:"#FFD700", s:9},
+            {n:"Urca de Lima ★", lat:27.4667, lon:-80.2833, y:1715, t:"Storeship", d:"12ft", c:"#00FF00", s:12},
+            {n:"San Pedro ★", lat:24.8567, lon:-80.675, y:1733, t:"Galleon", d:"18ft", c:"#00FF00", s:12},
+            {n:"El Infante (1733)", lat:24.93, lon:-80.55, y:1733, t:"Galleon", d:"20ft", c:"#00CED1", s:9},
+            {n:"ATOCHA 💰", lat:24.524, lon:-81.767, y:1622, t:"Galleon", d:"55ft", c:"#FF00FF", s:14},
+            {n:"Santa Margarita", lat:24.53, lon:-81.72, y:1622, t:"Galleon", d:"40ft", c:"#FF00FF", s:11},
+            {n:"Maravillas (1656)", lat:27.15, lon:-78.98, y:1656, t:"Galleon", d:"35ft", c:"#FFA500", s:12},
+            {n:"SS Sapona", lat:25.024, lon:-79.277, y:1926, t:"Concrete Ship", d:"15ft", c:"#FFA500", s:10},
+            {n:"SAN JOSÉ 💎", lat:9.5833, lon:-76.2569, y:1708, t:"Galleon", d:"1970ft", c:"#FF6347", s:16},
+            {n:"Concepción (1641)", lat:20.95, lon:-69.25, y:1641, t:"Galleon", d:"40ft", c:"#FF6347", s:11},
+            {n:"RMS Rhone ★", lat:18.385, lon:-64.50, y:1867, t:"Mail Ship", d:"80ft", c:"#00FF00", s:12},
+            {n:"MV Capt Keith", lat:19.75, lon:-79.80, y:1996, t:"Frigate", d:"100ft", c:"#FF6347", s:10},
+            {n:"USS Vandenberg", lat:24.5675, lon:-81.7419, y:2009, t:"Navy Ship", d:"140ft", c:"#7B68EE", s:10},
+            {n:"Spiegel Grove", lat:25.0611, lon:-80.3089, y:2002, t:"Navy Ship", d:"130ft", c:"#7B68EE", s:10},
+            {n:"USCGC Duane", lat:24.9867, lon:-80.3833, y:1987, t:"Cutter", d:"120ft", c:"#7B68EE", s:10},
+        ];
+        
+        wrecks.forEach(function(w) {
+            var bw = w.n.includes("YOUR") ? 4 : 2;
+            var icon = L.divIcon({
+                className: 'wreck',
+                html: '<div style="background:'+w.c+';width:'+w.s+'px;height:'+w.s+'px;border-radius:50%;border:'+bw+'px solid '+(w.b||'#333')+';box-shadow:0 1px 3px rgba(0,0,0,0.4)"></div>',
+                iconSize: [w.s, w.s], iconAnchor: [w.s/2, w.s/2]
+            });
+            L.marker([w.lat, w.lon], {icon: icon}).addTo(wrecksLayer)
+                .bindPopup('<b>'+w.n+'</b><br>'+w.t+'<br>'+w.lat.toFixed(4)+'°N, '+Math.abs(w.lon).toFixed(4)+'°W<br>Depth: '+w.d);
+        });
+
+        // Fishing spots (loaded from embedded data for performance)
+        var fishingSpots = [{"type": "fishing", "name": "Fishing Spot", "lat": 28.3875633, "lon": -81.5366652, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 22.6791695, "lon": -82.1390846, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 22.6893453, "lon": -82.133237, "source": "OSM"}, {"type": "fishing", "name": "Grouper Valleys", "lat": 23.6496838, "lon": -75.3582001, "source": "OSM"}, {"type": "fishing", "name": "Grandpa Grouper", "lat": 22.9011163, "lon": -74.8151452, "source": "OSM"}, {"type": "fishing", "name": "Stella Maris Shark Reef", "lat": 23.6981427, "lon": -75.3435344, "source": "OSM"}, {"type": "fishing", "name": "Caroosel", "lat": 23.6245275, "lon": -74.8367084, "source": "OSM"}, {"type": "fishing", "name": "Snow Field", "lat": 23.6447465, "lon": -74.9294407, "source": "OSM"}, {"type": "fishing", "name": "The Chimney", "lat": 23.6175605, "lon": -74.7916405, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 27.9961919, "lon": -81.9428211, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.8805891, "lon": -82.6191927, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.882258, "lon": -82.6144205, "source": "OSM"}, {"type": "fishing", "name": "Pat's Hole", "lat": 27.94068, "lon": -82.449857, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 20.3298129, "lon": -77.1539881, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 22.4287864, "lon": -78.2697678, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 22.4289568, "lon": -78.2697794, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 29.3989357, "lon": -83.2054614, "source": "OSM"}, {"type": "fishing", "name": "North Riding Point Club", "lat": 26.5960203, "lon": -78.4358064, "source": "OSM"}, {"type": "fishing", "name": "Buena pesca", "lat": 22.9880925, "lon": -82.6387446, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 29.5733577, "lon": -81.1895516, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 29.5767872, "lon": -81.1945748, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 29.5771436, "lon": -81.1947285, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 26.960274, "lon": -82.3642083, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 26.9602369, "lon": -82.3638059, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 29.5803111, "lon": -81.2034414, "source": "OSM"}, {"type": "fishing", "name": "Manasota Lemon Bay Fishing Dock", "lat": 27.0101534, "lon": -82.4103919, "source": "OSM"}, {"type": "fishing", "name": "Manasota Lemon Bay Fishing Dock", "lat": 27.0100077, "lon": -82.410636, "source": "OSM"}, {"type": "fishing", "name": "Manasota Lemon Bay Fishing Dock", "lat": 27.0099933, "lon": -82.4106923, "source": "OSM"}, {"type": "fishing", "name": "Manasota Lemon Bay Fishing Dock", "lat": 27.0099192, "lon": -82.4109015, "source": "OSM"}, {"type": "fishing", "name": "Lemon Bay Fishing", "lat": 26.9623323, "lon": -82.3661891, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 22.4002355, "lon": -83.6796319, "source": "OSM"}, {"type": "fishing", "name": "Presa Barroso", "lat": 22.5048734, "lon": -79.6993743, "source": "OSM"}, {"type": "fishing", "name": "Zona de Pesca", "lat": 21.7244384, "lon": -77.1907909, "source": "OSM"}, {"type": "fishing", "name": "Zona de Pesca", "lat": 21.4969967, "lon": -77.2073052, "source": "OSM"}, {"type": "fishing", "name": "Zona de Pesca", "lat": 21.5796603, "lon": -76.9938477, "source": "OSM"}, {"type": "fishing", "name": "Zona de Pesca", "lat": 21.577251, "lon": -77.2573608, "source": "OSM"}, {"type": "fishing", "name": "Zona de Pesca", "lat": 21.7904511, "lon": -77.3308732, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 22.3920484, "lon": -79.9133527, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.5604968, "lon": -81.6158136, "source": "OSM"}, {"type": "fishing", "name": "Los Corrales", "lat": 21.1256581, "lon": -75.7467437, "source": "OSM"}, {"type": "fishing", "name": "Los morrillos", "lat": 21.3700868, "lon": -76.7517295, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 29.9061514, "lon": -81.4101486, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 27.8616592, "lon": -80.4448735, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 26.6920043, "lon": -81.7772239, "source": "OSM"}, {"type": "fishing", "name": "Fishing Deck", "lat": 27.7736084, "lon": -82.6221923, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 29.9476057, "lon": -84.3415797, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 29.947806, "lon": -84.3416122, "source": "OSM"}, {"type": "fishing", "name": "Fishing dock", "lat": 28.8018311, "lon": -81.3827543, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 26.7823457, "lon": -81.7559913, "source": "OSM"}, {"type": "fishing", "name": "Captain Planet Charters LLC", "lat": 25.7433293, "lon": -80.3329688, "source": "OSM"}, {"type": "fishing", "name": "Tides Turn Fishing Charters", "lat": 29.136931, "lon": -83.030227, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 26.9963833, "lon": -81.9678608, "source": "OSM"}, {"type": "fishing", "name": "Brinson Park Fishing Spot", "lat": 28.2928689, "lon": -81.3967651, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 26.5315687, "lon": -80.0540652, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 27.7895001, "lon": -80.5105135, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 26.7835445, "lon": -80.0442312, "source": "OSM"}, {"type": "fishing", "name": "All 4 Chuck Fishing Charters LLC", "lat": 26.6457017, "lon": -82.0464706, "source": "OSM"}, {"type": "fishing", "name": "Captain Rios Charters", "lat": 24.5708455, "lon": -81.7466723, "source": "OSM"}, {"type": "fishing", "name": "Bear Pond Dock", "lat": 28.8192411, "lon": -81.4292345, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 27.261591, "lon": -80.3587489, "source": "OSM"}, {"type": "fishing", "name": "Calypso Park Fishing Pier", "lat": 26.6103215, "lon": -82.0294575, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1510018, "lon": -82.7286435, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1003633, "lon": -82.6879495, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1508283, "lon": -82.7286743, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.140953, "lon": -82.7666824, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1402091, "lon": -82.7644988, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1434109, "lon": -82.7657806, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1420099, "lon": -82.7669388, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1513909, "lon": -82.7282353, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1518855, "lon": -82.7279377, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1351426, "lon": -82.7396364, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1339902, "lon": -82.7383113, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1376575, "lon": -82.7521059, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1318692, "lon": -82.7350653, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1340345, "lon": -82.7343335, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1329764, "lon": -82.7374867, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1361819, "lon": -82.7397192, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1328119, "lon": -82.7359997, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1630683, "lon": -82.7401247, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1570049, "lon": -82.7401598, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1585713, "lon": -82.7401179, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1593864, "lon": -82.7401716, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1761102, "lon": -82.7486597, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.1762907, "lon": -82.7499748, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.176894, "lon": -82.7511369, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.8248024, "lon": -82.6576487, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 28.8243026, "lon": -82.6564276, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 25.988145, "lon": -81.5938976, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 25.9386351, "lon": -81.4612025, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 25.761467, "lon": -80.5031168, "source": "OSM"}, {"type": "fishing", "name": "1er Corral", "lat": 21.0670989, "lon": -75.6645876, "source": "OSM"}, {"type": "fishing", "name": "Fishing Spot", "lat": 26.7050015, "lon": -81.939598, "source": "OSM"}, {"type": "fishing", "name": "Don't Tell Mom Sportfishing", "lat": 26.118867, "lon": -80.1060527, "source": "OSM"}, {"type": "fishing", "name": "Lochloosa Wildlife Area Fishing Dock", "lat": 29.495042, "lon": -82.1286285, "source": "OSM"}, {"type": "fishing", "name": "Prarie Creek trail bridge", "lat": 29.610958, "lon": -82.2481867, "source": "OSM"}, {"type": "fishing", "name": "Earl P Powers Park pier", "lat": 29.6181407, "lon": -82.2507183, "source": "OSM"}, {"type": "reef", "name": "Bajo Los Colorados", "lat": 23.2167193, "lon": -81.1500178, "source": "OSM"}, {"type": "reef", "name": "Bajo del Franc\u00e9s", "lat": 23.2168969, "lon": -81.166608, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6226072, "lon": -77.0912294, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.5972814, "lon": -77.0493455, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.5370122, "lon": -77.0063546, "source": "OSM"}, {"type": "reef", "name": "Arrecife Playa Santa Luc\u00eda", "lat": 21.6116742, "lon": -77.0647307, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.5795775, "lon": -77.0386941, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.5276254, "lon": -76.9945273, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.5104823, "lon": -76.9813798, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.5633601, "lon": -77.0301229, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.5199069, "lon": -76.9890625, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6120319, "lon": -77.114858, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6139868, "lon": -77.1234376, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6179081, "lon": -77.1303984, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6305312, "lon": -77.1421066, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6627421, "lon": -77.1386178, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7007517, "lon": -77.2039983, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7182276, "lon": -77.251879, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7286724, "lon": -77.3019349, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7386291, "lon": -77.3067279, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7404055, "lon": -77.3144588, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7671409, "lon": -77.358338, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7941727, "lon": -77.4031403, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6237167, "lon": -77.1372266, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6375276, "lon": -77.1445176, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6449016, "lon": -77.1462747, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7048953, "lon": -77.2154837, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7254855, "lon": -77.293128, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7317924, "lon": -77.3045909, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7456819, "lon": -77.3058649, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7857313, "lon": -77.3702271, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.8029321, "lon": -77.4216541, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6691876, "lon": -77.145176, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6875052, "lon": -77.1814248, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7138195, "lon": -77.2359791, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7262823, "lon": -77.2956137, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7347401, "lon": -77.3053409, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7472988, "lon": -77.3198933, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.7930578, "lon": -77.3856552, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6493907, "lon": -77.1420748, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 21.6558872, "lon": -77.1370179, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 23.092834, "lon": -82.4936525, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 23.1366021, "lon": -82.408592, "source": "OSM"}, {"type": "reef", "name": "Hen and Chickens reef", "lat": 24.935307, "lon": -80.5485736, "source": "OSM"}, {"type": "reef", "name": "Turkey Point Shoal", "lat": 29.8939784, "lon": -84.4886987, "source": "OSM"}, {"type": "reef", "name": "Lanark Reef", "lat": 29.8688892, "lon": -84.5916575, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 23.1499695, "lon": -81.2727322, "source": "OSM"}, {"type": "reef", "name": "Julia Tuttle Causeway Artifical Reef", "lat": 25.811326, "lon": -80.1719249, "source": "OSM"}, {"type": "reef", "name": "Three Rooker Bar", "lat": 28.118681, "lon": -82.8461777, "source": "OSM"}, {"type": "reef", "name": "Mullet Key Shoal", "lat": 27.623394, "lon": -82.6895037, "source": "OSM"}, {"type": "reef", "name": "Long Bar", "lat": 27.8489439, "lon": -82.4645364, "source": "OSM"}, {"type": "reef", "name": "Long Shoal", "lat": 27.8708824, "lon": -82.4650644, "source": "OSM"}, {"type": "reef", "name": "Palatine Shoal", "lat": 27.5997497, "lon": -82.8522193, "source": "OSM"}, {"type": "reef", "name": "Cat Point Bank", "lat": 27.7061542, "lon": -82.7045068, "source": "OSM"}, {"type": "reef", "name": "Wake Porter Fish Havens", "lat": 27.7003186, "lon": -82.7494918, "source": "OSM"}, {"type": "reef", "name": "Middle Ground", "lat": 27.6961522, "lon": -82.7100384, "source": "OSM"}, {"type": "reef", "name": "Runway Wall", "lat": 24.9796075, "lon": -77.5351866, "source": "OSM"}, {"type": "reef", "name": "Reef", "lat": 24.9745137, "lon": -77.5350149, "source": "OSM"}, {"type": "reef", "name": "Bond Reef", "lat": 25.0088913, "lon": -77.5567212, "source": "OSM"}, {"type": "reef", "name": "Southern Escarpment", "lat": 23.4947127, "lon": -79.891868, "source": "OSM"}, {"type": "reef", "name": "Anchor 8", "lat": 23.4934303, "lon": -79.8852584, "source": "OSM"}, {"type": "reef", "name": "Southern Wall", "lat": 23.4909454, "lon": -79.8785794, "source": "OSM"}, {"type": "reef", "name": "Southern Escarpment", "lat": 23.4834476, "lon": -79.8532683, "source": "OSM"}, {"type": "reef", "name": "Savo Wall", "lat": 23.8216404, "lon": -75.1282567, "source": "OSM"}, {"name": "Canaveral Trident", "lat": 28.3833, "lon": -80.5167, "type": "reef", "depth": "75ft", "source": "FWC"}, {"name": "SW Grounds", "lat": 28.3667, "lon": -80.4333, "type": "reef", "depth": "55ft", "source": "FWC"}, {"name": "Neptune Reef", "lat": 28.35, "lon": -80.4, "type": "reef", "depth": "65ft", "source": "FWC"}, {"name": "Pelican Flats", "lat": 28.4333, "lon": -80.4833, "type": "reef", "depth": "45ft", "source": "FWC"}, {"name": "8A Reef", "lat": 28.4167, "lon": -80.5, "type": "reef", "depth": "48ft", "source": "FWC"}, {"name": "Ft Pierce Inlet Reef", "lat": 27.4667, "lon": -80.2333, "type": "reef", "depth": "65ft", "source": "FWC"}, {"name": "Sebastian Inlet Reef", "lat": 27.85, "lon": -80.3667, "type": "reef", "depth": "55ft", "source": "FWC"}, {"name": "Bethel Shoal", "lat": 27.5, "lon": -80.1833, "type": "reef", "depth": "72ft", "source": "FWC"}, {"name": "Breakers Reef", "lat": 26.7167, "lon": -80.0167, "type": "reef", "depth": "65ft", "source": "FWC"}, {"name": "Juno Ball", "lat": 26.8833, "lon": -80.0167, "type": "reef", "depth": "75ft", "source": "FWC"}, {"name": "Tenneco Towers", "lat": 26.15, "lon": -80.05, "type": "reef", "depth": "110ft", "source": "FWC"}, {"name": "Rodeo 25", "lat": 26.1833, "lon": -80.0333, "type": "reef", "depth": "90ft", "source": "FWC"}, {"name": "Haulover Reef", "lat": 25.9, "lon": -80.0833, "type": "reef", "depth": "40ft", "source": "FWC"}, {"name": "Spiegel Grove", "lat": 25.0611, "lon": -80.3089, "type": "reef", "depth": "130ft", "source": "FWC", "notes": "510ft Navy ship"}, {"name": "USCGC Duane", "lat": 24.9867, "lon": -80.3833, "type": "reef", "depth": "120ft", "source": "FWC", "notes": "Coast Guard cutter"}, {"name": "USS Vandenberg", "lat": 24.5675, "lon": -81.7419, "type": "reef", "depth": "140ft", "source": "FWC", "notes": "523ft tracking ship"}, {"name": "Thunderbolt", "lat": 24.65, "lon": -81.0333, "type": "reef", "depth": "115ft", "source": "FWC"}, {"name": "Adolphus Busch", "lat": 24.5167, "lon": -81.4833, "type": "reef", "depth": "110ft", "source": "FWC"}, {"name": "Port Canaveral Jetty", "lat": 28.4083, "lon": -80.6, "type": "fishing", "source": "Popular"}, {"name": "Banana River", "lat": 28.4, "lon": -80.6333, "type": "fishing", "source": "Popular"}, {"name": "Sebastian Inlet", "lat": 27.8567, "lon": -80.45, "type": "fishing", "source": "Popular"}, {"name": "Islamorada Hump", "lat": 24.8833, "lon": -80.5833, "type": "fishing", "source": "Popular"}, {"name": "Marathon Bridge", "lat": 24.7108, "lon": -81.0853, "type": "fishing", "source": "Popular"}, {"name": "Key West Bar", "lat": 24.5461, "lon": -81.8003, "type": "fishing", "source": "Popular"}, {"name": "Bimini Road", "lat": 25.7706, "lon": -79.2764, "type": "fishing", "source": "Popular"}, {"name": "Walker's Cay", "lat": 27.2667, "lon": -78.4, "type": "fishing", "source": "Popular"}, {"name": "Chub Cay", "lat": 25.4167, "lon": -77.9, "type": "fishing", "source": "Popular"}];
+        
+        fishingSpots.forEach(function(s) {
+            if(s.type === 'fishing') {
+                var icon = L.divIcon({
+                    className: 'fish',
+                    html: '<div style="background:#00BFFF;width:8px;height:8px;border-radius:50%;border:1px solid #006699;opacity:0.8"></div>',
+                    iconSize: [8, 8], iconAnchor: [4, 4]
+                });
+                L.marker([s.lat, s.lon], {icon: icon}).addTo(fishingLayer)
+                    .bindPopup('<b>🎣 '+s.name+'</b><br>Source: '+s.source);
+            } else if(s.type === 'reef') {
+                var icon = L.divIcon({
+                    className: 'reef',
+                    html: '<div style="background:#7B68EE;width:8px;height:8px;border-radius:2px;border:1px solid #4B0082;opacity:0.8"></div>',
+                    iconSize: [8, 8], iconAnchor: [4, 4]
+                });
+                var popup = '<b>🪸 '+s.name+'</b>';
+                if(s.depth) popup += '<br>Depth: '+s.depth;
+                if(s.notes) popup += '<br>'+s.notes;
+                popup += '<br>Source: '+s.source;
+                L.marker([s.lat, s.lon], {icon: icon}).addTo(reefsLayer).bindPopup(popup);
+            }
+        });
+
+        // Toggle controls
+        document.getElementById('toggleWrecks').addEventListener('change', function() {
+            this.checked ? map.addLayer(wrecksLayer) : map.removeLayer(wrecksLayer);
+        });
+        document.getElementById('toggleFishing').addEventListener('change', function() {
+            this.checked ? map.addLayer(fishingLayer) : map.removeLayer(fishingLayer);
+        });
+        document.getElementById('toggleReefs').addEventListener('change', function() {
+            this.checked ? map.addLayer(reefsLayer) : map.removeLayer(reefsLayer);
+        });
+        document.getElementById('toggleLeases').addEventListener('change', function() {
+            this.checked ? map.addLayer(leasesLayer) : map.removeLayer(leasesLayer);
+        });
+
+        L.control.scale({imperial: true, metric: true}).addTo(map);
+        
+        map.on('click', function(e) {
+            L.popup().setLatLng(e.latlng)
+                .setContent('<b>'+e.latlng.lat.toFixed(4)+'°N, '+Math.abs(e.latlng.lng).toFixed(4)+'°W</b>')
+                .openOn(map);
+        });
+    </script>
+</body>
+</html>
