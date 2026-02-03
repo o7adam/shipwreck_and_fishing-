@@ -97,7 +97,8 @@
         <div class="legend-item"><div class="legend-color" style="background:#FFEB3B"></div> Mystery Finds</div>
         <div class="legend-item"><div class="legend-color" style="background:#e74c3c"></div> ⚔️ Battles/Raids</div>
         <div class="legend-item"><div class="legend-color" style="background:#9b59b6"></div> 🌀 Storm Losses</div>
-        <div class="legend-item"><div class="legend-color" style="background:#8B0000;border-color:#FFD700"></div> 🏴‍☠️ Pirate Raids</div>
+        <div class="legend-item"><div class="legend-color" style="background:#000;border-color:#FFD700"></div> ☠️ Land Raids</div>
+        <div class="legend-item"><div class="legend-color" style="background:#c0392b;border-color:#FFD700"></div> ☠️ Sea Raids</div>
         
         <h4>Routes</h4>
         <div class="legend-item"><div class="legend-line" style="background:#e74c3c"></div> Spanish Fleet</div>
@@ -417,7 +418,13 @@
             var raids = (data.pirate_raids && data.pirate_raids.raids) || [];
             raids.forEach(function(raid) {
                 if (!raid.lat || !raid.lng) return;
-                var icon = createMarker(raid.lat, raid.lng, '#8B0000', 13, '2px solid #FFD700');
+                var isLand = raid.type && (raid.type.includes('land') || raid.type.includes('sack') || raid.type.includes('siege'));
+                var bgColor = isLand ? '#000' : '#c0392b'; // Black for land, red for sea
+                var icon = L.divIcon({
+                    className: 'raid-marker',
+                    html: '<div style="background:'+bgColor+';width:18px;height:18px;border-radius:50%;border:2px solid #FFD700;display:flex;align-items:center;justify-content:center;font-size:12px;box-shadow:0 2px 4px rgba(0,0,0,0.4)">☠️</div>',
+                    iconSize: [18, 18], iconAnchor: [9, 9]
+                });
                 L.marker([raid.lat, raid.lng], {icon: icon}).addTo(raidsLayer)
                     .on('click', function() {
                         var content = '<div class="info-box battle">';
@@ -442,7 +449,7 @@
             });
 
         // Gulf Oil Wells/Platforms
-            var oilWells = (data.gulf_oil_wells && data.gulf_oil_wells.platforms) || [];
+            var oilWells = (data.offshore_platforms && data.offshore_platforms.platforms) || (data.gulf_oil_wells && data.gulf_oil_wells.platforms) || [];
             oilWells.forEach(function(well) {
                 if (!well.lat || !well.lng) return;
                 var color = '#27ae60'; // active = green
@@ -471,7 +478,8 @@
         fetch('fishing_spots.json?v=' + Date.now())
             .then(r => r.json())
             .then(fishData => {
-                fishData.forEach(function(spot) {
+                var spots = fishData.spots || fishData; // Handle both wrapped and unwrapped formats
+                spots.forEach(function(spot) {
                     if (!spot.lat || !spot.lon) return;
                     if (spot.type === 'fishing') {
                         var icon = L.divIcon({
