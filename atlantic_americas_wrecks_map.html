@@ -1,466 +1,561 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Atlantic & Americas Shipwreck Database v3.1</title>
+    <title>Atlantic & Americas Treasure Map v4.2</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
         #map { height: 100vh; width: 100%; }
-        
-        /* Control Panel */
-        .control-panel {
-            position: absolute; top: 10px; right: 10px; z-index: 1000;
-            background: rgba(255,255,255,0.95); padding: 15px; border-radius: 8px;
-            max-width: 280px; max-height: 50vh; overflow-y: auto;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        .info-panel {
+            position: absolute; top: 10px; right: 10px;
+            background: rgba(255,255,255,0.95); padding: 12px;
+            border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            max-width: 280px; z-index: 1000; max-height: 92vh;
+            overflow-y: auto; font-size: 11px;
         }
-        .control-panel h2 { margin: 0 0 10px 0; color: #1a5276; font-size: 16px; }
-        .legend { margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd; }
-        .legend-item { display: flex; align-items: center; margin: 4px 0; font-size: 11px; }
-        .legend-color { width: 16px; height: 16px; border-radius: 50%; margin-right: 6px; border: 2px solid #333; }
-        .treasure { background: #f1c40f; }
-        .pirate { background: #2c3e50; }
-        .fleet { background: #e74c3c; }
-        .military { background: #3498db; }
-        .civilian { background: #27ae60; }
-        .uncertainty-legend { width: 16px; height: 16px; border-radius: 50%; margin-right: 6px; border: 2px dashed #e74c3c; background: rgba(231, 76, 60, 0.1); }
-        .filter-section { margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd; }
-        .filter-section label { display: block; margin: 3px 0; font-size: 11px; cursor: pointer; }
-        .stats { font-size: 10px; color: #666; margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd; }
+        .info-panel h3 { margin: 0 0 8px 0; font-size: 14px; }
+        .counts { font-family: monospace; font-size: 10px; background: #f0f0f0; padding: 4px 6px; border-radius: 3px; margin-bottom: 8px; }
+        h4 { margin: 10px 0 5px 0; font-size: 11px; border-bottom: 1px solid #ccc; padding-bottom: 3px; }
+        .layer-toggle { margin: 3px 0; }
+        .layer-toggle label { cursor: pointer; display: flex; align-items: center; }
+        .layer-toggle input { margin-right: 6px; }
+        .legend-item { display: flex; align-items: center; margin: 3px 0; font-size: 10px; }
+        .legend-color { width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; border: 2px solid #333; }
+        .legend-line { width: 20px; height: 3px; margin-right: 6px; }
+        .legend-line.dashed { border-top: 2px dashed; height: 0; }
+        .legend-box { width: 14px; height: 14px; margin-right: 6px; border: 2px dashed; }
+        a { color: #0066cc; font-size: 10px; }
         
-        /* Flyout Panel */
         .flyout {
             position: absolute; top: 0; left: -400px; z-index: 1001;
-            width: 400px; height: 100vh; background: #fff;
+            width: 380px; height: 100vh; background: #fff;
             box-shadow: 2px 0 15px rgba(0,0,0,0.3);
-            transition: left 0.3s ease;
-            overflow-y: auto;
+            transition: left 0.3s ease; overflow-y: auto;
         }
         .flyout.open { left: 0; }
         .flyout-header {
             background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
-            color: white; padding: 20px; position: sticky; top: 0;
+            color: white; padding: 15px; position: sticky; top: 0;
         }
-        .flyout-header h2 { margin: 0 0 5px 0; font-size: 20px; }
-        .flyout-header .year { font-size: 14px; opacity: 0.9; }
+        .flyout-header h2 { margin: 0; font-size: 18px; }
+        .flyout-header .sub { font-size: 12px; opacity: 0.9; margin-top: 4px; }
         .flyout-close {
-            position: absolute; top: 15px; right: 15px;
+            position: absolute; top: 10px; right: 10px;
             background: rgba(255,255,255,0.2); border: none; color: white;
-            width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
-            font-size: 18px; line-height: 30px;
+            width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 16px;
         }
-        .flyout-close:hover { background: rgba(255,255,255,0.3); }
-        .flyout-content { padding: 20px; }
-        .flyout-section {
-            margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;
-        }
-        .flyout-section:last-child { border-bottom: none; }
-        .flyout-section h3 {
-            margin: 0 0 10px 0; font-size: 13px; color: #7f8c8d;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        .flyout-section p { margin: 5px 0; font-size: 14px; line-height: 1.5; }
-        .info-box {
-            background: #f8f9fa; padding: 12px; border-radius: 6px; margin: 10px 0;
-        }
-        .info-box.treasure { background: #fff9e6; border-left: 4px solid #f1c40f; }
-        .info-box.depth { background: #e8f4fc; border-left: 4px solid #3498db; }
-        .info-box.uncertainty { background: #fdf2f2; border-left: 4px solid #e74c3c; }
-        .info-box.origin { background: #e8f6f3; border-left: 4px solid #1abc9c; }
-        .info-box strong { display: block; margin-bottom: 5px; }
-        .tag {
-            display: inline-block; padding: 3px 8px; margin: 2px;
-            background: #ecf0f1; border-radius: 12px; font-size: 11px;
-        }
-        .tag.gold { background: #f1c40f; color: #000; }
-        .tag.silver { background: #bdc3c7; }
-        .tag.emerald { background: #2ecc71; color: #fff; }
-        .status-badge {
-            display: inline-block; padding: 4px 10px; border-radius: 4px;
-            font-size: 12px; font-weight: bold;
-        }
-        .status-badge.recovered { background: #27ae60; color: white; }
-        .status-badge.unfound { background: #e74c3c; color: white; }
-        .links-list { list-style: none; padding: 0; margin: 0; }
-        .links-list li { margin: 8px 0; }
-        .links-list a {
-            color: #2980b9; text-decoration: none; display: flex; align-items: center;
-        }
-        .links-list a:hover { text-decoration: underline; }
-        .links-list a::before { content: "🔗"; margin-right: 8px; }
-        
-        /* Pre-1800 styling */
-        .pre1800-badge {
-            background: #8B4513; color: white; padding: 2px 8px;
-            border-radius: 3px; font-size: 11px; margin-left: 10px;
-        }
-        
-        @media (max-width: 600px) {
-            .flyout { width: 100%; left: -100%; }
-            .control-panel { max-width: 200px; font-size: 11px; }
-        }
+        .flyout-content { padding: 15px; font-size: 13px; line-height: 1.5; }
+        .flyout-section { margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+        .flyout-section h3 { margin: 0 0 8px 0; font-size: 12px; color: #666; text-transform: uppercase; }
+        .info-box { background: #f5f5f5; padding: 10px; border-radius: 5px; margin: 8px 0; }
+        .info-box.gold { border-left: 4px solid #f1c40f; background: #fffde7; }
+        .info-box.depth { border-left: 4px solid #3498db; background: #e3f2fd; }
+        .info-box.battle { border-left: 4px solid #e74c3c; background: #ffebee; }
+        .tag { display: inline-block; padding: 2px 6px; margin: 2px; background: #e0e0e0; border-radius: 10px; font-size: 10px; }
     </style>
 </head>
 <body>
     <div id="map"></div>
     
-    <!-- Control Panel -->
-    <div class="control-panel">
-        <h2>🏴‍☠️ Shipwreck Database</h2>
+    <div class="info-panel">
+        <h3>🏴‍☠️ Treasure Map v4.2</h3>
+        <div class="counts" id="counts">Loading...</div>
         
-        <div class="legend">
-            <div class="legend-item"><div class="legend-color treasure"></div> Treasure Ship</div>
-            <div class="legend-item"><div class="legend-color pirate"></div> Pirate Ship</div>
-            <div class="legend-item"><div class="legend-color fleet"></div> Fleet Disaster</div>
-            <div class="legend-item"><div class="legend-color military"></div> Military/Naval</div>
-            <div class="legend-item"><div class="legend-color civilian"></div> Civilian</div>
-            <div class="legend-item"><div class="uncertainty-legend"></div> Search Area</div>
-        </div>
+        <h4>Toggle Layers</h4>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleWrecks" checked> ⚓ Shipwrecks</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleSeaRoutes" checked> 🚢 Sea Trade Routes</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleLandRoutes"> 🛤️ Land Routes</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleMines"> ⛏️ Mining Sites</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleMints"> 🪙 Colonial Mints</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="togglePirates" checked> 💀 Pirate Havens</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleMystery"> ❓ Mystery Finds</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleLeases" checked> 📜 Salvage Leases</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleIncidents" checked> ⚔️ Voyage Incidents</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleRaids" checked> 🏴‍☠️ Pirate Raids</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleOilWells"> 🛢️ Gulf Oil Platforms</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleFishing"> 🎣 Fishing Spots</label></div>
+        <div class="layer-toggle"><label><input type="checkbox" id="toggleReefs"> 🪸 Artificial Reefs</label></div>
         
-        <div class="filter-section">
-            <strong style="font-size: 11px;">Era:</strong>
-            <label><input type="checkbox" id="pre1800" checked onchange="filterWrecks()"> Pre-1800 (Treasure Era)</label>
-            <label><input type="checkbox" id="post1800" checked onchange="filterWrecks()"> Post-1800</label>
-            <br>
-            <strong style="font-size: 11px;">Type:</strong>
-            <label><input type="checkbox" id="showTreasure" checked onchange="filterWrecks()"> Treasure</label>
-            <label><input type="checkbox" id="showPirate" checked onchange="filterWrecks()"> Pirate</label>
-            <label><input type="checkbox" id="showFleet" checked onchange="filterWrecks()"> Fleet</label>
-            <label><input type="checkbox" id="showMilitary" checked onchange="filterWrecks()"> Military</label>
-            <label><input type="checkbox" id="showCivilian" checked onchange="filterWrecks()"> Civilian</label>
-            <br>
-            <label><input type="checkbox" id="showUncertainty" checked onchange="filterWrecks()"> Show Search Areas</label>
-        </div>
+        <h4>Quick Toggle</h4>
+        <button onclick="toggleAll(true)" style="font-size:10px;padding:3px 8px;margin:2px">All On</button>
+        <button onclick="toggleAll(false)" style="font-size:10px;padding:3px 8px;margin:2px">All Off</button>
         
-        <div class="stats" id="stats">Loading...</div>
+        <h4>Wrecks Legend</h4>
+        <div class="legend-item"><div class="legend-color" style="background:#FFD700"></div> Treasure Ships</div>
+        <div class="legend-item"><div class="legend-color" style="background:#2c3e50"></div> Pirate Ships</div>
+        <div class="legend-item"><div class="legend-color" style="background:#e74c3c"></div> Fleet Disasters</div>
+        <div class="legend-item"><div class="legend-color" style="background:#3498db"></div> Military/Naval</div>
+        <div class="legend-item"><div class="legend-color" style="background:#27ae60"></div> Civilian/Other</div>
+        
+        <h4>Other Markers</h4>
+        <div class="legend-item"><div class="legend-color" style="background:#8B4513"></div> Mining Sites</div>
+        <div class="legend-item"><div class="legend-color" style="background:#C0C0C0"></div> Colonial Mints</div>
+        <div class="legend-item"><div class="legend-color" style="background:#000;border-color:#c0392b"></div> Pirate Havens</div>
+        <div class="legend-item"><div class="legend-color" style="background:#FFEB3B"></div> Mystery Finds</div>
+        <div class="legend-item"><div class="legend-color" style="background:#e74c3c"></div> ⚔️ Battles/Raids</div>
+        <div class="legend-item"><div class="legend-color" style="background:#9b59b6"></div> 🌀 Storm Losses</div>
+        <div class="legend-item"><div class="legend-color" style="background:#8B0000;border-color:#FFD700"></div> 🏴‍☠️ Pirate Raids</div>
+        
+        <h4>Routes</h4>
+        <div class="legend-item"><div class="legend-line" style="background:#e74c3c"></div> Spanish Fleet</div>
+        <div class="legend-item"><div class="legend-line" style="background:#3498db"></div> Portuguese Route</div>
+        <div class="legend-item"><div class="legend-line dashed" style="border-color:#8B4513"></div> Land/Mule Routes</div>
+        
+        <h4>Fishing & Reefs</h4>
+        <div class="legend-item"><div class="legend-color" style="background:#00BFFF;width:8px;height:8px"></div> Fishing Spots</div>
+        <div class="legend-item"><div class="legend-color" style="background:#7B68EE;width:8px;height:8px;border-radius:2px"></div> Artificial Reefs</div>
+        
+        <h4>Oil Platforms</h4>
+        <div class="legend-item"><div class="legend-color" style="background:#27ae60;width:8px;height:8px"></div> Active</div>
+        <div class="legend-item"><div class="legend-color" style="background:#7f8c8d;width:8px;height:8px"></div> Inactive</div>
+        <div class="legend-item"><div class="legend-color" style="background:#2c3e50;width:8px;height:8px"></div> Abandoned</div>
+        <div class="legend-item"><div class="legend-color" style="background:#c0392b;width:8px;height:8px"></div> Destroyed</div>
+        
+        <h4>Salvage Leases</h4>
+        <div class="legend-item"><div class="legend-box" style="background:rgba(255,215,0,0.2);border-color:#FFD700"></div> 1715 Fleet</div>
+        <div class="legend-item"><div class="legend-box" style="background:rgba(0,206,209,0.2);border-color:#00CED1"></div> 1733 Fleet</div>
+        <div class="legend-item"><div class="legend-box" style="background:rgba(255,0,255,0.2);border-color:#FF00FF"></div> Atocha</div>
+        
+        <h4>Data</h4>
+        <a href="shipwreck_database.json" target="_blank">📊 Full Database JSON</a>
     </div>
     
-    <!-- Flyout Detail Panel -->
     <div class="flyout" id="flyout">
         <div class="flyout-header">
-            <button class="flyout-close" onclick="closeFlyout()">×</button>
-            <h2 id="flyout-title">Ship Name</h2>
-            <div class="year" id="flyout-subtitle"></div>
+            <button class="flyout-close" onclick="closeFlyout()">✕</button>
+            <h2 id="flyout-title">Name</h2>
+            <div class="sub" id="flyout-sub"></div>
         </div>
-        <div class="flyout-content" id="flyout-content">
-            <!-- Dynamic content -->
-        </div>
+        <div class="flyout-content" id="flyout-content"></div>
     </div>
 
     <script>
-        const map = L.map('map').setView([20, -70], 4);
+        var map = L.map('map').setView([20, -60], 4);
         
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
+            attribution: '© OpenStreetMap', maxZoom: 19
         }).addTo(map);
+        
+        var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '© Esri', maxZoom: 19
+        });
+        L.control.layers({"Street": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'), "Satellite": satellite}).addTo(map);
 
-        let wrecks = [];
-        let markers = [];
-        let uncertaintyCircles = [];
+        // Layer groups
+        var wrecksLayer = L.layerGroup().addTo(map);
+        var seaRoutesLayer = L.layerGroup().addTo(map);
+        var landRoutesLayer = L.layerGroup();
+        var minesLayer = L.layerGroup();
+        var mintsLayer = L.layerGroup();
+        var piratesLayer = L.layerGroup().addTo(map);
+        var mysteryLayer = L.layerGroup();
+        var leasesLayer = L.layerGroup().addTo(map);
+        var incidentsLayer = L.layerGroup().addTo(map);
+        var raidsLayer = L.layerGroup().addTo(map);
+        var oilWellsLayer = L.layerGroup(); // Off by default
+        var fishingLayer = L.layerGroup(); // Off by default
+        var reefsLayer = L.layerGroup(); // Off by default
 
-        // Load data from JSON
-        async function loadData() {
-            try {
-                const response = await fetch('shipwreck_database.json');
-                const data = await response.json();
-                wrecks = data.wrecks.map(w => transformWreck(w));
-                filterWrecks();
-            } catch (e) {
-                console.error('Failed to load shipwreck data:', e);
-                document.getElementById('stats').innerHTML = '<span style="color:red">Failed to load data</span>';
-            }
+        // Salvage Lease Areas
+        var salvageLeases = [
+            {name: "1715 Fleet Lease", coords: [[27.86,-80.45],[27.86,-80.20],[27.25,-80.20],[27.25,-80.35],[27.60,-80.40]], color: "#FFD700", notes: "Queens Jewels LLC - Active salvage"},
+            {name: "1733 Fleet Lease", coords: [[25.08,-80.45],[25.08,-80.25],[24.70,-80.55],[24.70,-80.85]], color: "#00CED1", notes: "Florida Keys"},
+            {name: "Atocha/Margarita Lease", coords: [[24.65,-81.40],[24.65,-81.90],[24.40,-82.10],[24.40,-81.40]], color: "#FF00FF", notes: "Mel Fisher's Treasures"},
+            {name: "Maravillas Lease", coords: [[27.25,-78.80],[27.25,-79.20],[26.90,-79.20],[26.90,-78.80]], color: "#FFA500", notes: "Little Bahama Bank"},
+            {name: "San José Zone", coords: [[10.45,-76.00],[10.45,-76.15],[10.32,-76.15],[10.32,-76.00]], color: "#FF6347", notes: "Colombian protected"}
+        ];
+
+        var dbData = null;
+
+        function getWreckColor(wreck) {
+            var name = (wreck.name || '').toLowerCase();
+            var type = (wreck.type || '').toLowerCase();
+            if (type.includes('pirate')) return '#2c3e50';
+            if (type.includes('fleet') || name.includes('1715') || name.includes('1733')) return '#e74c3c';
+            if (type.includes('military') || type.includes('naval') || name.includes('uss ')) return '#3498db';
+            if (type.includes('treasure') || type.includes('galleon') || wreck.treasure_type) return '#FFD700';
+            return '#27ae60';
         }
 
-        // Transform database format to map format
-        function transformWreck(w) {
-            // Determine type
-            let type = 'civilian';
-            const name = w.name.toLowerCase();
-            const wtype = (w.type || '').toLowerCase();
-            
-            if (w.treasure_type && w.treasure_type.length > 0) type = 'treasure';
-            else if (wtype.includes('pirate')) type = 'pirate';
-            else if (wtype.includes('fleet')) type = 'fleet';
-            else if (wtype.includes('military') || wtype.includes('ironclad') || wtype.includes('cruiser') || 
-                     wtype.includes('corvette') || name.includes('uss ') || name.includes('sms ') || 
-                     name.includes('ara ') || name.includes('hms ')) type = 'military';
-            
-            if (name.includes('fleet')) type = 'fleet';
-            if (name.includes('pirate') || name.includes('blackbeard') || name.includes('whydah')) type = 'pirate';
-
-            return {
-                id: w.id,
-                name: w.name,
-                fullType: w.type,
-                type: type,
-                year: w.year,
-                date: w.date,
-                lat: w.location.lat,
-                lng: w.location.lng,
-                depth: w.location.depth_range || (w.location.depth_m ? `${w.location.depth_m}m / ${w.location.depth_ft}ft` : null),
-                depthM: w.location.depth_m,
-                uncertaintyKm: w.location.location_uncertainty_km || 0,
-                uncertaintyNotes: w.location.location_notes,
-                locationDesc: w.location.description,
-                cause: w.cause,
-                cargo: w.cargo,
-                cargoDetail: w.cargo_detail,
-                treasureType: w.treasure_type || [],
-                origin: w.origin,
-                casualties: w.casualties,
-                recovered: w.recovered,
-                diveAccessible: w.dive_accessible,
-                notes: w.notes,
-                links: w.links || []
-            };
+        function createMarker(lat, lng, color, size, borderStyle) {
+            var border = borderStyle || '2px solid #333';
+            return L.divIcon({
+                className: 'marker',
+                html: '<div style="background:'+color+';width:'+size+'px;height:'+size+'px;border-radius:50%;border:'+border+';box-shadow:0 1px 3px rgba(0,0,0,0.4)"></div>',
+                iconSize: [size, size], iconAnchor: [size/2, size/2]
+            });
         }
 
-        function getColor(type) {
-            switch(type) {
-                case 'treasure': return '#f1c40f';
-                case 'pirate': return '#2c3e50';
-                case 'fleet': return '#e74c3c';
-                case 'military': return '#3498db';
-                default: return '#27ae60';
-            }
+        function openFlyout(title, sub, content) {
+            document.getElementById('flyout-title').textContent = title;
+            document.getElementById('flyout-sub').textContent = sub;
+            document.getElementById('flyout-content').innerHTML = content;
+            document.getElementById('flyout').classList.add('open');
         }
-
-        function openFlyout(wreck) {
-            const flyout = document.getElementById('flyout');
-            const title = document.getElementById('flyout-title');
-            const subtitle = document.getElementById('flyout-subtitle');
-            const content = document.getElementById('flyout-content');
-
-            // Header
-            title.innerHTML = wreck.name + (wreck.year < 1800 ? '<span class="pre1800-badge">Treasure Era</span>' : '');
-            subtitle.innerHTML = `${wreck.fullType || wreck.type} • ${wreck.year}`;
-
-            // Build content
-            let html = '';
-
-            // Status
-            html += `<div class="flyout-section">
-                <span class="status-badge ${wreck.recovered ? 'recovered' : 'unfound'}">
-                    ${wreck.recovered ? '✓ Recovered/Found' : '✗ Unfound/Unrecovered'}
-                </span>
-                ${wreck.diveAccessible ? ' <span class="tag">🤿 Dive Accessible</span>' : ''}
-            </div>`;
-
-            // Location
-            html += `<div class="flyout-section">
-                <h3>📍 Location</h3>
-                <p><strong>${wreck.locationDesc}</strong></p>
-                <p>Coordinates: ${wreck.lat.toFixed(4)}°, ${wreck.lng.toFixed(4)}°</p>
-            </div>`;
-
-            // Depth
-            if (wreck.depth || wreck.depthM === null) {
-                html += `<div class="info-box depth">
-                    <strong>🌊 Depth</strong>
-                    ${wreck.depth || 'Unknown'}
-                    ${wreck.depthM === null ? ' <em>(estimated)</em>' : ''}
-                </div>`;
-            }
-
-            // Uncertainty - only show for unfound wrecks or large search areas
-            if (wreck.uncertaintyKm > 0 && (!wreck.recovered || wreck.uncertaintyKm >= 20)) {
-                html += `<div class="info-box uncertainty">
-                    <strong>🎯 Search Area (Approximate Location)</strong>
-                    Uncertainty radius: ±${wreck.uncertaintyKm} km
-                    ${wreck.uncertaintyNotes ? `<br><em>${wreck.uncertaintyNotes}</em>` : ''}
-                </div>`;
-            }
-
-            // Cargo/Treasure
-            if (wreck.cargo) {
-                html += `<div class="info-box treasure">
-                    <strong>💰 Cargo</strong>
-                    ${wreck.cargo}
-                    ${wreck.cargoDetail ? `<br><small>${wreck.cargoDetail}</small>` : ''}
-                </div>`;
-            }
-
-            // Treasure types
-            if (wreck.treasureType && wreck.treasureType.length > 0) {
-                html += `<div class="flyout-section">
-                    <h3>💎 Treasure Types</h3>
-                    <div>`;
-                wreck.treasureType.forEach(t => {
-                    let tagClass = 'tag';
-                    if (t.includes('gold')) tagClass += ' gold';
-                    else if (t.includes('silver')) tagClass += ' silver';
-                    else if (t.includes('emerald')) tagClass += ' emerald';
-                    html += `<span class="${tagClass}">${t.replace(/_/g, ' ')}</span>`;
-                });
-                html += `</div></div>`;
-            }
-
-            // Origin
-            if (wreck.origin) {
-                html += `<div class="info-box origin">
-                    <strong>🚢 Origin</strong>
-                    ${wreck.origin}
-                </div>`;
-            }
-
-            // Cause & Casualties
-            html += `<div class="flyout-section">
-                <h3>⚓ Details</h3>
-                ${wreck.cause ? `<p><strong>Cause:</strong> ${wreck.cause}</p>` : ''}
-                ${wreck.casualties ? `<p><strong>Casualties:</strong> ${wreck.casualties.toLocaleString()}</p>` : ''}
-                ${wreck.date ? `<p><strong>Date:</strong> ${wreck.date}</p>` : ''}
-            </div>`;
-
-            // Notes
-            if (wreck.notes) {
-                html += `<div class="flyout-section">
-                    <h3>📝 Notes</h3>
-                    <p>${wreck.notes}</p>
-                </div>`;
-            }
-
-            // Links
-            if (wreck.links && wreck.links.length > 0) {
-                html += `<div class="flyout-section">
-                    <h3>📚 Sources & Links</h3>
-                    <ul class="links-list">`;
-                wreck.links.forEach(link => {
-                    try {
-                        const url = new URL(link);
-                        const domain = url.hostname.replace('en.wikipedia.org', 'Wikipedia').replace('www.', '');
-                        html += `<li><a href="${link}" target="_blank">${domain}</a></li>`;
-                    } catch(e) {}
-                });
-                html += `</ul></div>`;
-            }
-
-            content.innerHTML = html;
-            flyout.classList.add('open');
-        }
-
         function closeFlyout() {
             document.getElementById('flyout').classList.remove('open');
         }
 
-        // Close flyout when clicking on map
-        map.on('click', function(e) {
-            if (!e.originalEvent.target.closest('.leaflet-marker-icon, .leaflet-interactive')) {
-                closeFlyout();
-            }
-        });
-
-        function filterWrecks() {
-            const pre1800 = document.getElementById('pre1800').checked;
-            const post1800 = document.getElementById('post1800').checked;
-            const showTreasure = document.getElementById('showTreasure').checked;
-            const showPirate = document.getElementById('showPirate').checked;
-            const showFleet = document.getElementById('showFleet').checked;
-            const showMilitary = document.getElementById('showMilitary').checked;
-            const showCivilian = document.getElementById('showCivilian').checked;
-            const showUncertainty = document.getElementById('showUncertainty').checked;
-
-            // Remove existing
-            markers.forEach(m => map.removeLayer(m));
-            uncertaintyCircles.forEach(c => map.removeLayer(c));
-            markers = [];
-            uncertaintyCircles = [];
-
-            let counts = { total: 0, pre1800: 0, treasure: 0, peru: 0, unfound: 0 };
-
-            wrecks.forEach(wreck => {
-                // Filter by era
-                if (wreck.year < 1800 && !pre1800) return;
-                if (wreck.year >= 1800 && !post1800) return;
-
-                // Filter by type
-                if (wreck.type === 'treasure' && !showTreasure) return;
-                if (wreck.type === 'pirate' && !showPirate) return;
-                if (wreck.type === 'fleet' && !showFleet) return;
-                if (wreck.type === 'military' && !showMilitary) return;
-                if (wreck.type === 'civilian' && !showCivilian) return;
-
-                // Stats
-                counts.total++;
-                if (wreck.year < 1800) counts.pre1800++;
-                if (wreck.type === 'treasure' || wreck.type === 'fleet') counts.treasure++;
-                if (wreck.origin && wreck.origin.includes('Peru')) counts.peru++;
-                if (!wreck.recovered) counts.unfound++;
-
-                const color = getColor(wreck.type);
-                const size = wreck.year < 1800 ? 12 : 9;
-
-                // Uncertainty circle - ONLY for unfound/unrecovered wrecks with approximate locations
-                // Don't show circles for found wrecks (their "uncertainty" is just debris field size)
-                const showCircle = showUncertainty && 
-                                   wreck.uncertaintyKm > 0 && 
-                                   (!wreck.recovered || wreck.uncertaintyKm >= 20);
-                
-                if (showCircle) {
-                    const circle = L.circle([wreck.lat, wreck.lng], {
-                        radius: wreck.uncertaintyKm * 1000,
-                        color: '#e74c3c',
-                        weight: 2,
-                        dashArray: '5, 5',
-                        fillColor: '#e74c3c',
-                        fillOpacity: 0.08
-                    }).addTo(map);
-                    
-                    circle.on('click', () => openFlyout(wreck));
-                    uncertaintyCircles.push(circle);
-                }
-
-                // Marker
-                const marker = L.circleMarker([wreck.lat, wreck.lng], {
-                    radius: size,
-                    fillColor: color,
-                    color: wreck.recovered ? '#000' : '#c0392b',
-                    weight: wreck.year < 1800 ? 3 : 2,
-                    opacity: 1,
-                    fillOpacity: 0.85
-                }).addTo(map);
-
-                marker.on('click', () => openFlyout(wreck));
-                markers.push(marker);
-            });
-
-            document.getElementById('stats').innerHTML = `
-                <strong>${counts.total} wrecks</strong><br>
-                Pre-1800: ${counts.pre1800} | Treasure: ${counts.treasure}<br>
-                Peru origin: ${counts.peru} | <span style="color:#c0392b">Unfound: ${counts.unfound}</span>
-            `;
+        function loadData() {
+            fetch('shipwreck_database.json')
+                .then(r => r.json())
+                .then(data => {
+                    dbData = data;
+                    renderAll(data);
+                })
+                .catch(e => {
+                    console.error('Failed to load database:', e);
+                    document.getElementById('counts').textContent = 'Error loading data';
+                });
         }
 
-        // Peru silver route
-        const peruRoute = [
-            [-12.05, -77.04], [8.95, -79.52], [9.35, -79.95],
-            [10.39, -75.51], [23.13, -82.35], [36.53, -6.29]
-        ];
-        
-        L.polyline(peruRoute, {
-            color: '#1abc9c', weight: 2, dashArray: '10, 10', opacity: 0.6
-        }).addTo(map).bindPopup('<strong>Peru Silver Route</strong><br>Potosí → Callao → Panama → Portobelo → Cartagena → Havana → Spain');
+        function renderAll(data) {
+            // Clear layers
+            wrecksLayer.clearLayers();
+            seaRoutesLayer.clearLayers();
+            landRoutesLayer.clearLayers();
+            minesLayer.clearLayers();
+            mintsLayer.clearLayers();
+            piratesLayer.clearLayers();
+            mysteryLayer.clearLayers();
+            leasesLayer.clearLayers();
+            incidentsLayer.clearLayers();
+            raidsLayer.clearLayers();
+            oilWellsLayer.clearLayers();
+            fishingLayer.clearLayers();
+            reefsLayer.clearLayers();
 
-        // Route markers
-        [
-            { lat: -12.05, lng: -77.04, name: "Callao" },
-            { lat: 9.35, lng: -79.95, name: "Portobelo" },
-            { lat: 10.39, lng: -75.51, name: "Cartagena" },
-            { lat: 23.13, lng: -82.35, name: "Havana" }
-        ].forEach(p => {
-            L.marker([p.lat, p.lng], {
-                icon: L.divIcon({
-                    className: 'route-marker',
-                    html: `<div style="background:#1abc9c;color:white;padding:2px 5px;border-radius:3px;font-size:9px;">🚢 ${p.name}</div>`,
-                    iconSize: [80, 16], iconAnchor: [40, 8]
-                })
-            }).addTo(map);
+            var wrecks = data.wrecks || [];
+            var routes = (data.trade_routes && data.trade_routes.routes) || [];
+            var mines = (data.mining_sites && data.mining_sites.sites) || [];
+            var mints = (data.mints && data.mints.mints) || [];
+            var landRoutes = (data.land_routes && data.land_routes.routes) || [];
+            var pirates = (data.pirate_havens && data.pirate_havens.havens) || [];
+            var mystery = (data.mystery_finds && data.mystery_finds.finds) || [];
+            var incidents = (data.voyage_incidents && data.voyage_incidents.incidents) || [];
+
+            document.getElementById('counts').textContent = 
+                '⚓'+wrecks.length+' 💀'+pirates.length+' ⚔️'+incidents.length+' ⛏️'+mines.length;
+
+            // Wrecks
+            wrecks.forEach(function(w) {
+                if (!w.location) return;
+                var lat = w.location.lat, lng = w.location.lng || w.location.lon;
+                var color = getWreckColor(w);
+                var size = w.treasure_type ? 14 : 10;
+                var border = (w.recovered === false && w.location.location_uncertainty_km > 0) ? '2px dashed #c0392b' : '2px solid #333';
+                var icon = createMarker(lat, lng, color, size, border);
+                var marker = L.marker([lat, lng], {icon: icon}).addTo(wrecksLayer);
+                marker.on('click', function() {
+                    var content = '<div class="flyout-section"><h3>Location</h3>';
+                    content += '<p>'+(w.location.description||'')+'</p>';
+                    content += '<p><strong>'+lat.toFixed(4)+'°, '+lng.toFixed(4)+'°</strong></p>';
+                    if (w.location.depth_ft) content += '<div class="info-box depth">Depth: '+w.location.depth_ft+' ft</div>';
+                    content += '</div>';
+                    if (w.cargo) content += '<div class="flyout-section"><h3>Cargo</h3><p>'+w.cargo+'</p></div>';
+                    if (w.treasure_type) {
+                        content += '<div class="flyout-section"><h3>Treasure</h3><div>';
+                        w.treasure_type.forEach(function(t) { content += '<span class="tag">'+t+'</span>'; });
+                        content += '</div></div>';
+                    }
+                    if (w.notes) content += '<div class="flyout-section"><h3>Notes</h3><p>'+w.notes+'</p></div>';
+                    if (w.casualties) content += '<div class="flyout-section"><h3>Casualties</h3><p>'+w.casualties+'</p></div>';
+                    if (w.links && w.links.length) {
+                        content += '<div class="flyout-section"><h3>Links</h3>';
+                        w.links.forEach(function(l) { content += '<a href="'+l+'" target="_blank">'+l+'</a><br>'; });
+                        content += '</div>';
+                    }
+                    openFlyout('⚓ '+w.name, (w.year||'')+(w.type?' • '+w.type:''), content);
+                });
+            });
+
+            // Sea Routes - handle dateline crossing
+            routes.forEach(function(r) {
+                if (!r.waypoints || r.waypoints.length < 2) return;
+                var color = '#e74c3c';
+                if ((r.name||'').toLowerCase().includes('portuguese')) color = '#3498db';
+                if ((r.name||'').toLowerCase().includes('manila') || (r.name||'').toLowerCase().includes('dutch') || (r.name||'').toLowerCase().includes('voc')) color = '#f39c12';
+                
+                // Split route at dateline crossings (longitude jumps > 180)
+                var segments = [];
+                var currentSegment = [];
+                for (var i = 0; i < r.waypoints.length; i++) {
+                    var wp = r.waypoints[i];
+                    currentSegment.push([wp.lat, wp.lng]);
+                    if (i < r.waypoints.length - 1) {
+                        var nextWp = r.waypoints[i + 1];
+                        var lngDiff = Math.abs(wp.lng - nextWp.lng);
+                        if (lngDiff > 180) {
+                            // Dateline crossing - end this segment, start new one
+                            segments.push(currentSegment);
+                            currentSegment = [];
+                        }
+                    }
+                }
+                if (currentSegment.length > 0) segments.push(currentSegment);
+                
+                // Draw each segment
+                segments.forEach(function(seg) {
+                    if (seg.length >= 2) {
+                        L.polyline(seg, {color: color, weight: 3, opacity: 0.7}).addTo(seaRoutesLayer)
+                            .bindPopup('<b>'+r.name+'</b><br>'+(r.period||''));
+                    }
+                });
+            });
+
+            // Land Routes
+            landRoutes.forEach(function(r) {
+                if (!r.waypoints || r.waypoints.length < 2) return;
+                var coords = r.waypoints.map(function(wp) { return [wp.lat, wp.lng]; });
+                L.polyline(coords, {color: '#8B4513', weight: 3, opacity: 0.7, dashArray: '8,6'}).addTo(landRoutesLayer)
+                    .bindPopup('<b>'+r.name+'</b><br>'+(r.distance_km ? r.distance_km+' km' : ''));
+            });
+
+            // Mining Sites
+            mines.forEach(function(m) {
+                var icon = createMarker(m.lat, m.lng, '#8B4513', 12);
+                L.marker([m.lat, m.lng], {icon: icon}).addTo(minesLayer)
+                    .on('click', function() {
+                        var content = '<div class="flyout-section"><h3>Details</h3>';
+                        content += '<p><strong>Mineral:</strong> '+(m.mineral||m.mineral_type||'Silver')+'</p>';
+                        if (m.peak_years) content += '<p><strong>Peak:</strong> '+m.peak_years+'</p>';
+                        if (m.notes || m.description) content += '<p>'+(m.notes||m.description)+'</p>';
+                        content += '</div>';
+                        openFlyout('⛏️ '+m.name, m.country||'', content);
+                    });
+            });
+
+            // Mints
+            mints.forEach(function(m) {
+                var icon = createMarker(m.lat, m.lng, '#C0C0C0', 12);
+                L.marker([m.lat, m.lng], {icon: icon}).addTo(mintsLayer)
+                    .on('click', function() {
+                        var content = '<div class="flyout-section"><h3>Details</h3>';
+                        content += '<p><strong>Founded:</strong> '+(m.founded||m.year_founded||'Unknown')+'</p>';
+                        if (m.notes || m.description) content += '<p>'+(m.notes||m.description)+'</p>';
+                        content += '</div>';
+                        openFlyout('🪙 '+m.name, 'Colonial Mint', content);
+                    });
+            });
+
+            // Pirate Havens
+            pirates.forEach(function(p) {
+                var icon = createMarker(p.lat, p.lng, '#000', 12, '2px solid #c0392b');
+                L.marker([p.lat, p.lng], {icon: icon}).addTo(piratesLayer)
+                    .on('click', function() {
+                        var content = '<div class="flyout-section"><h3>Details</h3>';
+                        if (p.period || p.active_period) content += '<p><strong>Active:</strong> '+(p.period||p.active_period)+'</p>';
+                        if (p.notable_pirates) content += '<p><strong>Pirates:</strong> '+p.notable_pirates.join(', ')+'</p>';
+                        if (p.notes || p.description) content += '<p>'+(p.notes||p.description)+'</p>';
+                        content += '</div>';
+                        openFlyout('💀 '+p.name, p.modern_location||p.country||'', content);
+                    });
+            });
+
+            // Mystery Finds
+            mystery.forEach(function(m) {
+                var icon = createMarker(m.lat, m.lng, '#FFEB3B', 10, '2px solid #F57F17');
+                L.marker([m.lat, m.lng], {icon: icon}).addTo(mysteryLayer)
+                    .on('click', function() {
+                        var content = '<div class="flyout-section"><h3>What Was Found</h3>';
+                        content += '<p>'+(m.artifacts_found || m.description || 'Unknown artifacts')+'</p>';
+                        if (m.year_discovered) content += '<p><strong>Discovered:</strong> '+m.year_discovered+'</p>';
+                        if (m.theories) content += '<p><strong>Theories:</strong> '+m.theories+'</p>';
+                        if (m.notes) content += '<p>'+m.notes+'</p>';
+                        content += '</div>';
+                        openFlyout('❓ '+m.name, 'Mystery Find', content);
+                    });
+            });
+
+            // Salvage Leases
+            salvageLeases.forEach(function(l) {
+                L.polygon(l.coords, {color: l.color, weight: 2, fillOpacity: 0.15, dashArray: '6,4'})
+                    .bindPopup('<b>📜 '+l.name+'</b><br>'+l.notes).addTo(leasesLayer);
+            });
+
+            // Voyage Incidents
+            incidents.forEach(function(inc) {
+                var color = '#e74c3c'; // battle red
+                var emoji = '⚔️';
+                if (inc.type && inc.type.includes('storm')) { color = '#9b59b6'; emoji = '🌀'; }
+                if (inc.type && inc.type.includes('sighting')) { color = '#3498db'; emoji = '👁️'; }
+                if (inc.type && inc.type.includes('capture')) { color = '#e67e22'; emoji = '🏴‍☠️'; }
+                
+                var icon = createMarker(inc.lat, inc.lng, color, 12, '2px solid #333');
+                L.marker([inc.lat, inc.lng], {icon: icon}).addTo(incidentsLayer)
+                    .on('click', function() {
+                        var content = '<div class="info-box battle">';
+                        content += '<strong>'+emoji+' '+(inc.type||'Incident').replace(/_/g,' ')+'</strong>';
+                        content += '<p>'+inc.date+'</p></div>';
+                        content += '<div class="flyout-section"><h3>Description</h3><p>'+inc.description+'</p></div>';
+                        if (inc.ships_involved && inc.ships_involved.length) {
+                            content += '<div class="flyout-section"><h3>Ships Involved</h3><p>'+inc.ships_involved.join(', ')+'</p></div>';
+                        }
+                        if (inc.pirates_involved && inc.pirates_involved.length && inc.pirates_involved[0] !== 'none') {
+                            content += '<div class="flyout-section"><h3>Pirates</h3><p>'+inc.pirates_involved.join(', ')+'</p></div>';
+                        }
+                        if (inc.outcome) content += '<div class="flyout-section"><h3>Outcome</h3><p>'+inc.outcome+'</p></div>';
+                        if (inc.loot) content += '<div class="flyout-section"><h3>Loot</h3><p>'+inc.loot+'</p></div>';
+                        if (inc.casualties) content += '<div class="flyout-section"><h3>Casualties</h3><p>'+inc.casualties+'</p></div>';
+                        if (inc.sources && inc.sources.length) {
+                            content += '<div class="flyout-section"><h3>Sources</h3>';
+                            inc.sources.forEach(function(s) {
+                                if (typeof s === 'string') content += '<p>'+s+'</p>';
+                                else if (s.book) content += '<p>'+s.book+' by '+s.author+'</p>';
+                                else if (s.title) content += '<p>'+s.title+'</p>';
+                            });
+                            content += '</div>';
+                        }
+                        openFlyout(inc.name || 'Incident', inc.date||'', content);
+                    });
+            });
+        }
+
+        // Pirate Raids (land attacks)
+            var raids = (data.pirate_raids && data.pirate_raids.raids) || [];
+            raids.forEach(function(raid) {
+                if (!raid.lat || !raid.lng) return;
+                var icon = createMarker(raid.lat, raid.lng, '#8B0000', 13, '2px solid #FFD700');
+                L.marker([raid.lat, raid.lng], {icon: icon}).addTo(raidsLayer)
+                    .on('click', function() {
+                        var content = '<div class="info-box battle">';
+                        content += '<strong>🏴‍☠️ '+raid.type.replace(/_/g,' ')+'</strong>';
+                        content += '<p>'+raid.date+'</p></div>';
+                        content += '<div class="flyout-section"><h3>Pirate Leader</h3><p>'+raid.pirate_leader+'</p></div>';
+                        if (raid.pirate_group) content += '<div class="flyout-section"><h3>Group</h3><p>'+raid.pirate_group+'</p></div>';
+                        if (raid.force_size) content += '<div class="flyout-section"><h3>Force</h3><p>'+raid.force_size+'</p></div>';
+                        content += '<div class="flyout-section"><h3>Target</h3><p>'+raid.target+'</p></div>';
+                        if (raid.outcome) content += '<div class="flyout-section"><h3>Outcome</h3><p>'+raid.outcome+'</p></div>';
+                        if (raid.loot) content += '<div class="flyout-section"><h3>Loot</h3><p>'+raid.loot+'</p></div>';
+                        if (raid.description) content += '<div class="flyout-section"><h3>Description</h3><p>'+raid.description+'</p></div>';
+                        if (raid.sources && raid.sources.length) {
+                            content += '<div class="flyout-section"><h3>Sources</h3>';
+                            raid.sources.forEach(function(s) {
+                                if (s.book) content += '<p><em>'+s.book+'</em> by '+s.author+'</p>';
+                            });
+                            content += '</div>';
+                        }
+                        openFlyout('🏴‍☠️ '+raid.name, raid.pirate_leader+' • '+raid.date, content);
+                    });
+            });
+
+        // Gulf Oil Wells/Platforms
+            var oilWells = (data.gulf_oil_wells && data.gulf_oil_wells.platforms) || [];
+            oilWells.forEach(function(well) {
+                if (!well.lat || !well.lng) return;
+                var color = '#27ae60'; // active = green
+                if (well.status === 'inactive') color = '#7f8c8d'; // grey
+                if (well.status === 'abandoned' || well.status === 'decommissioned') color = '#2c3e50'; // black
+                if (well.status === 'destroyed') color = '#c0392b'; // red
+                
+                var icon = createMarker(well.lat, well.lng, color, 8, '1px solid #333');
+                L.marker([well.lat, well.lng], {icon: icon}).addTo(oilWellsLayer)
+                    .on('click', function() {
+                        var content = '<div class="flyout-section"><h3>Platform Info</h3>';
+                        content += '<p><strong>Operator:</strong> '+(well.operator||'Unknown')+'</p>';
+                        content += '<p><strong>Status:</strong> '+well.status+'</p>';
+                        content += '<p><strong>Type:</strong> '+(well.type||'Unknown')+'</p>';
+                        if (well.water_depth_ft) content += '<p><strong>Water Depth:</strong> '+well.water_depth_ft+' ft</p>';
+                        if (well.install_date) content += '<p><strong>Installed:</strong> '+well.install_date+'</p>';
+                        if (well.production) content += '<p><strong>Production:</strong> '+well.production+'</p>';
+                        content += '</div>';
+                        if (well.notes) content += '<div class="flyout-section"><h3>Notes</h3><p>'+well.notes+'</p></div>';
+                        openFlyout('🛢️ '+(well.name||well.id), well.operator||'', content);
+                    });
+            });
+
+        // Load fishing spots from separate file
+        fetch('fishing_spots.json')
+            .then(r => r.json())
+            .then(fishData => {
+                fishData.forEach(function(spot) {
+                    if (!spot.lat || !spot.lon) return;
+                    if (spot.type === 'fishing') {
+                        var icon = L.divIcon({
+                            className: 'fish',
+                            html: '<div style="background:#00BFFF;width:8px;height:8px;border-radius:50%;border:1px solid #006699;opacity:0.8"></div>',
+                            iconSize: [8, 8], iconAnchor: [4, 4]
+                        });
+                        L.marker([spot.lat, spot.lon], {icon: icon}).addTo(fishingLayer)
+                            .bindPopup('<b>🎣 '+spot.name+'</b><br>Source: '+(spot.source||'OSM'));
+                    } else if (spot.type === 'reef') {
+                        var icon = L.divIcon({
+                            className: 'reef',
+                            html: '<div style="background:#7B68EE;width:8px;height:8px;border-radius:2px;border:1px solid #4B0082;opacity:0.8"></div>',
+                            iconSize: [8, 8], iconAnchor: [4, 4]
+                        });
+                        var popup = '<b>🪸 '+spot.name+'</b>';
+                        if (spot.depth) popup += '<br>Depth: '+spot.depth;
+                        if (spot.notes) popup += '<br>'+spot.notes;
+                        L.marker([spot.lat, spot.lon], {icon: icon}).addTo(reefsLayer).bindPopup(popup);
+                    }
+                });
+            })
+            .catch(e => console.log('Fishing spots not loaded:', e));
+
+        // Toggle handlers
+        document.getElementById('toggleWrecks').addEventListener('change', function() {
+            this.checked ? map.addLayer(wrecksLayer) : map.removeLayer(wrecksLayer);
+        });
+        document.getElementById('toggleSeaRoutes').addEventListener('change', function() {
+            this.checked ? map.addLayer(seaRoutesLayer) : map.removeLayer(seaRoutesLayer);
+        });
+        document.getElementById('toggleLandRoutes').addEventListener('change', function() {
+            this.checked ? map.addLayer(landRoutesLayer) : map.removeLayer(landRoutesLayer);
+        });
+        document.getElementById('toggleMines').addEventListener('change', function() {
+            this.checked ? map.addLayer(minesLayer) : map.removeLayer(minesLayer);
+        });
+        document.getElementById('toggleMints').addEventListener('change', function() {
+            this.checked ? map.addLayer(mintsLayer) : map.removeLayer(mintsLayer);
+        });
+        document.getElementById('togglePirates').addEventListener('change', function() {
+            this.checked ? map.addLayer(piratesLayer) : map.removeLayer(piratesLayer);
+        });
+        document.getElementById('toggleMystery').addEventListener('change', function() {
+            this.checked ? map.addLayer(mysteryLayer) : map.removeLayer(mysteryLayer);
+        });
+        document.getElementById('toggleLeases').addEventListener('change', function() {
+            this.checked ? map.addLayer(leasesLayer) : map.removeLayer(leasesLayer);
+        });
+        document.getElementById('toggleIncidents').addEventListener('change', function() {
+            this.checked ? map.addLayer(incidentsLayer) : map.removeLayer(incidentsLayer);
+        });
+        document.getElementById('toggleRaids').addEventListener('change', function() {
+            this.checked ? map.addLayer(raidsLayer) : map.removeLayer(raidsLayer);
+        });
+        document.getElementById('toggleOilWells').addEventListener('change', function() {
+            this.checked ? map.addLayer(oilWellsLayer) : map.removeLayer(oilWellsLayer);
+        });
+        document.getElementById('toggleFishing').addEventListener('change', function() {
+            this.checked ? map.addLayer(fishingLayer) : map.removeLayer(fishingLayer);
+        });
+        document.getElementById('toggleReefs').addEventListener('change', function() {
+            this.checked ? map.addLayer(reefsLayer) : map.removeLayer(reefsLayer);
         });
 
-        // Load data on start
+        // Toggle all layers on/off
+        function toggleAll(state) {
+            var checkboxes = ['toggleWrecks','toggleSeaRoutes','toggleLandRoutes','toggleMines','toggleMints','togglePirates','toggleMystery','toggleLeases','toggleIncidents','toggleRaids','toggleOilWells','toggleFishing','toggleReefs'];
+            checkboxes.forEach(function(id) {
+                var cb = document.getElementById(id);
+                if (cb) {
+                    cb.checked = state;
+                    cb.dispatchEvent(new Event('change'));
+                }
+            });
+        }
+
+        map.on('click', function(e) {
+            L.popup().setLatLng(e.latlng)
+                .setContent('<b>'+e.latlng.lat.toFixed(4)+'°, '+e.latlng.lng.toFixed(4)+'°</b>')
+                .openOn(map);
+        });
+
+        L.control.scale({imperial: true, metric: true}).addTo(map);
         loadData();
     </script>
 </body>

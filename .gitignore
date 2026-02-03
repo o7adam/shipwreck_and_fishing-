@@ -1,0 +1,21 @@
+# Large downloadable files (can be recovered)
+*.tif
+*.tiff
+*.asc
+*.wav
+*.mp3
+*.mp4
+*.zip
+
+# Generated files
+bathy_map.svg
+bathy_visual.png
+
+# Temp files
+*.tmp
+*.bak
+*.swp
+.DS_Store
+
+# Don't ignore JSON data files (we want those)
+!*.json
