@@ -1,0 +1,643 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.10 2d4cfc48",
+  "osm3s": {
+    "timestamp_osm_base": "2026-02-03T18:33:26Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 313610658,
+  "lat": 28.3875633,
+  "lon": -81.5366652,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 1292494173,
+  "lat": 27.9961919,
+  "lon": -81.9428211,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 1627454220,
+  "lat": 28.8805891,
+  "lon": -82.6191927,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 1627454308,
+  "lat": 28.8822580,
+  "lon": -82.6144205,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 2215641590,
+  "lat": 27.9406800,
+  "lon": -82.4498570,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Pat's Hole"
+  }
+},
+{
+  "type": "node",
+  "id": 3913853547,
+  "lat": 26.5960203,
+  "lon": -78.4358064,
+  "tags": {
+    "leisure": "fishing",
+    "name": "North Riding Point Club",
+    "website": "https://nrpcbonefishing.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 5294887912,
+  "lat": 26.9602740,
+  "lon": -82.3642083,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 5294887913,
+  "lat": 26.9602369,
+  "lon": -82.3638059,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 5354761323,
+  "lat": 27.0101534,
+  "lon": -82.4103919,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Manasota Lemon Bay Fishing Dock"
+  }
+},
+{
+  "type": "node",
+  "id": 5354761324,
+  "lat": 27.0100077,
+  "lon": -82.4106360,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Manasota Lemon Bay Fishing Dock"
+  }
+},
+{
+  "type": "node",
+  "id": 5354761325,
+  "lat": 27.0099933,
+  "lon": -82.4106923,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Manasota Lemon Bay Fishing Dock"
+  }
+},
+{
+  "type": "node",
+  "id": 5354761326,
+  "lat": 27.0099192,
+  "lon": -82.4109015,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Manasota Lemon Bay Fishing Dock"
+  }
+},
+{
+  "type": "node",
+  "id": 5354820732,
+  "lat": 26.9623323,
+  "lon": -82.3661891,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Lemon Bay Fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 6910370214,
+  "lat": 28.5604968,
+  "lon": -81.6158136,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 7278012561,
+  "lat": 27.8616592,
+  "lon": -80.4448735,
+  "tags": {
+    "fishing": "yes",
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 8204061864,
+  "lat": 26.6920043,
+  "lon": -81.7772239,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 8248596164,
+  "lat": 27.7736084,
+  "lon": -82.6221923,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Fishing Deck"
+  }
+},
+{
+  "type": "node",
+  "id": 9512897617,
+  "lat": 28.8018311,
+  "lon": -81.3827543,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Fishing dock"
+  }
+},
+{
+  "type": "node",
+  "id": 9592754587,
+  "lat": 26.7823457,
+  "lon": -81.7559913,
+  "tags": {
+    "fishing": "yes",
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 9669809677,
+  "lat": 25.7433293,
+  "lon": -80.3329688,
+  "tags": {
+    "addr:city": "Miami",
+    "addr:country": "US",
+    "addr:full": "8451 SW 28th St",
+    "addr:postcode": "33155",
+    "addr:state": "FL",
+    "leisure": "fishing",
+    "name": "Captain Planet Charters LLC",
+    "opening_hours": "24/7",
+    "phone": "+1-305-502-5349",
+    "website": "https://captainplanetcharters.com"
+  }
+},
+{
+  "type": "node",
+  "id": 10027573869,
+  "lat": 26.9963833,
+  "lon": -81.9678608,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 10721098670,
+  "lat": 28.2928689,
+  "lon": -81.3967651,
+  "tags": {
+    "leisure": "fishing",
+    "name": "Brinson Park Fishing Spot"
+  }
+},
+{
+  "type": "node",
+  "id": 10724733085,
+  "lat": 26.5315687,
+  "lon": -80.0540652,
+  "tags": {
+    "access": "yes",
+    "fishing": "yes",
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 10727868785,
+  "lat": 27.7895001,
+  "lon": -80.5105135,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 10732650563,
+  "lat": 26.7835445,
+  "lon": -80.0442312,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 10775855718,
+  "lat": 26.6457017,
+  "lon": -82.0464706,
+  "tags": {
+    "addr:city": "Cape Coral",
+    "addr:housenumber": "3420",
+    "addr:postcode": "33991",
+    "addr:state": "FL",
+    "addr:street": "SW 3rd Terrace",
+    "leisure": "fishing",
+    "name": "All 4 Chuck Fishing Charters LLC",
+    "note": "please check position, could be SEO SPAM",
+    "opening_hours": "Mo-Su 07:00-23:00",
+    "operator": "Al Harrington",
+    "payment:american_express": "yes",
+    "payment:cash": "yes",
+    "payment:discover_card": "yes",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes",
+    "phone": "+1-239-940-4901",
+    "website": "https://all4chuckfishingcharters.com"
+  }
+},
+{
+  "type": "node",
+  "id": 11142785575,
+  "lat": 24.5708455,
+  "lon": -81.7466723,
+  "tags": {
+    "addr:city": "Key West",
+    "addr:state": "FL",
+    "addr:street": "5130 Overseas Hwy",
+    "country": "US",
+    "leisure": "fishing",
+    "name": "Captain Rios Charters",
+    "opening_hours": "24/7",
+    "payment:american_express": "yes",
+    "payment:cash": "yes",
+    "payment:discover_card": "yes",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes",
+    "phone": "+1-305-394-1278",
+    "postal_code": "33040",
+    "website": "https://captainrioscharters.com"
+  }
+},
+{
+  "type": "node",
+  "id": 11387949524,
+  "lat": 28.8192411,
+  "lon": -81.4292345,
+  "tags": {
+    "access": "yes",
+    "fishing": "yes",
+    "leisure": "fishing",
+    "name": "Bear Pond Dock"
+  }
+},
+{
+  "type": "node",
+  "id": 11415414707,
+  "lat": 27.2615910,
+  "lon": -80.3587489,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11885060233,
+  "lat": 26.6103215,
+  "lon": -82.0294575,
+  "tags": {
+    "access": "private",
+    "leisure": "fishing",
+    "name": "Calypso Park Fishing Pier"
+  }
+},
+{
+  "type": "node",
+  "id": 11926817207,
+  "lat": 28.1510018,
+  "lon": -82.7286435,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11926989903,
+  "lat": 28.1003633,
+  "lon": -82.6879495,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11928371590,
+  "lat": 28.1508283,
+  "lon": -82.7286743,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11928371593,
+  "lat": 28.1409530,
+  "lon": -82.7666824,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11928371594,
+  "lat": 28.1402091,
+  "lon": -82.7644988,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11928372594,
+  "lat": 28.1434109,
+  "lon": -82.7657806,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11942238401,
+  "lat": 28.1420099,
+  "lon": -82.7669388,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11943101078,
+  "lat": 28.1513909,
+  "lon": -82.7282353,
+  "tags": {
+    "access": "yes",
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11943101164,
+  "lat": 28.1518855,
+  "lon": -82.7279377,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11943218086,
+  "lat": 28.1351426,
+  "lon": -82.7396364,
+  "tags": {
+    "leisure": "fishing",
+    "outdoor": "leisure"
+  }
+},
+{
+  "type": "node",
+  "id": 11943218087,
+  "lat": 28.1339902,
+  "lon": -82.7383113,
+  "tags": {
+    "leisure": "fishing",
+    "outdoor": "leisure"
+  }
+},
+{
+  "type": "node",
+  "id": 11943218088,
+  "lat": 28.1376575,
+  "lon": -82.7521059,
+  "tags": {
+    "leisure": "fishing",
+    "outdoor": "leisure"
+  }
+},
+{
+  "type": "node",
+  "id": 11943218089,
+  "lat": 28.1318692,
+  "lon": -82.7350653,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11943218090,
+  "lat": 28.1340345,
+  "lon": -82.7343335,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11943218092,
+  "lat": 28.1329764,
+  "lon": -82.7374867,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11943218093,
+  "lat": 28.1361819,
+  "lon": -82.7397192,
+  "tags": {
+    "leisure": "fishing",
+    "outdoor": "leisure"
+  }
+},
+{
+  "type": "node",
+  "id": 11943218094,
+  "lat": 28.1328119,
+  "lon": -82.7359997,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11947052561,
+  "lat": 28.1630683,
+  "lon": -82.7401247,
+  "tags": {
+    "leisure": "fishing",
+    "outdoor": "leisure"
+  }
+},
+{
+  "type": "node",
+  "id": 11947068250,
+  "lat": 28.1570049,
+  "lon": -82.7401598,
+  "tags": {
+    "leisure": "fishing",
+    "outdoor": "leisure"
+  }
+},
+{
+  "type": "node",
+  "id": 11947068251,
+  "lat": 28.1585713,
+  "lon": -82.7401179,
+  "tags": {
+    "leisure": "fishing",
+    "outdoor": "leisure"
+  }
+},
+{
+  "type": "node",
+  "id": 11947068252,
+  "lat": 28.1593864,
+  "lon": -82.7401716,
+  "tags": {
+    "leisure": "fishing",
+    "outdoor": "leisure"
+  }
+},
+{
+  "type": "node",
+  "id": 11948203525,
+  "lat": 28.1761102,
+  "lon": -82.7486597,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11948203527,
+  "lat": 28.1762907,
+  "lon": -82.7499748,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 11948203528,
+  "lat": 28.1768940,
+  "lon": -82.7511369,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 12214663236,
+  "lat": 28.8248024,
+  "lon": -82.6576487,
+  "tags": {
+    "access": "yes",
+    "fishing": "yes",
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 12214706329,
+  "lat": 28.8243026,
+  "lon": -82.6564276,
+  "tags": {
+    "access": "yes",
+    "fishing": "yes",
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 12508625517,
+  "lat": 25.9881450,
+  "lon": -81.5938976,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 12511140307,
+  "lat": 25.9386351,
+  "lon": -81.4612025,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 12512895536,
+  "lat": 25.7614670,
+  "lon": -80.5031168,
+  "tags": {
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 12637769534,
+  "lat": 26.7050015,
+  "lon": -81.9395980,
+  "tags": {
+    "access": "yes",
+    "leisure": "fishing"
+  }
+},
+{
+  "type": "node",
+  "id": 13013815551,
+  "lat": 26.1188670,
+  "lon": -80.1060527,
+  "tags": {
+    "address": "301 Seabreeze Blvd, Fort Lauderdale, FL, 33316",
+    "booking": "https://book.peek.com/s/d3f008ae-6cd5-4063-848d-9a093692d463/Wjdv7",
+    "contact:facebook": "https://www.facebook.com/profile.php?id=61573984520409",
+    "contact:instagram": "https://www.instagram.com/dont_tell_mom_sportfishing/",
+    "contact:phone": "+1-954-522-9399",
+    "contact:tripadvisor": "https://www.tripadvisor.com/Attraction_Review-g34227-d33057395-Reviews-Don_t_Tell_Mom_Sportfishing-Fort_Lauderdale_Broward_County_Florida.html",
+    "contact:website": "https://donttellmomsportfishing.com/",
+    "leisure": "fishing",
+    "name": "Don't Tell Mom Sportfishing",
+    "opening_hours": "24/7"
+  }
+}
+
+  ]
+}

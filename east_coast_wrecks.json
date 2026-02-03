@@ -1,0 +1,22 @@
+{
+  "wrecks": [
+    {"name": "Ocean Venus", "year": 1942, "lat": 28.383, "lon": -80.350, "type": "Cargo ship", "depth_ft": "unknown", "notes": "Torpedoed by U-564 off Cape Canaveral"},
+    {"name": "SS Copenhagen", "year": 1900, "lat": 26.20556, "lon": -80.0851, "type": "Steamship", "depth_ft": 20, "notes": "Crashed into reef at Pompano Beach"},
+    {"name": "SS Breconshire", "year": 1894, "lat": 27.6525, "lon": -80.351, "type": "British steamship", "depth_ft": 20, "notes": "Ran aground off Vero Beach"},
+    {"name": "1715 Fleet - Cabin Wreck", "year": 1715, "lat": 27.5167, "lon": -80.3167, "type": "Spanish galleon", "depth_ft": 20, "notes": "Part of 1715 Treasure Fleet, Sebastian area"},
+    {"name": "1715 Fleet - Wedge Wreck", "year": 1715, "lat": 27.4833, "lon": -80.3000, "type": "Spanish galleon", "depth_ft": 18, "notes": "1715 Fleet, south of Sebastian Inlet"},
+    {"name": "1715 Fleet - Sandy Point", "year": 1715, "lat": 27.575, "lon": -80.333, "type": "Spanish galleon", "depth_ft": 15, "notes": "1715 Fleet, near Wabasso"},
+    {"name": "1715 Fleet - Corrigan's Wreck", "year": 1715, "lat": 27.4500, "lon": -80.2833, "type": "Spanish galleon", "depth_ft": 22, "notes": "1715 Fleet"},
+    {"name": "1715 Fleet - Rio Mar", "year": 1715, "lat": 27.4167, "lon": -80.2667, "type": "Spanish galleon", "depth_ft": 20, "notes": "1715 Fleet, near Fort Pierce"},
+    {"name": "1715 Fleet - Douglas Beach", "year": 1715, "lat": 27.35, "lon": -80.25, "type": "Spanish galleon", "depth_ft": 18, "notes": "1715 Fleet"},
+    {"name": "1715 Fleet - Green Cabin", "year": 1715, "lat": 27.60, "lon": -80.35, "type": "Spanish galleon", "depth_ft": 16, "notes": "1715 Fleet, McLarty Treasure Museum area"},
+    {"name": "San Pedro", "year": 1733, "lat": 24.857, "lon": -80.675, "type": "Spanish galleon", "depth_ft": 18, "notes": "1733 Fleet, Florida Keys"},
+    {"name": "Urca de Lima", "year": 1715, "lat": 27.4667, "lon": -80.2833, "type": "Spanish storeship", "depth_ft": 15, "notes": "1715 Fleet, underwater preserve"},
+    {"name": "Georges Valentine", "year": 1904, "lat": 26.0617, "lon": -80.1083, "type": "Italian barquentine", "depth_ft": 25, "notes": "Sank near Hillsboro Inlet"},
+    {"name": "Lofthus", "year": 1898, "lat": 26.4833, "lon": -80.05, "type": "Norwegian barque", "depth_ft": 10, "notes": "Wrecked off Boynton Beach"},
+    {"name": "Amaryllis", "year": 1965, "lat": 26.053, "lon": -80.098, "type": "Freighter", "depth_ft": 95, "notes": "Artificial reef, Pompano Beach"},
+    {"name": "Ancient Mariner", "year": 1930, "lat": 26.15, "lon": -80.075, "type": "Yacht", "depth_ft": 60, "notes": "Sank off Fort Lauderdale"},
+    {"name": "Lowrance", "year": 1984, "lat": 25.95, "lon": -80.05, "type": "Tugboat", "depth_ft": 80, "notes": "Artificial reef, Miami"},
+    {"name": "SS Inchulva", "year": 1903, "lat": 26.067, "lon": -80.095, "type": "British steamer", "depth_ft": 25, "notes": "Near Hillsboro Inlet"}
+  ]
+}
